@@ -25,3 +25,8 @@ provider "github" {
 resource "github_repository" "doom_emacs_configs" {
   name = ".doom.d"
 }
+
+resource "github_repository" "spotistatsR" {
+  name       = "spotistatsR"
+  visibility = "private"
+}
