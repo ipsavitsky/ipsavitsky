@@ -63,3 +63,25 @@ resource "github_repository" "cryptobotAPI" {
 resource "github_repository" "multiprocessor_scheduling_text" {
   name = "multiprocessor-scheduling-text"
 }
+
+resource "github_repository" "wiki_search" {
+  name       = "wiki_search"
+  has_issues = true
+}
+
+resource "github_repository" "greedy_scheduling" {
+  name       = "greedy-scheduling"
+  has_issues = true
+}
+
+resource "github_repository" "cmc_mdo" {
+  name = "cmc-mdo"
+}
+
+resource "github_repository" "cmc_numerical_methods" {
+  name = "cmc-numerical-methods"
+}
+
+resource "github_repository" "cmc_ml_course" {
+  name = "cmc-ml-course"
+}
