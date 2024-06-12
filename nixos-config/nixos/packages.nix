@@ -26,6 +26,7 @@
     # DevOps stuff
     terraform
     podman
+    helm
     kind
 
     # CLI utils
@@ -41,6 +42,7 @@
     ffmpeg
     openssl
     bat
+    zellij
 
     # Sound
     pipewire
