@@ -22,6 +22,11 @@ provider "github" {
   token = var.github_token
 }
 
+resource "github_repository" "readme" {
+  name = "ipsavitsky"
+  visibility = "private"
+}
+
 resource "github_repository" "doom_emacs_configs" {
   name = ".doom.d"
 }
