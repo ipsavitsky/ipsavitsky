@@ -5,6 +5,12 @@
 I'm a software engineer based in Manchester UK. You can find my resume [[https://github.com/ipsavitsky/resume/releases/download/v5.1/resume.en_US.pdf][here]].
 ** What is in this repo?
 This repo contains this ~org~ file as well as a lately added ~terraform~ files that contains as much configuration as it is possible without a recreation of all resources. All new repos I will create there.
+
+There is also a nixos config (work in progress) wit home manager. To apply it run:
+#+begin_src bash
+sudo nixos-rebuild switch --flake .
+home-manager switch --flake .
+#+end_src
 ** What is on this account
 There is also [[https://github.com/ipsavitsky/greedy-scheduling]] which is a comprehensive greedy scheduling algorithm, described in a paper I co-authored.
 Every repository starting with ~cmc-~ is a repo for a course in my uni.
