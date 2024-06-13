@@ -14,6 +14,10 @@ jobs:
 
       - name: Check Nix flake inputs
         uses: DeterminateSystems/flake-checker-action@v4
+        with:
+          fail-mode: true
+          send-statistics: false
+          flake-lock-path: ./flake.nix
 
       - name: Install Nix
         uses: DeterminateSystems/nix-installer-action@v3
