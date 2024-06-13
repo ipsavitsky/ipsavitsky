@@ -23,8 +23,8 @@ provider "github" {
 }
 
 resource "github_repository" "readme" {
-  name = "ipsavitsky"
-  visibility = "private"
+  name       = "ipsavitsky"
+  visibility = "public"
 }
 
 resource "github_repository" "doom_emacs_configs" {
