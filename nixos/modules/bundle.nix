@@ -1,9 +1,10 @@
 {
   imports = [
+    ./bootloader.nix
     ./input.nix
-    ./xserver.nix
     ./pipewire.nix
     ./user.nix
-    ./bootloader.nix
+    ./xserver.nix
+    ./xfce.nix
   ];
 }

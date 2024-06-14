@@ -16,7 +16,6 @@
     let system = "x86_64-linux";
     in {
 
-      # nixos - system hostname
       nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
         specialArgs = {
           pkgs-stable = import nixpkgs-stable {
