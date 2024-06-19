@@ -3,6 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixos-wsl.url = "github:nix-community/nixos-wsl";
     nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-23.11";
 
     home-manager = {
@@ -11,7 +12,7 @@
     };
   };
 
-  outputs = { self, nixpkgs, nixpkgs-stable, home-manager, ... }@inputs:
+  outputs = { self, nixpkgs, nixpkgs-stable, nixos-wsl, home-manager, ... }@inputs:
 
     let system = "x86_64-linux";
     in {
@@ -25,6 +26,14 @@
           inherit inputs system;
         };
         modules = [ ./nixos/configuration.nix ];
+      };
+
+      nixosConfigurations.wsl = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        modules = [
+	  ./wsl/configuration.nix
+	  nixos-wsl.nixosModules.wsl
+	];
       };
 
       homeConfigurations.ilya = home-manager.lib.homeManagerConfiguration {
