@@ -8,8 +8,8 @@ This repo contains this ~org~ file as well as a lately added ~terraform~ files t
 
 There is also a nixos config (work in progress) wit home manager. To apply it run:
 #+begin_src bash
-sudo nixos-rebuild switch --flake .
-home-manager switch --flake .
+sudo nixos-rebuild switch --flake ./#nixos # for config by name of "nixos"
+home-manager switch --flake ./#ilya
 #+end_src
 ** What is on this account
 There is also [[https://github.com/ipsavitsky/greedy-scheduling]] which is a comprehensive greedy scheduling algorithm, described in a paper I co-authored.

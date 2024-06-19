@@ -12,7 +12,8 @@
     };
   };
 
-  outputs = { self, nixpkgs, nixpkgs-stable, nixos-wsl, home-manager, ... }@inputs:
+  outputs =
+    { self, nixpkgs, nixpkgs-stable, nixos-wsl, home-manager, ... }@inputs:
 
     let system = "x86_64-linux";
     in {
@@ -30,10 +31,7 @@
 
       nixosConfigurations.wsl = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-        modules = [
-	  ./wsl/configuration.nix
-	  nixos-wsl.nixosModules.wsl
-	];
+        modules = [ ./wsl/configuration.nix nixos-wsl.nixosModules.wsl ];
       };
 
       homeConfigurations.ilya = home-manager.lib.homeManagerConfiguration {
