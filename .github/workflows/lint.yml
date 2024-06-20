@@ -39,4 +39,4 @@ jobs:
         run: cd hcl && terraform init
 
       - name: Terraform validate
-        run: ccd hcl && terraform validate
+        run: cd hcl && terraform validate
