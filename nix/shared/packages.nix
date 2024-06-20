@@ -4,22 +4,6 @@
   };
 
   environment.systemPackages = with pkgs; [
-    # Coding stuff
-    gnumake
-    gcc
-    python3
-    R
-    go
-    ghc
-    rustup
-    cmake
-
-    # DevOps stuff
-    terraform
-    podman
-    helm
-    kind
-
     # CLI utils
     neofetch
     file
@@ -34,12 +18,10 @@
     openssl
     bat
     zellij
+    emacs
+    fzf
 
     # Other
     home-manager
-  ];
-
-  fonts.packages = with pkgs; [
-      fira-code
   ];
 }
