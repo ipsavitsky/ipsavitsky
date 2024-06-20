@@ -22,13 +22,17 @@
         inherit system;
         modules = [
           ./old-personal/configuration.nix
-
+	  ./shared/packages.nix
         ];
       };
 
       nixosConfigurations.wsl = nixpkgs.lib.nixosSystem {
         inherit system;
-        modules = [ ./wsl/configuration.nix nixos-wsl.nixosModules.wsl ];
+        modules = [
+	  ./wsl/configuration.nix
+	  ./shared/packages.nix
+	  nixos-wsl.nixosModules.wsl
+	];
       };
 
       homeConfigurations.ilya = home-manager.lib.homeManagerConfiguration {

@@ -8,10 +8,6 @@
 { config, lib, pkgs, ... }:
 
 {
-  imports = [
-    ./packages.nix
-  ];
-
   wsl.enable = true;
   wsl.defaultUser = "ilya";
   
