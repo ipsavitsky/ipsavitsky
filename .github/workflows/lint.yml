@@ -15,11 +15,8 @@ jobs:
       - name: Install nix
         uses: DeterminateSystems/nix-installer-action@v3
 
-      - name: Move to nix directory
-        run: cd nix
-
       - name: Nix flake check
-        run: nix flake check
+        run: cd nix && nix flake check
 
   terraform:
     runs-on: ubuntu-latest
@@ -36,10 +33,10 @@ jobs:
         run: cd hcl
 
       - name: Terraform fmt
-        run: terraform fmt -check
+        run: cd hcl && terraform fmt -check
 
       - name: Terraform init
-        run: terraform init
+        run: cd hcl && terraform init
 
       - name: Terraform validate
-        run: terraform validate
+        run: ccd hcl && terraform validate
