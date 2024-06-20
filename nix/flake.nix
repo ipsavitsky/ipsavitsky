@@ -18,7 +18,7 @@
     let system = "x86_64-linux";
     in {
 
-      nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
+      nixosConfigurations.old-personal = nixpkgs.lib.nixosSystem {
         specialArgs = {
           pkgs-stable = import nixpkgs-stable {
             inherit system;
@@ -26,7 +26,7 @@
           };
           inherit inputs system;
         };
-        modules = [ ./nixos/configuration.nix ];
+        modules = [ ./old-personal/configuration.nix ];
       };
 
       nixosConfigurations.wsl = nixpkgs.lib.nixosSystem {
