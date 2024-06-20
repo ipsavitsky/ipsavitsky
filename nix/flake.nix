@@ -19,18 +19,15 @@
     in {
 
       nixosConfigurations.old-personal = nixpkgs.lib.nixosSystem {
-        specialArgs = {
-          pkgs-stable = import nixpkgs-stable {
-            inherit system;
-            config.allowUnfree = true;
-          };
-          inherit inputs system;
-        };
-        modules = [ ./old-personal/configuration.nix ];
+        inherit system;
+        modules = [
+          ./old-personal/configuration.nix
+
+        ];
       };
 
       nixosConfigurations.wsl = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
+        inherit system;
         modules = [ ./wsl/configuration.nix nixos-wsl.nixosModules.wsl ];
       };
 
