@@ -9,7 +9,6 @@
     file
     tree
     wget
-    git
     htop
     nix-index
     zip
@@ -18,10 +17,59 @@
     openssl
     bat
     zellij
-    emacs
     fzf
 
+    # Emacs stuff
+    git
+    ripgrep
+    coreutils
+    fd
+    clang
+    emacs
+
+    # Dev packages
+    dockfmt
+    terraform
+    libclang
+    cljfmt
+    libxml2
+    gopls
+    gomodifytags
+    gotests
+    gore
+    gotools
+    haskell-language-server
+    haskellPackages.hoogle
+    julia
+    python312
+    python312Packages.black
+    python312Packages.pyflakes
+    python312Packages.isort
+    python312Packages.pynose
+    python312Packages.pytest
+    poetry
+    pipenv
+    gcc
+    ghc
+
+    rust-analyzer
+    rustc
+
+    shfmt
+    shellcheck
+
+    html-tidy
+    stylelint
+    jsbeautifier
+
     # Other
+    nerdfonts
+    fira-code-nerdfont
+    emojify
     home-manager
+  ];
+
+  fonts.packages = with pkgs; [
+    fira-code
   ];
 }
