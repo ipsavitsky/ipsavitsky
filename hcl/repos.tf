@@ -16,7 +16,7 @@ terraform {
 
 variable "github_token" {
   description = "Token used to authenticate in github"
-  sensitive = true
+  sensitive   = true
 }
 
 provider "github" {
