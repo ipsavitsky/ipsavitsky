@@ -4,7 +4,11 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     nixos-wsl.url = "github:nix-community/nixos-wsl";
-    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-23.11";
+
+    rust-overlay = {
+      url = "github:oxalica/rust-overlay";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -13,14 +17,19 @@
   };
 
   outputs =
-    { self, nixpkgs, nixpkgs-stable, nixos-wsl, home-manager, ... }@inputs:
-
+    { self, nixpkgs, nixos-wsl, rust-overlay, home-manager, ... }@inputs:
     let system = "x86_64-linux";
     in {
-
       nixosConfigurations.old-personal = nixpkgs.lib.nixosSystem {
         inherit system;
-        modules = [ ./old-personal/configuration.nix ./shared/packages.nix ];
+        modules = [
+          ./old-personal/configuration.nix
+          ./shared/packages.nix
+          ({ pkgs, ... }: {
+            nixpkgs.overlays = [ rust-overlay.overlays.default ];
+            environment.systemPackages = [ pkgs.rust-bin.stable.latest.default ];
+          })
+        ];
       };
 
       nixosConfigurations.wsl = nixpkgs.lib.nixosSystem {
@@ -29,6 +38,10 @@
           ./wsl/configuration.nix
           ./shared/packages.nix
           nixos-wsl.nixosModules.wsl
+          ({ pkgs, ... }: {
+            nixpkgs.overlays = [ rust-overlay.overlays.default ];
+            environment.systemPackages = [ pkgs.rust-bin.stable.latest.default ];
+          })
         ];
       };
 
