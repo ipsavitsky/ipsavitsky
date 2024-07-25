@@ -91,3 +91,7 @@ resource "github_repository" "cmc_numerical_methods" {
 resource "github_repository" "cmc_ml_course" {
   name = "cmc-ml-course"
 }
+
+resource "github_repository" "opaste" {
+  name = "opaste"
+}
