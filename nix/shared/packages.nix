@@ -1,4 +1,4 @@
-{ pkgs, rust-overlay, ... }: {
+{ pkgs, ... }: {
   nixpkgs.config = {
     allowUnfree = true;
   };
@@ -26,7 +26,7 @@
     coreutils
     fd
     clang
-    emacs-git
+    emacs
 
     # Dev packages
     dockfmt
@@ -79,12 +79,5 @@
 
   fonts.packages = with pkgs; [
     fira-code
-  ];
-
-  nixpkgs.overlays = [
-    (import (builtins.fetchTarball {
-        url    = "https://github.com/nix-community/emacs-overlay/archive/master.tar.gz";
-        sha256 = "1p1lfl6hg9g3n3bzd1frn9s2ihmsssz5phfxpyafz9kh08j7qknj";
-    }))
   ];
 }
