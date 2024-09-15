@@ -10,5 +10,6 @@
   imports = [
     ./emacs/emacs.nix
     ./git/git.nix
+    ./zellij/zellij.nix
   ];
 }
