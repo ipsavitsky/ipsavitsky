@@ -15,7 +15,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
-  outputs = { self, nixpkgs, nixos-wsl, home-manager, emacs-overlay, ... }@inputs:
+  outputs = { self, nixpkgs, nixos-wsl, home-manager, emacs-overlay, ... }:
   let
     system = "x86_64-linux";
   in {
