@@ -1,5 +1,8 @@
 { pkgs, ... }: {
   environment.systemPackages = with pkgs; [
+    tree
+    cloc
+
     home-manager
   ];
   

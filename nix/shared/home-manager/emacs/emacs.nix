@@ -7,7 +7,7 @@
       epkgs.dracula-theme
       epkgs.which-key
       epkgs.undo-tree
-      
+      epkgs.dirvish
     ];
   };
   
