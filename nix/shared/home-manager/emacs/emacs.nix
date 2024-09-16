@@ -2,6 +2,7 @@
   programs.emacs = {
     enable = true;
     package = pkgs.emacs-git;
+    extraConfig = builtins.readFile ./emacs.el;
     extraPackages = epkgs: [
       epkgs.magit
       epkgs.dracula-theme
@@ -10,6 +11,4 @@
       epkgs.undo-tree
     ];
   };
-
-  home.file.".config/emacs/init.el".source = ./emacs.el;
 }

@@ -19,7 +19,6 @@
   let
     system = "x86_64-linux";
   in {
-    nix.registry.nixpkgs.flake = nixpkgs;
     nixosConfigurations.wsl = nixpkgs.lib.nixosSystem {
       inherit system;
       modules = [
