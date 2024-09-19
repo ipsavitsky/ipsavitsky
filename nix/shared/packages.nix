@@ -2,6 +2,9 @@
   environment.systemPackages = with pkgs; [
     tree
     cloc
+    xclip
+    fd
+    file
 
     home-manager
   ];

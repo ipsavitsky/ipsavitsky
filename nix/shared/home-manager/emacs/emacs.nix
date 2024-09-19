@@ -2,12 +2,13 @@
   programs.emacs = {
     enable = true;
     package = pkgs.emacs-git;
-    extraPackages = epkgs: [
-      epkgs.magit
-      epkgs.dracula-theme
-      epkgs.which-key
-      epkgs.undo-tree
-      epkgs.dirvish
+    extraPackages = epkgs: with epkgs; [
+      magit
+      dracula-theme
+      which-key
+      undo-tree
+      dirvish
+      all-the-icons
     ];
   };
   
