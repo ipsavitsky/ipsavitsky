@@ -4,6 +4,8 @@
 
 (set-face-attribute 'default (selected-frame) :height 300)
 
+(add-hook 'prog-mode-hook 'display-line-numbers-mode)
+
 ; set y-or-n prompt
 (defalias 'yes-or-no-p 'y-or-n-p)
 
@@ -49,6 +51,5 @@
 ;; Hide details by default
 (add-hook 'dirvish-setup-hook 'dired-hide-details-mode)
 
-;; Optional: Enable all-the-icons (if you want file icons)
 (when (display-graphic-p)
   (require 'all-the-icons))

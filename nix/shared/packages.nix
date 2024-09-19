@@ -8,13 +8,14 @@
 
     home-manager
   ];
-  
+
+  fonts.packages = with pkgs; [
+    fira-code
+    emacs-all-the-icons-fonts
+  ];
+
   home-manager = {
     users.ilya = ./home-manager/home.nix;
     useGlobalPkgs = true;
   };
-
-  fonts.packages = with pkgs; [
-    fira-code
-  ];
 }
