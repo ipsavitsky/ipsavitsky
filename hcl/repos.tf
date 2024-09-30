@@ -95,3 +95,7 @@ resource "github_repository" "cmc_ml_course" {
 resource "github_repository" "opaste" {
   name = "opaste"
 }
+
+resource "github_repository" "linux_development" {
+  name = "linux_development"
+}
