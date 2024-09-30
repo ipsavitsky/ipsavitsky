@@ -14,20 +14,20 @@
 ; display line numbers
 (add-hook 'prog-mode-hook 'display-line-numbers-mode)
 
-; set y-or-n prompt
+					; set y-or-n prompt
 (defalias 'yes-or-no-p 'y-or-n-p)
 
-; confirm on exit
+					; confirm on exit
 (setq confirm-kill-emacs 'y-or-n-p)
 
-; disabling the menu bars
+					; disabling the menu bars
 (menu-bar-mode 0)
 (tool-bar-mode 0)
 
-; setting up which-key
+					; setting up which-key
 (which-key-mode 1)
 
-; setting up undo-tree
+					; setting up undo-tree
 (global-undo-tree-mode 1)
 (setq undo-tree-auto-save-history t
       undo-tree-visualizer-diff t
@@ -41,23 +41,22 @@
 (dirvish-override-dired-mode)
 
 ;; Configure Dirvish
-(setq dirvish-mode-line-format
-      '(:left (sort file-time " " file-size symlink) :right (omit yank index)))
+(setq dirvish-mode-line-format '(:left (sort file-time " " file-size symlink) :right (omit yank index))
+      dirvish-attributes '(all-the-icons file-size file-time collapse subtree-state vc-state))
 
-(setq dirvish-attributes
-      '(all-the-icons file-size file-time collapse subtree-state vc-state))
-
-(setq dirvish-default-layout '(1 0.16 0.84))
-
-;; Enable side-follow mode
-(dirvish-side-follow-mode)
-
-;; Enable mouse drag-and-drop
-(setq dired-mouse-drag-files t)
-(setq mouse-drag-and-drop-region-cross-program t)
+;; (setq dirvish-default-layout '(1 0.16 0.84))
 
 ;; Hide details by default
 (add-hook 'dirvish-setup-hook 'dired-hide-details-mode)
 
 (when (display-graphic-p)
   (require 'all-the-icons))
+
+;; ;; formatter config
+;; (apheleia-global-mode 1)
+
+;; helm config
+(global-set-key (kbd "M-x") 'helm-M-x)
+(helm-mode 1)
+
+
