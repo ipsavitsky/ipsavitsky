@@ -1,9 +1,17 @@
+; do not show startup screen
 (setq inhibit-startup-screen t)
+
+; prevent emacs from creating annoying auto save files
+(setq auto-save-default nil)
+
+; highlight matching brackets
+(show-paren-mode 1)
 
 (load-theme 'dracula t)
 
 (set-face-attribute 'default (selected-frame) :height 300)
 
+; display line numbers
 (add-hook 'prog-mode-hook 'display-line-numbers-mode)
 
 ; set y-or-n prompt
