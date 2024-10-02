@@ -13,6 +13,7 @@
       nix-mode
       helm
       helm-icons
+      smartparens
     ];
   };
 

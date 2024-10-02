@@ -1,17 +1,17 @@
-; do not show startup screen
+;; do not show startup screen
 (setq inhibit-startup-screen t)
 
-; prevent emacs from creating annoying auto save files
+;; prevent emacs from creating annoying auto save files
 (setq auto-save-default nil)
 
-; highlight matching brackets
+;; highlight matching brackets
 (show-paren-mode 1)
 
 (load-theme 'dracula t)
 
 (set-face-attribute 'default (selected-frame) :height 300)
 
-; display line numbers
+;; display line numbers
 (add-hook 'prog-mode-hook 'display-line-numbers-mode)
 
 					; set y-or-n prompt
@@ -24,10 +24,10 @@
 (menu-bar-mode 0)
 (tool-bar-mode 0)
 
-					; setting up which-key
+;; setting up which-key
 (which-key-mode 1)
 
-					; setting up undo-tree
+;; setting up undo-tree
 (global-undo-tree-mode 1)
 (setq undo-tree-auto-save-history t
       undo-tree-visualizer-diff t
@@ -59,4 +59,5 @@
 (global-set-key (kbd "M-x") 'helm-M-x)
 (helm-mode 1)
 
-
+;; smartparens config					
+(add-hook 'prog-mode-hook #'smartparens-mode)
