@@ -99,3 +99,7 @@ resource "github_repository" "opaste" {
 resource "github_repository" "linux_development" {
   name = "linux_development"
 }
+
+resource "github_repository" "linux_developmentg" {
+  name = "linux_development"
+}

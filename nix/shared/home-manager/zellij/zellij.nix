@@ -4,6 +4,7 @@
     enableBashIntegration = true;
     settings = {
       theme = "dracula";
+      simplified_ui = true;
     };
   };
 }

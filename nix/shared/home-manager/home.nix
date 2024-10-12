@@ -10,5 +10,6 @@
     ./zellij/zellij.nix
     ./fzf/fzf.nix
     ./bat/bat.nix
+    ./direnv/direnv.nix
   ];
 }

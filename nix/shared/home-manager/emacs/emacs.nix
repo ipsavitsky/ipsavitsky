@@ -14,6 +14,7 @@
       helm
       helm-icons
       smartparens
+      go-mode
     ];
   };
 

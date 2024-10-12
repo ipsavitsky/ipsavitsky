@@ -1,8 +1,10 @@
+
 ;; do not show startup screen
 (setq inhibit-startup-screen t)
 
 ;; prevent emacs from creating annoying auto save files
 (setq auto-save-default nil)
+(setq make-backup-files nil)
 
 ;; highlight matching brackets
 (show-paren-mode 1)
@@ -61,3 +63,5 @@
 
 ;; smartparens config					
 (add-hook 'prog-mode-hook #'smartparens-mode)
+
+(add-hook 'go-mode-hook #'eglot-ensure)
