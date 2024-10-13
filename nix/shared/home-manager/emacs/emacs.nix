@@ -14,6 +14,10 @@
       smartparens
       direnv
 
+      corfu
+      cape
+      nerd-icons-corfu
+
       go-mode
       terraform-mode
       nix-mode

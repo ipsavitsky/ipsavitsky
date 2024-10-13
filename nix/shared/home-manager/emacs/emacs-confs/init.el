@@ -10,7 +10,7 @@
 
 (load-theme 'dracula t)
 
-(set-face-attribute 'default (selected-frame) :height 300)
+(set-face-attribute 'default (selected-frame) :height 280)
 
 ;; display line numbers
 (add-hook 'prog-mode-hook 'display-line-numbers-mode)
@@ -40,3 +40,5 @@
 (add-hook 'prog-mode-hook #'smartparens-mode)
 
 (load-file "~/.config/emacs/eglot.el")
+
+(load-file "~/.config/emacs/corfu.el")

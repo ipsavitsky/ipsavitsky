@@ -5,6 +5,7 @@
     xclip
     fd
     file
+    wget
 
     home-manager
   ];
