@@ -1,2 +1,3 @@
 .terraform
 values.auto.tfvars
+.direnv

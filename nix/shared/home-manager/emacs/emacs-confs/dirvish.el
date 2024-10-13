@@ -1,3 +1,5 @@
+(require 'dirvish)
+
 ;; Enable Dirvish globally
 (dirvish-override-dired-mode)
 

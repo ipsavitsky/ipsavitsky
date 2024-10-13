@@ -9,12 +9,12 @@
       undo-tree
       dirvish
       all-the-icons
-      apheleia
       nix-mode
       helm
       helm-icons
       smartparens
       go-mode
+      terraform-mode
     ];
   };
 

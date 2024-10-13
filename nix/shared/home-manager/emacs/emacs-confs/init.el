@@ -1,4 +1,3 @@
-
 ;; do not show startup screen
 (setq inhibit-startup-screen t)
 
@@ -33,14 +32,9 @@
 
 (load-file "~/.config/emacs/dirvish.el")
 
-;; ;; formatter config
-;; (apheleia-global-mode 1)
-
-;; helm config
-(global-set-key (kbd "M-x") 'helm-M-x)
-(helm-mode 1)
+(load-file "~/.config/emacs/helm.el")
 
 ;; smartparens config					
 (add-hook 'prog-mode-hook #'smartparens-mode)
 
-(add-hook 'go-mode-hook #'eglot-ensure)
+(load-file "~/.config/emacs/eglot.el")
