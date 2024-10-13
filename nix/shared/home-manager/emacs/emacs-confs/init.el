@@ -37,7 +37,7 @@
 (load-file "~/.config/emacs/direnv.el")
 
 ;; smartparens config					
-(add-hook 'prog-mode-hook #'smartparens-mode)
+(electric-pair-mode)
 
 (load-file "~/.config/emacs/eglot.el")
 

@@ -11,7 +11,6 @@
       all-the-icons
       helm
       helm-icons
-      smartparens
       direnv
 
       corfu
