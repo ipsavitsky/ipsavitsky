@@ -34,6 +34,8 @@
 
 (load-file "~/.config/emacs/helm.el")
 
+(load-file "~/.config/emacs/direnv.el")
+
 ;; smartparens config					
 (add-hook 'prog-mode-hook #'smartparens-mode)
 

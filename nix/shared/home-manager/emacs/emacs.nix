@@ -9,12 +9,15 @@
       undo-tree
       dirvish
       all-the-icons
-      nix-mode
       helm
       helm-icons
       smartparens
+      direnv
+
       go-mode
       terraform-mode
+      nix-mode
+      haskell-mode
     ];
   };
 
