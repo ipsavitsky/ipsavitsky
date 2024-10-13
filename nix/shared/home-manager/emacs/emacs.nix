@@ -19,5 +19,8 @@
   };
 
   # Can't set this as part of extraConfig because it doesn't allow (inhibit-startup-screen)
-  home.file.".config/emacs/init.el".source = ./emacs.el;
+  home.file.".config/emacs/" = {
+    source = ./emacs-confs;
+    recursive = true;
+  };
 }
