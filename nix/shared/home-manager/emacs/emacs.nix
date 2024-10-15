@@ -18,9 +18,11 @@
       nerd-icons-corfu
 
       go-mode
+      markdown-mode
       terraform-mode
       nix-mode
       haskell-mode
+      python-mode
     ];
   };
 
