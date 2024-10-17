@@ -1,6 +1,6 @@
 { config, lib, pkgs, ... }: {
   home = {
-    stateVersion = "24.05"; # Match with nixpkgs version
+    stateVersion = "24.11";
   };
 
   imports = [

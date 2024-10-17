@@ -8,5 +8,5 @@
   
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
-  system.stateVersion = "24.05"; # Match with nixpkgs version
+  system.stateVersion = "24.11";
 }
