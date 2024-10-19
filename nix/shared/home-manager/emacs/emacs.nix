@@ -23,6 +23,7 @@
       nix-mode
       haskell-mode
       python-mode
+      yaml-mode
     ];
   };
 

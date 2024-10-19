@@ -5,6 +5,7 @@
 (require 'haskell-mode)
 (require 'python-mode)
 (require 'markdown-mode)
+(require 'yaml-mode)
 
 (add-hook 'go-mode-hook #'eglot-ensure)
 (add-hook 'nix-mode-hook #'eglot-ensure)
@@ -13,3 +14,4 @@
 (add-hook 'haskell-mode-hook #'eglot-ensure)
 (add-hook 'python-mode-hook #'eglot-ensure)
 (add-hook 'markdown-mode-hook #'eglot-ensure)
+(add-hook 'yaml-mode-hook #'eglot-ensure)
