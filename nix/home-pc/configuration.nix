@@ -94,7 +94,9 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
-  environment.systemPackages = [];
+  environment.systemPackages = with pkgs; [
+    telegram-desktop
+  ];
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
   # This value determines the NixOS release from which the default
