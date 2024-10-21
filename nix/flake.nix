@@ -14,7 +14,7 @@
       wsl = nixpkgs.lib.nixosSystem {
         inherit system;
         modules = [
-          ./shared/configuration.nix
+          ./wsl/configuration.nix
           nixos-wsl.nixosModules.wsl
           home-manager.nixosModules.home-manager
           { nixpkgs.overlays = [ emacs-overlay.overlay ]; }
