@@ -1,6 +1,6 @@
 { config, lib, pkgs, ... }: {
   imports = [
-    ./packages.nix
+    ../shared/packages.nix
   ];
   
   wsl.enable = true;

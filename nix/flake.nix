@@ -10,14 +10,24 @@
   let
     system = "x86_64-linux";
   in {
-    nixosConfigurations.wsl = nixpkgs.lib.nixosSystem {
-      inherit system;
-      modules = [
-        ./shared/configuration.nix
-        nixos-wsl.nixosModules.wsl
-        home-manager.nixosModules.home-manager
-        { nixpkgs.overlays = [ emacs-overlay.overlay ]; }
-      ];
+    nixosConfigurations = {
+      wsl = nixpkgs.lib.nixosSystem {
+        inherit system;
+        modules = [
+          ./shared/configuration.nix
+          nixos-wsl.nixosModules.wsl
+          home-manager.nixosModules.home-manager
+          { nixpkgs.overlays = [ emacs-overlay.overlay ]; }
+        ];
+      };
+      home-pc = nixpkgs.lib.nixosSystem {
+        inherit system;
+        modules = [
+          ./home-pc/configuration.nix
+          home-manager.nixosModules.home-manager
+          { nixpkgs.overlays = [ emacs-overlay.overlay ]; }
+        ];
+      };
     };
   };
 }
