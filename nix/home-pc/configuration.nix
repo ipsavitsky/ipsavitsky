@@ -42,12 +42,16 @@
     LC_TIME = "en_GB.UTF-8";
   };
 
-  services.xserver.enable = true;
-
-  services.displayManager.sddm.enable = true;
-  services.desktopManager.plasma6.enable = true;
+  # services.displayManager.sddm.enable = true;
+  # services.desktopManager.plasma6.enable = true;
 
   services.xserver = {
+    enable = true;
+    # displayManager.gdm.enable = true;
+    # desktopManager.gnome.enable = true;
+    displayManager.sddm.enable = true;
+    desktopManager.plasma6.enable = true;
+    videoDrivers = [ "nvidia" ];
     xkb = {
       variant = "";
       layout = "gb";
@@ -64,12 +68,12 @@
     nvidia = {
       modesetting.enable = true;
       powerManagement = {
-        enable = true;
-        finegrained = true;
+        enable = false;
+        finegrained = false;
       };
       open = false;
       nvidiaSettings = true;
-      package = config.boot.kernelPackages.nvidiaPackages.beta;
+      package = config.boot.kernelPackages.nvidiaPackages.stable;
     };
   };
   security.rtkit.enable = true;
@@ -89,8 +93,8 @@
       "wheel"
     ];
     packages = with pkgs; [
-      kdePackages.kate
-      #  thunderbird
+      # kdePackages.kate
+      # thunderbird
     ];
   };
 

@@ -10,7 +10,7 @@
 
 (load-theme 'dracula t)
 
-(set-face-attribute 'default (selected-frame) :height 280)
+(set-face-attribute 'default (selected-frame) :height 140)
 
 ;; display line numbers
 (add-hook 'prog-mode-hook 'display-line-numbers-mode)
