@@ -2,14 +2,18 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, inputs, ... }:
+{
+  config,
+  pkgs,
+  inputs,
+  ...
+}:
 
 {
-  imports =
-    [
-      ./hardware-configuration.nix
-      ../shared/packages.nix
-    ];
+  imports = [
+    ./hardware-configuration.nix
+    ../shared/packages.nix
+  ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -76,15 +80,17 @@
     pulse.enable = true;
   };
 
-
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.ilya = {
     isNormalUser = true;
     description = "IlyaSavitsky";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+    ];
     packages = with pkgs; [
       kdePackages.kate
-    #  thunderbird
+      #  thunderbird
     ];
   };
 
@@ -94,14 +100,18 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
-  environment.systemPackages = with pkgs; [
-    telegram-desktop
-    alacritty
-  ] ++ [
-    inputs.zen-browser.packages."${pkgs.system}".specific
-  ];
+  environment.systemPackages =
+    with pkgs;
+    [
+      telegram-desktop
+      alacritty
+    ]
+    ++ [ inputs.zen-browser.packages."${pkgs.system}".specific ];
 
-  nix.settings.experimental-features = ["nix-command" "flakes"];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
   # on your system were taken. It‘s perfectly fine and recommended to leave

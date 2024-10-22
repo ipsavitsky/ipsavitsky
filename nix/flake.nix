@@ -8,29 +8,41 @@
     zen-browser.url = "github:MarceColl/zen-browser-flake";
   };
 
-  outputs = { self, nixpkgs, nixos-wsl, home-manager, emacs-overlay, zen-browser, ... }@inputs:
-  let
-    system = "x86_64-linux";
-  in {
-    nixosConfigurations = {
-      wsl = nixpkgs.lib.nixosSystem {
-        inherit system;
-        modules = [
-          ./wsl/configuration.nix
-          nixos-wsl.nixosModules.wsl
-          home-manager.nixosModules.home-manager
-          { nixpkgs.overlays = [ emacs-overlay.overlay ]; }
-        ];
-      };
-      home-pc = nixpkgs.lib.nixosSystem {
-        specialArgs = { inherit inputs; };
-        inherit system;
-        modules = [
-          ./home-pc/configuration.nix
-          home-manager.nixosModules.home-manager
-          { nixpkgs.overlays = [ emacs-overlay.overlay ]; }
-        ];
+  outputs =
+    {
+      self,
+      nixpkgs,
+      nixos-wsl,
+      home-manager,
+      emacs-overlay,
+      zen-browser,
+      ...
+    }@inputs:
+    let
+      system = "x86_64-linux";
+    in
+    {
+      nixosConfigurations = {
+        wsl = nixpkgs.lib.nixosSystem {
+          inherit system;
+          modules = [
+            ./wsl/configuration.nix
+            nixos-wsl.nixosModules.wsl
+            home-manager.nixosModules.home-manager
+            { nixpkgs.overlays = [ emacs-overlay.overlay ]; }
+          ];
+        };
+        home-pc = nixpkgs.lib.nixosSystem {
+          specialArgs = {
+            inherit inputs;
+          };
+          inherit system;
+          modules = [
+            ./home-pc/configuration.nix
+            home-manager.nixosModules.home-manager
+            { nixpkgs.overlays = [ emacs-overlay.overlay ]; }
+          ];
+        };
       };
     };
-  };
 }
