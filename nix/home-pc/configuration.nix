@@ -96,6 +96,7 @@
 
   environment.systemPackages = with pkgs; [
     telegram-desktop
+    alacritty
   ];
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
