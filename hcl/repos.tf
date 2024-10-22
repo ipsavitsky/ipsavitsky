@@ -99,3 +99,8 @@ resource "github_repository" "opaste" {
 resource "github_repository" "linux_development" {
   name = "linux_development"
 }
+
+resource "github_repository" "gl-watcher" {
+  name       = "gl-watcher"
+  visibility = "private"
+}
