@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
   imports =
@@ -97,6 +97,8 @@
   environment.systemPackages = with pkgs; [
     telegram-desktop
     alacritty
+  ] ++ [
+    inputs.zen-browser.packages."${pkgs.system}".specific
   ];
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
