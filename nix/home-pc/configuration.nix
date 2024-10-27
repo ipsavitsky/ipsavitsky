@@ -16,8 +16,22 @@
   ];
 
   # Bootloader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
+  boot = {
+    loader = {
+      systemd-boot.enable = false;
+      grub = {
+        enable = true;
+        device = "nodev";
+        useOSProber = true;
+        efiSupport = true;
+        gfxmodeEfi = "1280x720";
+      };
+      efi = {
+        canTouchEfiVariables = true;
+        efiSysMountPoint = "/boot/efi";
+      };
+    };
+  };
 
   networking.hostName = "nixos"; # Define your hostname.
 
@@ -47,10 +61,6 @@
 
   services.xserver = {
     enable = true;
-    # displayManager.gdm.enable = true;
-    # desktopManager.gnome.enable = true;
-    displayManager.sddm.enable = true;
-    desktopManager.plasma6.enable = true;
     videoDrivers = [ "nvidia" ];
     xkb = {
       variant = "";
@@ -58,6 +68,14 @@
     };
   };
 
+  services.displayManager = {
+    sddm.enable = true;
+  };
+
+  services.desktopManager = {
+    plasma6.enable = true;
+  };
+  
   console.keyMap = "uk";
 
   services.printing.enable = true;
@@ -109,8 +127,10 @@
     [
       telegram-desktop
       alacritty
-    ]
-    ++ [ inputs.zen-browser.packages."${pkgs.system}".specific ];
+      spotify
+      gparted
+      inputs.zen-browser.packages."${pkgs.system}".specific
+    ];
 
   nix.settings.experimental-features = [
     "nix-command"
