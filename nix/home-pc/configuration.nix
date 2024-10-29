@@ -75,7 +75,7 @@
   services.desktopManager = {
     plasma6.enable = true;
   };
-  
+
   console.keyMap = "uk";
 
   services.printing.enable = true;
@@ -122,20 +122,24 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
-  environment.systemPackages =
-    with pkgs;
-    [
-      telegram-desktop
-      alacritty
-      spotify
-      gparted
-      inputs.zen-browser.packages."${pkgs.system}".specific
-    ];
+  environment.systemPackages = with pkgs; [
+    telegram-desktop
+    spotify
+    gparted
+    inputs.zen-browser.packages."${pkgs.system}".specific
+  ];
 
   nix.settings.experimental-features = [
     "nix-command"
     "flakes"
   ];
+
+  home-manager = {
+    users.ilya = ./home-manager/home.nix;
+    useGlobalPkgs = true;
+    sharedModules = [ inputs.plasma-manager.homeManagerModules.plasma-manager ];
+  };
+
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
   # on your system were taken. It‘s perfectly fine and recommended to leave
@@ -143,5 +147,4 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "24.05"; # Did you read the comment?
-
 }
