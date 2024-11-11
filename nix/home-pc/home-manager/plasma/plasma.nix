@@ -2,6 +2,7 @@
 {
   programs.plasma = {
     enable = true;
+    overrideConfig = true;
     shortcuts = {
       "ActivityManager"."switch-to-activity-11642569-2617-4d7e-8bd1-397bc877aa3e" = [ ];
       "KDE Keyboard Layout Switcher"."Switch to Last-Used Keyboard Layout" = "Meta+Alt+L";

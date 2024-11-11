@@ -7,6 +7,7 @@
     fd
     file
     wget
+    circumflex
 
     home-manager
   ];

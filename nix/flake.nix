@@ -5,7 +5,7 @@
     emacs-overlay.url = "github:nix-community/emacs-overlay";
     nixos-wsl.url = "github:nix-community/NixOS-WSL";
     home-manager.url = "github:nix-community/home-manager";
-    zen-browser.url = "github:MarceColl/zen-browser-flake";
+    zen-browser.url = "github:0xc000022070/zen-browser-flake";
     plasma-manager.url = "github:nix-community/plasma-manager";
   };
 
