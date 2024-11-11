@@ -9,13 +9,11 @@
         dracula-theme
         which-key
         undo-tree
-        dirvish
         all-the-icons
-        helm
-        helm-icons
         direnv
 
         corfu
+        vertico
         cape
         nerd-icons-corfu
 

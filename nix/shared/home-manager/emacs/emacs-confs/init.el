@@ -28,17 +28,14 @@
 ;; setting up which-key
 (which-key-mode 1)
 
+(electric-pair-mode)
+
 (load-file "~/.config/emacs/undo-tree.el")
 
-(load-file "~/.config/emacs/dirvish.el")
-
-(load-file "~/.config/emacs/helm.el")
-
 (load-file "~/.config/emacs/direnv.el")
-
-;; smartparens config					
-(electric-pair-mode)
 
 (load-file "~/.config/emacs/eglot.el")
 
 (load-file "~/.config/emacs/corfu.el")
+
+(load-file "~/.config/emacs/vertico.el")
