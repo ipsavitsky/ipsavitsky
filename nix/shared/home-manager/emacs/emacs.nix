@@ -24,6 +24,7 @@
         haskell-mode
         python-mode
         yaml-mode
+        elm-mode
       ];
   };
 
