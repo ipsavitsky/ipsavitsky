@@ -56,20 +56,22 @@
     LC_TIME = "en_GB.UTF-8";
   };
 
-  services.xserver = {
-    enable = true;
-    videoDrivers = [ "nvidia" ];
-    xkb = {
-      variant = "";
-      layout = "gb";
+  services = {
+    xserver = {
+      enable = true;
+      videoDrivers = [ "nvidia" ];
+      xkb = {
+        variant = "";
+        layout = "gb";
+      };
+      desktopManager = {
+        xterm.enable = false;
+        xfce.enable = true;
+      };
     };
-    desktopManager = {
-      xterm.enable = false;
-      xfce.enable = true;
-    };
+    displayManager.defaultSession = "xfce";
+    blueman.enable = true;
   };
-
-  services.displayManager.defaultSession = "xfce";
 
   console.keyMap = "uk";
 
@@ -88,6 +90,7 @@
       nvidiaSettings = true;
       package = config.boot.kernelPackages.nvidiaPackages.stable;
     };
+    bluetooth.enable = true;
   };
   security.rtkit.enable = true;
   services.pipewire = {
@@ -114,6 +117,8 @@
   nixpkgs.config.allowUnfree = true;
 
   environment.systemPackages = with pkgs; [
+    blueman
+    xfce.xfce4-whiskermenu-plugin
     telegram-desktop
     spotify
     gparted

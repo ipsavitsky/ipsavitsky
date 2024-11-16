@@ -1,6 +1,4 @@
 { ... }:
 {
-  imports = [
-    ./kitty/kitty.nix
-  ];
+  imports = [ ./kitty/kitty.nix ];
 }
