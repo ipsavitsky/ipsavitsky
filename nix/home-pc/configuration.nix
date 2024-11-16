@@ -56,9 +56,6 @@
     LC_TIME = "en_GB.UTF-8";
   };
 
-  # services.displayManager.sddm.enable = true;
-  # services.desktopManager.plasma6.enable = true;
-
   services.xserver = {
     enable = true;
     videoDrivers = [ "nvidia" ];
@@ -66,15 +63,13 @@
       variant = "";
       layout = "gb";
     };
+    desktopManager = {
+      xterm.enable = false;
+      xfce.enable = true;
+    };
   };
 
-  services.displayManager = {
-    sddm.enable = true;
-  };
-
-  services.desktopManager = {
-    plasma6.enable = true;
-  };
+  services.displayManager.defaultSession = "xfce";
 
   console.keyMap = "uk";
 
@@ -110,10 +105,6 @@
       "networkmanager"
       "wheel"
     ];
-    packages = with pkgs; [
-      # kdePackages.kate
-      # thunderbird
-    ];
   };
 
   # Install firefox.
@@ -137,7 +128,6 @@
   home-manager = {
     users.ilya = ./home-manager/home.nix;
     useGlobalPkgs = true;
-    sharedModules = [ inputs.plasma-manager.homeManagerModules.plasma-manager ];
   };
 
   # This value determines the NixOS release from which the default
