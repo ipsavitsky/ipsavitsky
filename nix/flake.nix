@@ -24,22 +24,22 @@
     in
     {
       nixosConfigurations = {
-        wsl = nixpkgs.lib.nixosSystem {
+        hephaestus = nixpkgs.lib.nixosSystem {
           inherit system;
           modules = [
-            ./wsl/configuration.nix
+            ./hosts/hephaestus/configuration.nix
             nixos-wsl.nixosModules.wsl
             home-manager.nixosModules.home-manager
             { nixpkgs.overlays = [ emacs-overlay.overlay ]; }
           ];
         };
-        home-pc = nixpkgs.lib.nixosSystem {
+        zeus = nixpkgs.lib.nixosSystem {
           specialArgs = {
             inherit inputs;
           };
           inherit system;
           modules = [
-            ./home-pc/configuration.nix
+            ./hosts/zeus/configuration.nix
             home-manager.nixosModules.home-manager
             { nixpkgs.overlays = [ emacs-overlay.overlay ]; }
           ];

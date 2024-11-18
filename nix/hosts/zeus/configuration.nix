@@ -12,7 +12,7 @@
 {
   imports = [
     ./hardware-configuration.nix
-    ../shared/packages.nix
+    ../../shared/packages.nix
   ];
 
   # Bootloader.
@@ -33,7 +33,7 @@
     };
   };
 
-  networking.hostName = "nixos"; # Define your hostname.
+  networking.hostName = "zeus";
 
   # Enable networking
   networking.networkmanager.enable = true;
@@ -103,17 +103,12 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.ilya = {
     isNormalUser = true;
-    description = "IlyaSavitsky";
     extraGroups = [
       "networkmanager"
       "wheel"
     ];
   };
 
-  # Install firefox.
-  programs.firefox.enable = true;
-
-  # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
   environment.systemPackages = with pkgs; [

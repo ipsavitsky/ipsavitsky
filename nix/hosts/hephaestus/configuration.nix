@@ -5,10 +5,11 @@
   ...
 }:
 {
-  imports = [ ../shared/packages.nix ];
+  imports = [ ../../shared/packages.nix ];
 
   wsl.enable = true;
   wsl.defaultUser = "ilya";
+  wsl.wslConf.network.hostname = "hephaestus";
 
   nix.settings.experimental-features = [
     "nix-command"
