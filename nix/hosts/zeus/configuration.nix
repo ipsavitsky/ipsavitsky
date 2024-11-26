@@ -1,7 +1,3 @@
-# Edit this configuration file to define what should be installed on
-# your system.  Help is available in the configuration.nix(5) man page
-# and in the NixOS manual (accessible by running ‘nixos-help’).
-
 {
   config,
   pkgs,
@@ -12,8 +8,15 @@
 {
   imports = [
     ./hardware-configuration.nix
-    ../../shared/packages.nix
+    ../../modules/shared.nix
   ];
+
+  home-manager = {
+    users.ilya = {
+      imports = [ ../../modules/full-stack.nix ];
+    };
+    useGlobalPkgs = true;
+  };
 
   # Bootloader.
   boot = {
@@ -124,11 +127,6 @@
     "nix-command"
     "flakes"
   ];
-
-  home-manager = {
-    users.ilya = ./home-manager/home.nix;
-    useGlobalPkgs = true;
-  };
 
   programs.xfconf.enable = true;
 

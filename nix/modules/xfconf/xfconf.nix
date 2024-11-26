@@ -1,4 +1,4 @@
-{ lib, ... }:
+{ ... }:
 {
   xfconf.settings = {
     xfce4-keyboard-shortcuts = {

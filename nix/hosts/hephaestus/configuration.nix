@@ -1,11 +1,13 @@
+{ ... }:
 {
-  config,
-  lib,
-  pkgs,
-  ...
-}:
-{
-  imports = [ ../../shared/packages.nix ];
+  imports = [ ../../modules/shared.nix ];
+
+  home-manager = {
+    users.ilya = {
+      imports = [ ../../modules/cli-stack.nix ];
+    };
+    useGlobalPkgs = true;
+  };
 
   wsl.enable = true;
   wsl.defaultUser = "ilya";

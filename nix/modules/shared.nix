@@ -17,11 +17,6 @@
     emacs-all-the-icons-fonts
   ];
 
-  home-manager = {
-    users.ilya = ./home-manager/home.nix;
-    useGlobalPkgs = true;
-  };
-
   nix.settings.auto-optimise-store = true;
 
   # Enable common container config files in /etc/containers

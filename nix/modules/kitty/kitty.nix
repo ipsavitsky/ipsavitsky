@@ -1,8 +1,8 @@
-{ pkgs, ... }:
+{ ... }:
 {
   programs.kitty = {
     enable = true;
-    theme = "Dracula";
+    themeFile = "Dracula";
     font = {
       name = "Fira Code";
     };

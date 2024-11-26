@@ -1,8 +1,10 @@
 { ... }:
 {
   imports = [
+    ./cli-stack.nix
     ./kitty/kitty.nix
-    ./dconf/dconf.nix
     ./xfconf/xfconf.nix
   ];
+
+  home.stateVersion = "24.11";
 }
