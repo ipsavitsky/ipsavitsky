@@ -21,6 +21,9 @@
 ;; confirm on exit
 (setq confirm-kill-emacs 'y-or-n-p)
 
+;; disable ringing
+(setq ring-bell-function 'ignore)
+
 ;; disabling the menu bars
 (menu-bar-mode 0)
 (tool-bar-mode 0)
@@ -28,14 +31,17 @@
 ;; setting up which-key
 (which-key-mode 1)
 
+;; enable parenthesis autocompletion
 (electric-pair-mode)
 
-(load-file "~/.config/emacs/undo-tree.el")
+(load-file "~/.config/emacs/corfu.el")
 
 (load-file "~/.config/emacs/direnv.el")
 
 (load-file "~/.config/emacs/eglot.el")
 
-(load-file "~/.config/emacs/corfu.el")
+(load-file "~/.config/emacs/orderless.el")
+
+(load-file "~/.config/emacs/undo-tree.el")
 
 (load-file "~/.config/emacs/vertico.el")

@@ -14,7 +14,8 @@
 
         corfu
         vertico
-        cape
+        marginalia
+        orderless
         nerd-icons-corfu
 
         go-mode
