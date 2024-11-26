@@ -104,3 +104,8 @@ resource "github_repository" "gl-watcher" {
   name       = "gl-watcher"
   visibility = "private"
 }
+
+resource "github_repository" "script_pile" {
+  name        = "script_pile"
+  description = "Random pile of scripts"
+}
