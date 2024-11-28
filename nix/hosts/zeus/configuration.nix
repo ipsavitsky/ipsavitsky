@@ -65,7 +65,8 @@
       videoDrivers = [ "nvidia" ];
       xkb = {
         variant = "";
-        layout = "gb";
+        layout = "gb,us";
+        options = "grp:alt_shift_toggle";
       };
       desktopManager = {
         xterm.enable = false;
@@ -76,7 +77,7 @@
     blueman.enable = true;
   };
 
-  console.keyMap = "uk";
+  # console.keyMap = "uk";
 
   services.printing.enable = true;
 
