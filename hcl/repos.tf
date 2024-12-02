@@ -109,3 +109,9 @@ resource "github_repository" "script_pile" {
   name        = "script_pile"
   description = "Random pile of scripts"
 }
+
+resource "github_repository" "gitlab_gopher" {
+  name        = "gitlab_gopher"
+  description = "Automatically assign reviewers to your project"
+  visibility  = "private"
+}
