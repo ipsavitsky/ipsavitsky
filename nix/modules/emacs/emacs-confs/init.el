@@ -1,6 +1,9 @@
 ;; do not show startup screen
 (setq inhibit-startup-screen t)
 
+;; goodbye scrollbar
+(scroll-bar-mode 0)
+
 ;; prevent emacs from creating annoying auto save files
 (setq auto-save-default nil)
 (setq make-backup-files nil)

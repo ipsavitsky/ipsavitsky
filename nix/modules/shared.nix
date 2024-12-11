@@ -5,6 +5,7 @@
     cloc
     xclip
     fd
+    ripgrep
     file
     wget
     circumflex
