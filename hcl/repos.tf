@@ -120,3 +120,8 @@ resource "github_repository" "suslik" {
   description = "Automatically assign reviewers to your project"
   visibility  = "private"
 }
+
+resource "github_repository" "gitlab_due_dates" {
+  name = "gitlab_due_dates"
+  description = "Monitor your due dates and automatically postpone them"
+}
