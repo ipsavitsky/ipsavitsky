@@ -75,6 +75,10 @@
     };
     displayManager.defaultSession = "xfce";
     blueman.enable = true;
+    ollama = {
+      enable = true;
+      acceleration = "cuda";
+    };
   };
 
   # console.keyMap = "uk";

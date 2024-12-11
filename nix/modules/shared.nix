@@ -8,6 +8,7 @@
     file
     wget
     circumflex
+    mods
 
     home-manager
   ];
