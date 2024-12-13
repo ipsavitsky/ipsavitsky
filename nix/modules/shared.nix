@@ -10,6 +10,7 @@
     wget
     circumflex
     mods
+    btop
 
     home-manager
   ];
@@ -20,6 +21,12 @@
   ];
 
   nix.settings.auto-optimise-store = true;
+
+  services = {
+    ollama = {
+      enable = true;
+    };
+  };
 
   # Enable common container config files in /etc/containers
   virtualisation.containers.enable = true;
