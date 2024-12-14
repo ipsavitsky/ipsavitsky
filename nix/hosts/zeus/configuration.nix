@@ -68,12 +68,14 @@
         layout = "gb,us";
         options = "grp:alt_shift_toggle";
       };
+      displayManager = {
+        gdm.enable = true;
+      };
       desktopManager = {
-        xterm.enable = false;
-        xfce.enable = true;
+        gnome.enable = true;
       };
     };
-    displayManager.defaultSession = "xfce";
+    # displayManager.defaultSession = "xfce";
     blueman.enable = true;
     ollama = {
       acceleration = "cuda";
