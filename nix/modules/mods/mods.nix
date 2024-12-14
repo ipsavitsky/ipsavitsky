@@ -40,8 +40,8 @@ in
   config = {
     home.packages = [ cfg.package ];
 
-    xdg.configFile."mods/mods.yaml" = mkIf (cfg.settings != { }) {
-      source = yamlFormat.generate "mods.yaml" cfg.settings;
+    xdg.configFile."mods/mods.yml" = mkIf (cfg.settings != { }) {
+      source = yamlFormat.generate "mods.yml" cfg.settings;
     };
 
     programs.bash.initExtra = mkIf cfg.enableBashIntegration (
