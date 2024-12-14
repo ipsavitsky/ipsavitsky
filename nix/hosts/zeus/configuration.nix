@@ -122,12 +122,29 @@
 
   environment.systemPackages = with pkgs; [
     blueman
-    xfce.xfce4-whiskermenu-plugin
     telegram-desktop
     spotify
     gparted
     inputs.zen-browser.packages."${pkgs.system}".specific
   ];
+
+  environment.gnome.excludePackages = (with pkgs; [
+    gnome-photos
+    gnome-tour
+    gedit # text editor
+    cheese
+    gnome-music
+    gnome-terminal
+    epiphany # web browser
+    geary # email reader
+    evince # document viewer
+    gnome-characters
+    totem # video player
+    tali # poker game
+    iagno # go game
+    hitori # sudoku game
+    atomix # puzzle game
+  ]);
 
   nix.settings.experimental-features = [
     "nix-command"
