@@ -9,7 +9,6 @@
     file
     wget
     circumflex
-    mods
     btop
 
     home-manager

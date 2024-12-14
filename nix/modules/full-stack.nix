@@ -3,7 +3,8 @@
   imports = [
     ./cli-stack.nix
     ./kitty/kitty.nix
-    # ./xfconf/xfconf.nix
+    # ./dconf/dconf.nix
+    ./mods/mods.nix
   ];
 
   home.stateVersion = "24.11";
