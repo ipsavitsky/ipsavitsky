@@ -1,10 +1,13 @@
-{ ... }:
+{ mods-hm, ... }:
 {
   imports = [ ../../modules/shared.nix ];
 
   home-manager = {
     users.ilya = {
-      imports = [ ../../modules/cli-stack.nix ];
+      imports = [
+        ../../modules/cli-stack.nix
+        mods-hm.homeManagerModules.mods
+      ];
     };
     useGlobalPkgs = true;
   };

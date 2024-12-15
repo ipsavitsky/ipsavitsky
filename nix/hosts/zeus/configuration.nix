@@ -2,6 +2,7 @@
   config,
   pkgs,
   inputs,
+  mods-hm,
   ...
 }:
 
@@ -13,7 +14,10 @@
 
   home-manager = {
     users.ilya = {
-      imports = [ ../../modules/full-stack.nix ];
+      imports = [
+        ../../modules/full-stack.nix
+        mods-hm.homeManagerModules.mods
+      ];
     };
     useGlobalPkgs = true;
   };

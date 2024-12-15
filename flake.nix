@@ -19,7 +19,7 @@
     };
     mods-home-manager = {
       url = "github:ipsavitsky/mods-home-manager";
-      # inputs.nixpkgs.follows = "nixpkgs";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
@@ -55,6 +55,9 @@
 
       nixosConfigurations = {
         hephaestus = nixpkgs.lib.nixosSystem {
+          specialArgs = {
+            mods-hm = mods-home-manager;
+          };
           inherit system;
           modules = [
             ./nix/hosts/hephaestus/configuration.nix
@@ -66,6 +69,7 @@
         zeus = nixpkgs.lib.nixosSystem {
           specialArgs = {
             inherit inputs;
+            mods-hm = mods-home-manager;
           };
           inherit system;
           modules = [
