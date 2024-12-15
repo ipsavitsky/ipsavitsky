@@ -17,6 +17,10 @@
       url = "github:0xc000022070/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    mods-home-manager = {
+      url = "github:ipsavitsky/mods-home-manager";
+      # inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -27,6 +31,7 @@
       home-manager,
       emacs-overlay,
       zen-browser,
+      mods-home-manager,
     }@inputs:
     let
       system = "x86_64-linux";

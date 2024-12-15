@@ -9,7 +9,6 @@
     ./git/git.nix
     ./zellij/zellij.nix
     ./mods/mods.nix
-    ./mods/mods-config.nix
   ];
 
   home.stateVersion = "24.11";
