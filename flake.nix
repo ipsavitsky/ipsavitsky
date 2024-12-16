@@ -78,6 +78,12 @@
             { nixpkgs.overlays = [ emacs-overlay.overlay ]; }
           ];
         };
+        demeter = nixpkgs.lib.nixosSystem {
+          system = "aarch64-linux";
+          modules = [
+            ./nix/hosts/demeter/configuration.nix
+          ];
+        };
       };
     };
 }
