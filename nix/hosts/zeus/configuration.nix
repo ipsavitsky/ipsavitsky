@@ -38,6 +38,9 @@
         efiSysMountPoint = "/boot/efi";
       };
     };
+    binfmt.emulatedSystems = [
+      "aarch64-linux"
+    ];
   };
 
   networking.hostName = "zeus";
