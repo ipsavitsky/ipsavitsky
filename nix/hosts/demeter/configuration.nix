@@ -13,7 +13,7 @@
       eth0.useDHCP = true;
     };
   };
-  raspberry-pi-nix.board = "bcm2712";
+  raspberry-pi-nix.board = "bcm2712"; # this is raspberry pi 5
   hardware = {
     raspberry-pi = {
       config = {
@@ -38,11 +38,6 @@
       };
     };
   };
-  security.rtkit.enable = true;
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-  };
+
+  system.stateVersion = "24.11";
 }
