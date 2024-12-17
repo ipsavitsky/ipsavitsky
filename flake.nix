@@ -21,6 +21,10 @@
       url = "github:ipsavitsky/mods-home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    raspberry-pi = {
+      url = "github:nix-community/raspberry-pi-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -32,6 +36,7 @@
       emacs-overlay,
       zen-browser,
       mods-home-manager,
+      raspberry-pi,
     }@inputs:
     let
       system = "x86_64-linux";
@@ -81,6 +86,8 @@
         demeter = nixpkgs.lib.nixosSystem {
           system = "aarch64-linux";
           modules = [
+            raspberry-pi.nixosModules.raspberry-pi
+            raspberry-pi.nixosModules.sd-image
             ./nix/hosts/demeter/configuration.nix
           ];
         };
