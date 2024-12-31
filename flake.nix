@@ -1,6 +1,9 @@
 {
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    treefmt-nix = {
+      url = "github:numtide/treefmt-nix";
+    };
     emacs-overlay = {
       url = "github:nix-community/emacs-overlay";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -34,6 +37,7 @@
     {
       self,
       nixpkgs,
+      treefmt-nix,
       nixos-wsl,
       home-manager,
       emacs-overlay,
@@ -50,7 +54,8 @@
       };
     in
     {
-      formatter.${system} = pkgs.nixfmt-rfc-style;
+      # formatter.${system} = pkgs.nixfmt-rfc-style;
+      formatter.${system} = (treefmt-nix.lib.evalModule pkgs ./treefmt.nix).config.build.wrapper;
 
       devShells.${system} = {
         default = pkgs.mkShell {

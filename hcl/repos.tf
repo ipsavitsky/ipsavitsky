@@ -122,7 +122,7 @@ resource "github_repository" "suslik" {
 }
 
 resource "github_repository" "gitlab_due_dates" {
-  name = "gitlab_due_dates"
+  name        = "gitlab_due_dates"
   description = "Monitor your due dates and automatically postpone them"
-  visibility = "private"
+  visibility  = "private"
 }
