@@ -21,6 +21,9 @@
       url = "github:ipsavitsky/mods-home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    ghostty = {
+      url = "github:ghostty-org/ghostty";
+    };
     raspberry-pi = {
       url = "github:nix-community/raspberry-pi-nix";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -36,8 +39,9 @@
       emacs-overlay,
       zen-browser,
       mods-home-manager,
+      ghostty,
       raspberry-pi,
-    }@inputs:
+    }:
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs {
@@ -71,9 +75,11 @@
             { nixpkgs.overlays = [ emacs-overlay.overlay ]; }
           ];
         };
+
         zeus = nixpkgs.lib.nixosSystem {
           specialArgs = {
-            inherit inputs;
+            inherit ghostty;
+            inherit zen-browser;
             mods-hm = mods-home-manager;
           };
           inherit system;
@@ -83,6 +89,7 @@
             { nixpkgs.overlays = [ emacs-overlay.overlay ]; }
           ];
         };
+
         demeter = nixpkgs.lib.nixosSystem {
           system = "aarch64-linux";
           modules = [

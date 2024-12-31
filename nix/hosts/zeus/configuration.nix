@@ -1,7 +1,8 @@
 {
   config,
   pkgs,
-  inputs,
+  zen-browser,
+  ghostty,
   mods-hm,
   ...
 }:
@@ -132,7 +133,8 @@
     telegram-desktop
     spotify
     gparted
-    inputs.zen-browser.packages."${pkgs.system}".specific
+    zen-browser.packages."${pkgs.system}".specific
+    ghostty.packages."${pkgs.system}".default
   ];
 
   environment.gnome.excludePackages = (
