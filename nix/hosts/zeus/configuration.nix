@@ -20,6 +20,9 @@
         mods-hm.homeManagerModules.mods
       ];
     };
+    extraSpecialArgs = {
+      inherit ghostty;
+    };
     useGlobalPkgs = true;
   };
 
@@ -133,8 +136,7 @@
     telegram-desktop
     spotify
     gparted
-    zen-browser.packages."${pkgs.system}".specific
-    ghostty.packages."${pkgs.system}".default
+    zen-browser.packages."${pkgs.system}".default
   ];
 
   environment.gnome.excludePackages = (

@@ -3,6 +3,7 @@
   imports = [
     ./cli-stack.nix
     ./kitty/kitty.nix
+    ./ghostty/ghostty.nix
     ./dconf/dconf.nix
   ];
 
