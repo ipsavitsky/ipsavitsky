@@ -137,6 +137,7 @@
     spotify
     gparted
     zen-browser.packages."${pkgs.system}".default
+    cachix
   ];
 
   environment.gnome.excludePackages = (
@@ -160,10 +161,13 @@
     ]
   );
 
-  nix.settings.experimental-features = [
-    "nix-command"
-    "flakes"
-  ];
+  nix.settings = {
+    experimental-features = [
+      "nix-command"
+      "flakes"
+    ];
+    trusted-users = ["ilya"];
+  };
 
   programs.xfconf.enable = true;
 
