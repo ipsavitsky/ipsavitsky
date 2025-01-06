@@ -29,7 +29,7 @@
     };
     raspberry-pi = {
       url = "github:nix-community/raspberry-pi-nix";
-      inputs.nixpkgs.follows = "nixpkgs";
+      # inputs.nixpkgs.follows = "nixpkgs"; // This will force us to rebuild the kernel constantly which I do not want
     };
   };
 
