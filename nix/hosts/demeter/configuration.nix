@@ -39,5 +39,31 @@
     };
   };
 
+  services = {
+    openssh = {
+      enable = true;
+      ports = [ 22 ];
+      settings = {
+        PasswordAuthentication = true;
+        AllowUsers = null; # Allows all users by default. Can be [ "user1" "user2" ]
+        UseDns = true;
+        X11Forwarding = false;
+        PermitRootLogin = "prohibit-password"; # "yes", "without-password", "prohibit-password", "forced-commands-only", "no"
+      };
+    };
+
+    fail2ban.enable = true;
+
+    immich = {
+      enable = true;
+      port = 2283;
+    };
+
+    tandoor-recipes = {
+      enable = true;
+      port = 8888;
+    };
+  };
+
   system.stateVersion = "24.11";
 }

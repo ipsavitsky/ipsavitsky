@@ -166,7 +166,7 @@
       "nix-command"
       "flakes"
     ];
-    trusted-users = ["ilya"];
+    trusted-users = [ "ilya" ];
   };
 
   programs.xfconf.enable = true;
