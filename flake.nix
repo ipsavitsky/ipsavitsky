@@ -62,7 +62,7 @@
           packages = with pkgs; [
             nil
             terraform-ls
-            terraform
+            (terraform.withPlugins (p: [ p.github ]))
           ];
         };
       };
