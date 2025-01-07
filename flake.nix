@@ -1,44 +1,25 @@
 {
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-24.11";
     treefmt-nix = {
       url = "github:numtide/treefmt-nix";
-    };
-    emacs-overlay = {
-      url = "github:nix-community/emacs-overlay";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    nixos-wsl = {
-      url = "github:nix-community/NixOS-WSL";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    zen-browser = {
-      url = "github:0xc000022070/zen-browser-flake";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     mods-home-manager = {
       url = "github:ipsavitsky/mods-home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    ghostty = {
-      url = "github:ghostty-org/ghostty";
-    };
-    raspberry-pi = {
-      url = "github:nix-community/raspberry-pi-nix";
-      # inputs.nixpkgs.follows = "nixpkgs"; // This will force us to rebuild the kernel constantly which I do not want
-    };
-    zed = {
-      url = "github:zed-industries/zed";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    caligula = {
-      url = "github:ifd3f/caligula";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    emacs-overlay.url = "github:nix-community/emacs-overlay";
+    zen-browser.url = "github:0xc000022070/zen-browser-flake";
+    ghostty.url = "github:ghostty-org/ghostty";
+    zed.url = "github:zed-industries/zed";
+    caligula.url = "github:ifd3f/caligula";
+    nixos-wsl.url = "github:nix-community/NixOS-WSL";
+    raspberry-pi.url = "github:nix-community/raspberry-pi-nix";
   };
 
   outputs =
