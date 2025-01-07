@@ -31,6 +31,14 @@
       url = "github:nix-community/raspberry-pi-nix";
       # inputs.nixpkgs.follows = "nixpkgs"; // This will force us to rebuild the kernel constantly which I do not want
     };
+    zed = {
+      url = "github:zed-industries/zed";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    caligula = {
+      url = "github:ifd3f/caligula";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -45,6 +53,8 @@
       mods-home-manager,
       ghostty,
       raspberry-pi,
+      zed,
+      caligula,
     }:
     let
       system = "x86_64-linux";
@@ -85,6 +95,8 @@
           specialArgs = {
             inherit ghostty;
             inherit zen-browser;
+            inherit zed;
+            inherit caligula;
             mods-hm = mods-home-manager;
           };
           inherit system;

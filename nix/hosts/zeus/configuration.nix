@@ -4,6 +4,8 @@
   zen-browser,
   ghostty,
   mods-hm,
+  zed,
+  caligula,
   ...
 }:
 
@@ -22,6 +24,7 @@
     };
     extraSpecialArgs = {
       inherit ghostty;
+      inherit zed;
     };
     useGlobalPkgs = true;
   };
@@ -138,6 +141,7 @@
     gparted
     zen-browser.packages."${pkgs.system}".default
     cachix
+    caligula.packages."${pkgs.system}".default
   ];
 
   environment.gnome.excludePackages = (
