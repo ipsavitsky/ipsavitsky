@@ -74,6 +74,12 @@
   };
 
   services = {
+    pipewire = {
+      enable = true;
+      alsa.enable = true;
+      alsa.support32Bit = true;
+      pulse.enable = true;
+    };
     xserver = {
       enable = true;
       videoDrivers = [ "nvidia" ];
@@ -101,7 +107,6 @@
   services.printing.enable = true;
 
   hardware = {
-    pulseaudio.enable = false;
     graphics.enable = true;
     nvidia = {
       modesetting.enable = true;
@@ -116,12 +121,6 @@
     bluetooth.enable = true;
   };
   security.rtkit.enable = true;
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-  };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.ilya = {
