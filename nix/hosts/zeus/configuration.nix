@@ -19,10 +19,10 @@
     users.ilya = {
       imports = [
         ../../modules/full-stack.nix
-        mods-hm.homeManagerModules.mods
       ];
     };
     extraSpecialArgs = {
+      inherit mods-hm;
       inherit ghostty;
       inherit zed;
     };

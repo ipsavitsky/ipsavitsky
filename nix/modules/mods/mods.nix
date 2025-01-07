@@ -1,5 +1,9 @@
-{ ... }:
+{ mods-hm, ... }:
 {
+  imports = [
+    mods-hm.homeManagerModules.mods
+  ];
+
   programs.mods = {
     enable = true;
     enableBashIntegration = true;

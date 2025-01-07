@@ -6,9 +6,13 @@
     users.ilya = {
       imports = [
         ../../modules/cli-stack.nix
-        mods-hm.homeManagerModules.mods
       ];
     };
+
+    extraSpecialArgs = {
+      inherit mods-hm;
+    };
+
     useGlobalPkgs = true;
   };
 
