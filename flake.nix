@@ -54,6 +54,7 @@
             nil
             terraform-ls
             (terraform.withPlugins (p: [ p.github ]))
+            caligula.packages."${pkgs.system}".default
           ];
         };
       };
@@ -77,7 +78,6 @@
             inherit ghostty;
             inherit zen-browser;
             inherit zed;
-            inherit caligula;
             mods-hm = mods-home-manager;
           };
           inherit system;

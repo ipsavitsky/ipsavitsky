@@ -5,7 +5,6 @@
   ghostty,
   mods-hm,
   zed,
-  caligula,
   ...
 }:
 
@@ -140,7 +139,6 @@
     gparted
     zen-browser.packages."${pkgs.system}".default
     cachix
-    caligula.packages."${pkgs.system}".default
   ];
 
   environment.gnome.excludePackages = (
