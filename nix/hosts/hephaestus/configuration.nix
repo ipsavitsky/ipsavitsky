@@ -20,10 +20,13 @@
   wsl.defaultUser = "ilya";
   wsl.wslConf.network.hostname = "hephaestus";
 
-  nix.settings.experimental-features = [
-    "nix-command"
-    "flakes"
-  ];
+  nix.settings = {
+    experimental-features = [
+      "nix-command"
+      "flakes"
+    ];
+    trusted-users = [ "ilya" ];
+  };
 
   system.stateVersion = "24.11";
 }
