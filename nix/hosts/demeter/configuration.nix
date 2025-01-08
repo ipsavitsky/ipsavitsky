@@ -4,7 +4,7 @@
 
 {
   time.timeZone = "Europe/London";
-  # users.users.root.initialPassword = "root";
+  users.users.root.initialPassword = "root";
   networking = {
     hostName = "demeter";
     useDHCP = false;
@@ -12,6 +12,7 @@
       wlan0.useDHCP = true;
       eth0.useDHCP = true;
     };
+    firewall.allowedTCPPorts = [ 22 ];
   };
   raspberry-pi-nix.board = "bcm2712"; # this is raspberry pi 5
   hardware = {
@@ -54,10 +55,10 @@
 
     fail2ban.enable = true;
 
-    immich = {
-      enable = true;
-      port = 2283;
-    };
+    # immich = {
+    #   enable = true;
+    #   port = 2283;
+    # };
 
     tandoor-recipes = {
       enable = true;

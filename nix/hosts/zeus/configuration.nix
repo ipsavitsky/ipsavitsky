@@ -139,6 +139,7 @@
     gparted
     zen-browser.packages."${pkgs.system}".default
     cachix
+    nmap
   ];
 
   environment.gnome.excludePackages = (
