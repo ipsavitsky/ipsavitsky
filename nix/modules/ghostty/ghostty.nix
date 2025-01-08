@@ -12,7 +12,8 @@
     settings = {
       font-family = "Fira Code";
       theme = "Dracula";
-      window-decoration = "false";
+      window-decoration = false;
+      copy-on-select = false;
     };
   };
 }
