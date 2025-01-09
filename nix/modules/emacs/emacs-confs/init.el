@@ -11,6 +11,9 @@
 ;; highlight matching brackets
 (show-paren-mode 1)
 
+;; overwrite selected text
+(delete-selection-mode 1)
+
 (load-theme 'dracula t)
 
 (set-face-attribute 'default (selected-frame) :height 140)
