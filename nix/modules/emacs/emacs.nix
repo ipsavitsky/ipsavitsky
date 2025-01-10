@@ -26,6 +26,7 @@
         python-mode
         yaml-mode
         elm-mode
+        zig-mode
       ];
   };
 
