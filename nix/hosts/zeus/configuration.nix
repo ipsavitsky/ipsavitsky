@@ -5,6 +5,7 @@
   ghostty,
   mods-hm,
   zed,
+  cachix,
   ...
 }:
 
@@ -132,15 +133,19 @@
 
   nixpkgs.config.allowUnfree = true;
 
-  environment.systemPackages = with pkgs; [
-    blueman
-    telegram-desktop
-    spotify
-    gparted
-    zen-browser.packages."${pkgs.system}".default
-    cachix
-    nmap
-  ];
+  environment.systemPackages =
+    with pkgs;
+    [
+      blueman
+      telegram-desktop
+      spotify
+      gparted
+      nmap
+    ]
+    ++ [
+      zen-browser.packages."${pkgs.system}".default
+      cachix.packages."${pkgs.system}".default
+    ];
 
   environment.gnome.excludePackages = (
     with pkgs;

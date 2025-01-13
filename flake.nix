@@ -20,6 +20,8 @@
     caligula.url = "github:ifd3f/caligula";
     nixos-wsl.url = "github:nix-community/NixOS-WSL";
     raspberry-pi.url = "github:nix-community/raspberry-pi-nix";
+    nil.url = "github:oxalica/nil";
+    cachix.url = "github:cachix/cachix";
   };
 
   outputs =
@@ -36,6 +38,8 @@
       raspberry-pi,
       zed,
       caligula,
+      nil,
+      cachix,
     }:
     let
       system = "x86_64-linux";
@@ -51,7 +55,7 @@
       devShells.${system} = {
         default = pkgs.mkShell {
           packages = with pkgs; [
-            nil
+            nil.packages."${pkgs.system}".default
             terraform-ls
             (terraform.withPlugins (p: [ p.github ]))
             caligula.packages."${pkgs.system}".default
@@ -78,6 +82,8 @@
             inherit ghostty;
             inherit zen-browser;
             inherit zed;
+            inherit cachix;
+            inherit home-manager;
             mods-hm = mods-home-manager;
           };
           inherit system;
@@ -103,10 +109,12 @@
     extra-substituters = [
       "https://ghostty.cachix.org"
       "https://nix-community.cachix.org"
+      "https://cachix.cachix.org"
     ];
     extra-trusted-public-keys = [
       "ghostty.cachix.org-1:QB389yTa6gTyneehvqG58y0WnHjQOqgnA+wBnpWWxns="
       "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
+      "cachix.cachix.org-1:eWNHQldwUO7G2VkjpnjDbWwy4KQ/HNxht7H4SSoMckM="
     ];
   };
 }
