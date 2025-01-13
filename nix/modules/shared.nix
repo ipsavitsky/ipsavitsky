@@ -10,7 +10,6 @@
     wget
     circumflex
     btop
-
     home-manager
   ];
 
@@ -24,6 +23,7 @@
   services = {
     ollama = {
       enable = true;
+      loadModels = [ "llama3.2" ];
     };
   };
 
