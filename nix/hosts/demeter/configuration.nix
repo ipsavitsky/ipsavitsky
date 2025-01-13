@@ -5,15 +5,18 @@
 
 {
   time.timeZone = "Europe/London";
+
   users.users.root.initialPassword = "root";
+  users.users.ilya = {
+    isNormalUser = true;
+    openssh.authorizedKeys.keys = [
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGF6pkBKgzxw7EEBJOjCoSoGlcOF3I0yMmHrEmFqXR1R ilya@nixos"
+    ];
+  };
+
   networking = {
     hostName = "demeter";
     useDHCP = true;
-    # interfaces = {
-    #   wlan0.useDHCP = true;
-    #   eth0.useDHCP = true;
-    # };
-    firewall.allowedTCPPorts = [ 22 ];
   };
   raspberry-pi-nix.board = "bcm2712"; # this is raspberry pi 5
   hardware = {
@@ -43,8 +46,6 @@
 
   environment.systemPackages = with pkgs; [
     nmap
-    ethtool
-    networkmanager
   ];
 
   services = {
@@ -71,6 +72,13 @@
       enable = true;
       port = 8888;
     };
+  };
+
+  nix.settings = {
+    experimental-features = [
+      "nix-command"
+      "flakes"
+    ];
   };
 
   system.stateVersion = "24.11";
