@@ -1,4 +1,5 @@
 {
+  pkgs,
   ...
 }:
 
@@ -7,11 +8,11 @@
   users.users.root.initialPassword = "root";
   networking = {
     hostName = "demeter";
-    useDHCP = false;
-    interfaces = {
-      wlan0.useDHCP = true;
-      eth0.useDHCP = true;
-    };
+    useDHCP = true;
+    # interfaces = {
+    #   wlan0.useDHCP = true;
+    #   eth0.useDHCP = true;
+    # };
     firewall.allowedTCPPorts = [ 22 ];
   };
   raspberry-pi-nix.board = "bcm2712"; # this is raspberry pi 5
@@ -39,6 +40,12 @@
       };
     };
   };
+
+  environment.systemPackages = with pkgs; [
+    nmap
+    ethtool
+    networkmanager
+  ];
 
   services = {
     openssh = {
