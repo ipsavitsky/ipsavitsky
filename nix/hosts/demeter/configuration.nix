@@ -6,17 +6,20 @@
 {
   time.timeZone = "Europe/London";
 
-  users.users.root.initialPassword = "root";
-  users.users.ilya = {
-    isNormalUser = true;
-    openssh.authorizedKeys.keys = [
-      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGF6pkBKgzxw7EEBJOjCoSoGlcOF3I0yMmHrEmFqXR1R ilya@nixos"
-    ];
-  };
-
   networking = {
     hostName = "demeter";
     useDHCP = true;
+  };
+
+  users.users = {
+    root.initialPassword = "root";
+    ilya = {
+      isNormalUser = true;
+      openssh.authorizedKeys.keys = [
+        "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGF6pkBKgzxw7EEBJOjCoSoGlcOF3I0yMmHrEmFqXR1R ilya@nixos"
+      ];
+      extraGroups = [ "wheel" ];
+    };
   };
 
   raspberry-pi-nix.board = "bcm2712"; # this is raspberry pi 5
