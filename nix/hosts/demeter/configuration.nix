@@ -18,25 +18,30 @@
     hostName = "demeter";
     useDHCP = true;
   };
+
   raspberry-pi-nix.board = "bcm2712"; # this is raspberry pi 5
+
   hardware = {
     raspberry-pi = {
       config = {
         all = {
-          base-dt-params = {
-            BOOT_UART = {
-              value = 1;
+          options = {
+            camera_auto_detect = {
               enable = true;
+              value = 0;
             };
-            uart_2ndstage = {
-              value = 1;
+            display_auto_detect = {
               enable = true;
+              value = 0;
             };
           };
-          dt-overlays = {
-            disable-bt = {
+          base-dt-params = {
+            pciex3 = {
               enable = true;
-              params = { };
+            };
+            pciex1_gen = {
+              enable = true;
+              value = 3;
             };
           };
         };
@@ -45,6 +50,7 @@
   };
 
   environment.systemPackages = with pkgs; [
+    neofetch
     nmap
   ];
 
