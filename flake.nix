@@ -22,6 +22,7 @@
     raspberry-pi.url = "github:nix-community/raspberry-pi-nix";
     nil.url = "github:oxalica/nil";
     cachix.url = "github:cachix/cachix";
+    gitlab_due_date.url = "github:ipsavitsky/gitlab_due_dates";
   };
 
   outputs =
@@ -40,6 +41,7 @@
       caligula,
       nil,
       cachix,
+      gitlab_due_date,
     }:
     let
       system = "x86_64-linux";
@@ -96,6 +98,9 @@
 
         demeter = nixpkgs.lib.nixosSystem {
           system = "aarch64-linux";
+          specialArgs = {
+            inherit gitlab_due_date;
+          };
           modules = [
             raspberry-pi.nixosModules.raspberry-pi
             raspberry-pi.nixosModules.sd-image

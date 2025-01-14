@@ -1,5 +1,6 @@
 {
   pkgs,
+  gitlab_due_date,
   ...
 }:
 
@@ -80,6 +81,23 @@
     tandoor-recipes = {
       enable = true;
       port = 8888;
+    };
+  };
+
+  systemd.timers."gitlab_due_date" = {
+    wantedBy = ["timers.target"];
+    timerConfig = {
+      OnBootSec = "5m";
+      OnUnitActiveSec = "5m";
+      Unit = "gitlab_due_date.service";
+    };
+  };
+
+  systemd.services."gitlab_due_date" = {
+    script = "${gitlab_due_date.packages.${pkgs.system}.default}/bin/gitlab_due_date";
+    serviceConfig = {
+      Type = "oneshot";
+      User = "root";
     };
   };
 
