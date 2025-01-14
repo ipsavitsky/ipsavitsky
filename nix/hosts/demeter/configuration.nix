@@ -10,6 +10,10 @@
   networking = {
     hostName = "demeter";
     useDHCP = true;
+    firewall.allowedTCPPorts = [
+      22
+      80
+    ];
   };
 
   users.users = {
@@ -82,24 +86,40 @@
       enable = true;
       port = 8888;
     };
-  };
 
-  systemd.timers."gitlab_due_date" = {
-    wantedBy = ["timers.target"];
-    timerConfig = {
-      OnBootSec = "5m";
-      OnUnitActiveSec = "5m";
-      Unit = "gitlab_due_date.service";
+    nginx = {
+      enable = true;
+      recommendedProxySettings = true;
+      virtualHosts."_" = {
+        listen = [
+          {
+            addr = "0.0.0.0";
+            port = 80;
+          }
+        ];
+        locations."/" = {
+          proxyPass = "http://127.0.0.1:8888";
+        };
+      };
     };
   };
 
-  systemd.services."gitlab_due_date" = {
-    script = "${gitlab_due_date.packages.${pkgs.system}.default}/bin/gitlab_due_date";
-    serviceConfig = {
-      Type = "oneshot";
-      User = "root";
-    };
-  };
+  # systemd.timers."gitlab_due_date" = {
+  #   wantedBy = ["timers.target"];
+  #   timerConfig = {
+  #     OnBootSec = "5m";
+  #     OnUnitActiveSec = "5m";
+  #     Unit = "gitlab_due_date.service";
+  #   };
+  # };
+
+  # systemd.services."gitlab_due_date" = {
+  #   script = "${gitlab_due_date.packages.${pkgs.system}.default}/bin/gitlab_due_date";
+  #   serviceConfig = {
+  #     Type = "oneshot";
+  #     User = "root";
+  #   };
+  # };
 
   nix.settings = {
     experimental-features = [
