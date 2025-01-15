@@ -51,7 +51,6 @@
       };
     in
     {
-      # formatter.${system} = pkgs.nixfmt-rfc-style;
       formatter.${system} = (treefmt-nix.lib.evalModule pkgs ./treefmt.nix).config.build.wrapper;
 
       devShells.${system} = {
