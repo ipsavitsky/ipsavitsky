@@ -1,16 +1,13 @@
 {
   pkgs,
-  gitlab_due_date,
   ...
 }:
-let
-  gitlab_dd_config_file = builtins.toFile "gitlab_dd_config_file" (
-    builtins.toJSON {
-      base_url = "gitlab.codethink.co.uk/api/v4";
-    }
-  );
-in
 {
+  imports = [
+    ./hardware-configuration.nix
+    ./gitlab_dd.nix
+  ];
+
   time.timeZone = "Europe/London";
 
   networking = {
@@ -30,36 +27,6 @@ in
         "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGF6pkBKgzxw7EEBJOjCoSoGlcOF3I0yMmHrEmFqXR1R ilya@nixos"
       ];
       extraGroups = [ "wheel" ];
-    };
-  };
-
-  raspberry-pi-nix.board = "bcm2712"; # this is raspberry pi 5
-
-  hardware = {
-    raspberry-pi = {
-      config = {
-        all = {
-          options = {
-            camera_auto_detect = {
-              enable = true;
-              value = 0;
-            };
-            display_auto_detect = {
-              enable = true;
-              value = 0;
-            };
-          };
-          base-dt-params = {
-            pciex3 = {
-              enable = true;
-            };
-            pciex1_gen = {
-              enable = true;
-              value = 3;
-            };
-          };
-        };
-      };
     };
   };
 
@@ -107,30 +74,6 @@ in
           proxyPass = "http://127.0.0.1:8888";
         };
       };
-    };
-  };
-
-  systemd.timers."gitlab_due_date" = {
-    wantedBy = [ "timers.target" ];
-    timerConfig = {
-      OnBootSec = "5m";
-      OnUnitActiveSec = "5m";
-      Unit = "gitlab_due_date.service";
-    };
-  };
-
-  systemd.services."gitlab_due_date" = {
-    script = "${
-      gitlab_due_date.packages.${pkgs.system}.default
-    }/bin/gitlab_due_date ${gitlab_dd_config_file}";
-
-    serviceConfig = {
-      Type = "oneshot";
-      User = "root";
-    };
-
-    environment = {
-      GITLAB_DD_TOKEN = "";
     };
   };
 
