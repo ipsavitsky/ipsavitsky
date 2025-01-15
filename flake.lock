@@ -372,11 +372,11 @@
         "nixpkgs": "nixpkgs_6"
       },
       "locked": {
-        "lastModified": 1736437467,
-        "narHash": "sha256-Hj6SOU8HKHEZuFYuSnCt2IiVHOyRMgdbWuTQJ2pDRvI=",
+        "lastModified": 1736937886,
+        "narHash": "sha256-JWZ5Ksn+oR7CnLctJ0+plssk0csdk1/2FqOVrffWeaI=",
         "owner": "ipsavitsky",
         "repo": "gitlab_due_dates",
-        "rev": "494c712e85410e806a42578c272d88853fed17d4",
+        "rev": "b97e30f8c44fd4385a2be5adcbb09049c29f1ecc",
         "type": "github"
       },
       "original": {
