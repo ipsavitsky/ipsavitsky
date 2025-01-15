@@ -13,6 +13,7 @@
       url = "github:ipsavitsky/mods-home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    sops-nix.url = "github:Mic92/sops-nix";
     emacs-overlay.url = "github:nix-community/emacs-overlay";
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
     ghostty.url = "github:ghostty-org/ghostty";
@@ -32,6 +33,7 @@
       treefmt-nix,
       nixos-wsl,
       home-manager,
+      sops-nix,
       emacs-overlay,
       zen-browser,
       mods-home-manager,
@@ -60,6 +62,9 @@
             terraform-ls
             (terraform.withPlugins (p: [ p.github ]))
             caligula.packages."${pkgs.system}".default
+            ssh-to-age
+            age
+            sops
           ];
         };
       };
@@ -103,6 +108,7 @@
           modules = [
             raspberry-pi.nixosModules.raspberry-pi
             raspberry-pi.nixosModules.sd-image
+            sops-nix.nixosModules.sops
             ./nix/hosts/demeter/configuration.nix
           ];
         };

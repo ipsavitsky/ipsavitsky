@@ -1,5 +1,6 @@
 {
   pkgs,
+  sops,
   ...
 }:
 {
@@ -74,6 +75,14 @@
           proxyPass = "http://127.0.0.1:8888";
         };
       };
+    };
+  };
+
+  sops = {
+    defaultSopsFile = ../../../secrets/demeter.yaml;
+    age.keyFile = "/home/ilya/.config/sops/age/keys.txt";
+    secrets."tandoor/config.json" = {
+      owner = "gitlab_dd";
     };
   };
 

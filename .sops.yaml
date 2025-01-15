@@ -1,0 +1,9 @@
+keys:
+  - &zeus age1xhw6p6q8nv4mvuzz967tc42s5xr4p3qy0cd6eq8mjas6m9uf2s9sq9pgkf
+  - &demeter age1mrh87dc9gwz096gvr7wldzxefy5j9gv8n8r4mh4ru4gtdhfw7q9qfeds99
+creation_rules:
+  - path_regex: secrets/demeter.yaml$
+    key_groups:
+    - age:
+      - *zeus
+      - *demeter

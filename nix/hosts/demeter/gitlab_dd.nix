@@ -1,37 +1,36 @@
 {
   pkgs,
   gitlab_due_date,
+  config,
   ...
 }:
-let
-  gitlab_dd_config_file = builtins.toFile "gitlab_dd_config_file" (
-    builtins.toJSON {
-      base_url = "gitlab.codethink.co.uk/api/v4";
-    }
-  );
-in
 {
   systemd.timers."gitlab_due_date" = {
     wantedBy = [ "timers.target" ];
     timerConfig = {
-      OnBootSec = "5m";
-      OnUnitActiveSec = "5m";
+      OnBootSec = "3d";
+      OnUnitActiveSec = "3d";
       Unit = "gitlab_due_date.service";
     };
   };
 
   systemd.services."gitlab_due_date" = {
-    script = "${
-      gitlab_due_date.packages.${pkgs.system}.default
-    }/bin/gitlab_due_date ${gitlab_dd_config_file}";
+    script = ''
+      ${gitlab_due_date.packages.${pkgs.system}.default}/bin/gitlab_due_date ${
+        config.sops.secrets."tandoor/config.json".path
+      }
+    '';
 
     serviceConfig = {
       Type = "oneshot";
-      User = "root";
-    };
-
-    environment = {
-      GITLAB_DD_TOKEN = "";
+      User = "gitlab_dd";
     };
   };
+
+  users.users.gitlab_dd = {
+    isSystemUser = true;
+    group = "gitlab_dd";
+  };
+
+  users.groups.gitlab_dd = { };
 }
