@@ -1,14 +1,14 @@
 { ... }:
 {
   imports = [
-    ./bash/bash.nix
-    ./bat/bat.nix
-    ./direnv/direnv.nix
-    ./emacs/emacs.nix
-    ./fzf/fzf.nix
-    ./git/git.nix
-    ./zellij/zellij.nix
-    ./mods/mods.nix
+    ./bash.nix
+    ./bat.nix
+    ./direnv.nix
+    ./emacs.nix
+    ./fzf.nix
+    ./git.nix
+    ./zellij.nix
+    ./mods.nix
   ];
 
   home.stateVersion = "24.11";
