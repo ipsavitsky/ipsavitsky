@@ -27,6 +27,10 @@
     };
   };
 
+  sops.secrets."tandoor/config.json" = {
+    owner = "gitlab_dd";
+  };
+
   users.users.gitlab_dd = {
     isSystemUser = true;
     group = "gitlab_dd";

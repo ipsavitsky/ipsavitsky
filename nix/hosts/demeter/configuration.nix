@@ -1,12 +1,13 @@
 {
   pkgs,
-  sops,
+  config,
   ...
 }:
 {
   imports = [
     ./hardware-configuration.nix
     ./gitlab_dd.nix
+    ./tandoor.nix
   ];
 
   time.timeZone = "Europe/London";
@@ -34,6 +35,7 @@
   environment.systemPackages = with pkgs; [
     neofetch
     nmap
+    btrfs-progs
   ];
 
   services = {
@@ -51,39 +53,20 @@
 
     fail2ban.enable = true;
 
-    # immich = {
-    #   enable = true;
-    #   port = 2283;
-    # };
-
-    tandoor-recipes = {
-      enable = true;
-      port = 8888;
-    };
-
     nginx = {
       enable = true;
       recommendedProxySettings = true;
-      virtualHosts."_" = {
-        listen = [
-          {
-            addr = "0.0.0.0";
-            port = 80;
-          }
-        ];
-        locations."/" = {
-          proxyPass = "http://127.0.0.1:8888";
-        };
-      };
     };
+
+    # postgresql = {
+    #   enable = true;
+    #   dataDir = "/data/postgresql/${config.services.postgresql.package.psqlSchema}";
+    # };
   };
 
   sops = {
     defaultSopsFile = ../../../secrets/demeter.yaml;
     age.keyFile = "/home/ilya/.config/sops/age/keys.txt";
-    secrets."tandoor/config.json" = {
-      owner = "gitlab_dd";
-    };
   };
 
   nix.settings = {
