@@ -17,7 +17,7 @@
   systemd.services."gitlab_due_date" = {
     script = ''
       ${gitlab_due_date.packages.${pkgs.system}.default}/bin/gitlab_due_date ${
-        config.sops.secrets."tandoor/config.json".path
+        config.sops.secrets."gitlab_dd/config.json".path
       }
     '';
 
@@ -27,7 +27,7 @@
     };
   };
 
-  sops.secrets."tandoor/config.json" = {
+  sops.secrets."gitlab_dd/config.json" = {
     owner = "gitlab_dd";
   };
 

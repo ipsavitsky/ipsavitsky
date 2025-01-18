@@ -7,7 +7,9 @@
   imports = [
     ./hardware-configuration.nix
     ./gitlab_dd.nix
-    ./tandoor.nix
+    # ./ddclient.nix
+    # ./tandoor.nix
+    # ./jitsi.nix
   ];
 
   time.timeZone = "Europe/London";
@@ -18,6 +20,7 @@
     firewall.allowedTCPPorts = [
       22
       80
+      443
     ];
   };
 
@@ -56,12 +59,14 @@
     nginx = {
       enable = true;
       recommendedProxySettings = true;
+      virtualHosts."savitsky.dev" = {
+        default = true;
+        # what is this acme challenge...
+        # locations."./well-known" = {
+        #   proxyPass = "http://localhost:80";
+        # };
+      };
     };
-
-    # postgresql = {
-    #   enable = true;
-    #   dataDir = "/data/postgresql/${config.services.postgresql.package.psqlSchema}";
-    # };
   };
 
   sops = {
