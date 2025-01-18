@@ -13,7 +13,7 @@
       };
     };
 
-    nginx.virtualHosts."_" = {
+    nginx.virtualHosts."recipe.savitsky.dev" = {
       listen = [
         {
           addr = "0.0.0.0";

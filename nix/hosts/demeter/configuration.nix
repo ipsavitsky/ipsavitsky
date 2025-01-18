@@ -1,16 +1,15 @@
 {
   pkgs,
-  config,
   ...
 }:
 {
   imports = [
     ./hardware-configuration.nix
     ./gitlab_dd.nix
-    # ./ddclient.nix
+    ./ddclient.nix
     ./tandoor.nix
     ./postgres.nix
-    # ./jitsi.nix
+    ./jitsi.nix
   ];
 
   time.timeZone = "Europe/London";

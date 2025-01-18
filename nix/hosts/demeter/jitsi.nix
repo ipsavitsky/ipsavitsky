@@ -6,7 +6,7 @@
 
   services = {
     jitsi-meet = {
-      enable = true;
+      enable = false;
       hostName = "meet.savitsky.dev";
       prosody.lockdown = true;
       config = {
@@ -29,6 +29,6 @@
   #   basicAuthFile = "/var/lib/jitsi-auth";
   # };
 
-  security.acme.email = "ipsavitsky234@gmail.com";
-  security.acme.acceptTerms = true;
+  # security.acme.email = "ipsavitsky234@gmail.com";
+  # security.acme.acceptTerms = true;
 }
