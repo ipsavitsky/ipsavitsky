@@ -8,7 +8,8 @@
     ./hardware-configuration.nix
     ./gitlab_dd.nix
     # ./ddclient.nix
-    # ./tandoor.nix
+    ./tandoor.nix
+    ./postgres.nix
     # ./jitsi.nix
   ];
 
@@ -59,13 +60,13 @@
     nginx = {
       enable = true;
       recommendedProxySettings = true;
-      virtualHosts."savitsky.dev" = {
-        default = true;
-        # what is this acme challenge...
-        # locations."./well-known" = {
-        #   proxyPass = "http://localhost:80";
-        # };
-      };
+      # virtualHosts."savitsky.dev" = {
+      #   default = true;
+      #   # what is this acme challenge...
+      # locations."./well-known" = {
+      #   proxyPass = "http://localhost:80";
+      # };
+      # };
     };
   };
 
