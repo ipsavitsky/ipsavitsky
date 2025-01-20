@@ -5,7 +5,7 @@
     ./kitty.nix
     ./ghostty.nix
     ./dconf.nix
-    # ./zed.nix
+    ./zed.nix
   ];
 
   home.stateVersion = "24.11";
