@@ -3,7 +3,6 @@
   services = {
     tandoor-recipes = {
       enable = true;
-      port = 8888;
       extraConfig = {
         SECRET_KEY_FILE = config.sops.secrets."tandoor/secret_key".path;
         POSTGRES_HOST = "/run/postgresql";
@@ -14,14 +13,8 @@
     };
 
     nginx.virtualHosts."recipe.savitsky.dev" = {
-      listen = [
-        {
-          addr = "0.0.0.0";
-          port = 80;
-        }
-      ];
       locations."/" = {
-        proxyPass = "http://127.0.0.1:8888";
+        proxyPass = "http://127.0.0.1:${toString config.services.tandoor-recipes.port}";
       };
     };
   };
