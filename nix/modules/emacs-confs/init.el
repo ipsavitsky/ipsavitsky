@@ -11,6 +11,9 @@
 ;; highlight matching brackets
 (show-paren-mode 1)
 
+;; automatically reload buffer when content changes
+(auto-revert-mode 1)
+
 ;; overwrite selected text
 (delete-selection-mode 1)
 
