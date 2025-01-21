@@ -8,8 +8,7 @@
   systemd.timers."gitlab_due_date" = {
     wantedBy = [ "timers.target" ];
     timerConfig = {
-      OnBootSec = "3d";
-      OnUnitActiveSec = "3d";
+      OnCalendar = "Wed *-*-* 00:00:00";
       Unit = "gitlab_due_date.service";
     };
   };
