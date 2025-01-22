@@ -9,6 +9,7 @@
         POSTGRES_DB = "tandoor_recipes";
         POSTGRES_USER = "tandoor_recipes";
         DB_ENGINE = "django.db.backends.postgresql";
+        MEDIA_ROOT = "/data/tandoor-recipes/media";
       };
     };
 
@@ -24,6 +25,10 @@
       after = [ "postgresql.service" ];
     };
   };
+
+  systemd.tmpfiles.rules = [
+    "d /data/tandoor-recipes 0700 tandoor-recipes tandoor-recipes -"
+  ];
 
   sops.secrets."tandoor/secret_key" = { };
 }
