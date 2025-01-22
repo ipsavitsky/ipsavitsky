@@ -4,6 +4,7 @@
   zen-browser,
   ghostty,
   mods-hm,
+  helix,
   zed,
   cachix,
   ...
@@ -23,6 +24,7 @@
     };
     extraSpecialArgs = {
       inherit mods-hm;
+      inherit helix;
       inherit ghostty;
       inherit zed;
     };

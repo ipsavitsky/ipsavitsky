@@ -1,4 +1,4 @@
-{ mods-hm, ... }:
+{ mods-hm, helix, ... }:
 {
   imports = [ ../../modules/shared.nix ];
 
@@ -8,11 +8,10 @@
         ../../modules/cli-stack.nix
       ];
     };
-
     extraSpecialArgs = {
       inherit mods-hm;
+      inherit helix;
     };
-
     useGlobalPkgs = true;
   };
 

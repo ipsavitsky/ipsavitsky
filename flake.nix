@@ -24,6 +24,7 @@
     nil.url = "github:oxalica/nil";
     cachix.url = "github:cachix/cachix";
     gitlab_due_date.url = "github:ipsavitsky/gitlab_due_dates";
+    helix.url = "github:helix-editor/helix";
   };
 
   outputs =
@@ -44,6 +45,7 @@
       nil,
       cachix,
       gitlab_due_date,
+      helix,
     }:
     let
       system = "x86_64-linux";
@@ -73,6 +75,7 @@
         hephaestus = nixpkgs.lib.nixosSystem {
           specialArgs = {
             mods-hm = mods-home-manager;
+            inherit helix;
           };
           inherit system;
           modules = [
@@ -90,6 +93,7 @@
             inherit zed;
             inherit cachix;
             inherit home-manager;
+            inherit helix;
             mods-hm = mods-home-manager;
           };
           inherit system;
@@ -120,11 +124,13 @@
       "https://ghostty.cachix.org"
       "https://nix-community.cachix.org"
       "https://cachix.cachix.org"
+      "https://helix.cachix.org"
     ];
     extra-trusted-public-keys = [
       "ghostty.cachix.org-1:QB389yTa6gTyneehvqG58y0WnHjQOqgnA+wBnpWWxns="
       "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
       "cachix.cachix.org-1:eWNHQldwUO7G2VkjpnjDbWwy4KQ/HNxht7H4SSoMckM="
+      "helix.cachix.org-1:ejp9KQpR1FBI2onstMQ34yogDm4OgU2ru6lIwPvuCVs="
     ];
   };
 }
