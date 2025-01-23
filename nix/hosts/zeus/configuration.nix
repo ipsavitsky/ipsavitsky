@@ -7,6 +7,7 @@
   helix,
   zed,
   cachix,
+  charmbracelet-nur,
   ...
 }:
 
@@ -27,6 +28,7 @@
       inherit helix;
       inherit ghostty;
       inherit zed;
+      inherit charmbracelet-nur;
     };
     useGlobalPkgs = true;
   };

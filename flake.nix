@@ -1,6 +1,10 @@
 {
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-24.11";
+    charmbracelet-nur = {
+      url = "github:charmbracelet/nur";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     treefmt-nix = {
       url = "github:numtide/treefmt-nix";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -13,24 +17,30 @@
       url = "github:ipsavitsky/mods-home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    emacs-overlay = {
+      url = "github:nix-community/emacs-overlay";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     sops-nix.url = "github:Mic92/sops-nix";
-    emacs-overlay.url = "github:nix-community/emacs-overlay";
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
     ghostty.url = "github:ghostty-org/ghostty";
     zed.url = "github:zed-industries/zed";
     caligula.url = "github:ifd3f/caligula";
-    nixos-wsl.url = "github:nix-community/NixOS-WSL";
-    raspberry-pi.url = "github:nix-community/raspberry-pi-nix";
     nil.url = "github:oxalica/nil";
     cachix.url = "github:cachix/cachix";
     gitlab_due_date.url = "github:ipsavitsky/gitlab_due_dates";
     helix.url = "github:helix-editor/helix";
+
+    raspberry-pi.url = "github:nix-community/raspberry-pi-nix";
+    nixos-wsl.url = "github:nix-community/NixOS-WSL";
   };
 
   outputs =
     {
       self,
       nixpkgs,
+      charmbracelet-nur,
       treefmt-nix,
       nixos-wsl,
       home-manager,
@@ -76,6 +86,7 @@
           specialArgs = {
             mods-hm = mods-home-manager;
             inherit helix;
+            inherit charmbracelet-nur;
           };
           inherit system;
           modules = [
@@ -94,6 +105,7 @@
             inherit cachix;
             inherit home-manager;
             inherit helix;
+            inherit charmbracelet-nur;
             mods-hm = mods-home-manager;
           };
           inherit system;

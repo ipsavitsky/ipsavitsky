@@ -1,4 +1,9 @@
-{ pkgs, mods-hm, ... }:
+{
+  pkgs,
+  mods-hm,
+  charmbracelet-nur,
+  ...
+}:
 {
   imports = [
     mods-hm.homeManagerModules.mods
@@ -6,7 +11,7 @@
 
   programs.mods = {
     enable = true;
-    package = pkgs.mods;
+    package = charmbracelet-nur.packages."${pkgs.system}".mods;
     enableBashIntegration = true;
     settings = {
       default-model = "phi4";

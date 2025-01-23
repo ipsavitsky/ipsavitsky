@@ -1,4 +1,9 @@
-{ mods-hm, helix, ... }:
+{
+  mods-hm,
+  helix,
+  charmbracelet-nur,
+  ...
+}:
 {
   imports = [ ../../modules/shared.nix ];
 
@@ -11,6 +16,7 @@
     extraSpecialArgs = {
       inherit mods-hm;
       inherit helix;
+      inherit charmbracelet-nur;
     };
     useGlobalPkgs = true;
   };
