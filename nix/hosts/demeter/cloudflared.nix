@@ -1,4 +1,4 @@
-{ savitsky-dev, ... }:
+{ pkgs, savitsky-dev, ... }:
 {
   services = {
     cloudflared = {
@@ -7,7 +7,7 @@
         "fill-in-this-tunnel-id" = {
           ingress = {
             "savitsky.dev" = {
-              path = "${savitsky-dev}/static";
+              path = "${savitsky-dev.packages.${pkgs.system}.default}/static";
             };
           };
         };
