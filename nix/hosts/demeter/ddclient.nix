@@ -1,7 +1,7 @@
 { config, ... }:
 {
   services.ddclient = {
-    enable = true;
+    enable = false;
     configFile = config.sops.secrets."ddclient/ddclient.conf".path;
   };
 

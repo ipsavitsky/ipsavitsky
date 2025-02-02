@@ -31,6 +31,7 @@
     cachix.url = "github:cachix/cachix";
     gitlab_due_date.url = "github:ipsavitsky/gitlab_due_dates";
     helix.url = "github:helix-editor/helix";
+    savitsky-dev.url = "github:ipsavitsky/savitsky.dev";
 
     raspberry-pi.url = "github:nix-community/raspberry-pi-nix";
     nixos-wsl.url = "github:nix-community/NixOS-WSL";
@@ -56,6 +57,7 @@
       cachix,
       gitlab_due_date,
       helix,
+      savitsky-dev,
     }:
     let
       system = "x86_64-linux";
@@ -120,6 +122,7 @@
           system = "aarch64-linux";
           specialArgs = {
             inherit gitlab_due_date;
+            inherit savitsky-dev;
           };
           modules = [
             raspberry-pi.nixosModules.raspberry-pi
