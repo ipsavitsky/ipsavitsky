@@ -6,10 +6,8 @@
   imports = [
     ./hardware-configuration.nix
     ./gitlab_dd.nix
-    ./ddclient.nix
     ./tandoor.nix
     ./postgres.nix
-    ./jitsi.nix
     ./cloudflared.nix
   ];
 
@@ -40,6 +38,8 @@
     neofetch
     nmap
     btrfs-progs
+    cloudflared
+    systemctl-tui
   ];
 
   services = {
@@ -56,18 +56,6 @@
     };
 
     fail2ban.enable = true;
-
-    nginx = {
-      enable = true;
-      recommendedProxySettings = true;
-      # virtualHosts."savitsky.dev" = {
-      #   default = true;
-      #   # what is this acme challenge...
-      # locations."./well-known" = {
-      #   proxyPass = "http://localhost:80";
-      # };
-      # };
-    };
   };
 
   sops = {
