@@ -10,6 +10,7 @@
     ./postgres.nix
     ./cloudflared.nix
     ./blocky.nix
+    ./static_page.nix
   ];
 
   time.timeZone = "Europe/London";
