@@ -54,10 +54,11 @@
     ];
   };
 
-  networking.hostName = "zeus";
-
-  # Enable networking
-  networking.networkmanager.enable = true;
+  networking = {
+    hostName = "zeus";
+    networkmanager.enable = true;
+    # nameservers = ["192.168.55.102"];
+  };
 
   # Set your time zone.
   time.timeZone = "Europe/London";

@@ -9,6 +9,7 @@
     ./tandoor.nix
     ./postgres.nix
     ./cloudflared.nix
+    ./blocky.nix
   ];
 
   time.timeZone = "Europe/London";
