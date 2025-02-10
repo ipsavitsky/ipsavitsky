@@ -5,7 +5,7 @@
   ];
 
   services.jellyfin = {
-    enable = false;
+    enable = true;
 
     dataDir = "/data/jellyfin";
     openFirewall = true;
