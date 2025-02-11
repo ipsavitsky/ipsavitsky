@@ -22,9 +22,9 @@
     };
   };
 
-  # systemd.tmpfiles.rules = [
-  #   "d /data/tandoor_recipes 0700 tandoor_recipes tandoor_recipes -"
-  # ];
+  systemd.tmpfiles.rules = [
+    "d /data/tandoor_recipes 0700 tandoor_recipes tandoor_recipes -"
+  ];
 
   sops.secrets."tandoor/secret_key" = { };
 }
