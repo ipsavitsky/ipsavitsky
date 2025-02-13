@@ -49,6 +49,7 @@
         efiSysMountPoint = "/boot/efi";
       };
     };
+
     binfmt.emulatedSystems = [
       "aarch64-linux"
     ];
