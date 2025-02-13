@@ -9,7 +9,6 @@
     ./tandoor.nix
     ./postgres.nix
     ./cloudflared.nix
-    ./blocky.nix
     ./static_page.nix
     ./jellyfin.nix
     ./deluge.nix
