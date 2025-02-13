@@ -1,4 +1,4 @@
-{ config, ... }:
+{ config, lib, ... }:
 {
   services = {
     tandoor-recipes = {
@@ -11,20 +11,35 @@
         POSTGRES_DB = "tandoor_recipes";
         POSTGRES_USER = "tandoor_recipes";
         DB_ENGINE = "django.db.backends.postgresql";
-        # MEDIA_ROOT = "/data/tandoor_recipes/media";
+        MEDIA_ROOT = "/data/tandoor_recipes";
+        GUNICORN_MEDIA = "1";
       };
     };
   };
 
+  users.users.tandoor_recipes = {
+    name = "tandoor_recipes";
+    group = "tandoor";
+    isSystemUser = true;
+  };
+  users.groups.tandoor = { };
+
   systemd.services = {
     tandoor-recipes = {
       after = [ "postgresql.service" ];
+      serviceConfig = {
+        DynamicUser = lib.mkForce false;
+        Group = lib.mkForce "tandoor";
+        User = lib.mkForce "tandoor_recipes";
+      };
     };
   };
 
   systemd.tmpfiles.rules = [
-    "d /data/tandoor_recipes 0700 tandoor_recipes tandoor_recipes -"
+    "d /data/tandoor_recipes 0700 tandoor_recipes tandoor -"
   ];
 
-  sops.secrets."tandoor/secret_key" = { };
+  sops.secrets."tandoor/secret_key" = {
+    owner = "tandoor_recipes";
+  };
 }
