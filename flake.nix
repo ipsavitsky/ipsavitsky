@@ -25,7 +25,8 @@
     sops-nix.url = "github:Mic92/sops-nix";
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
     ghostty.url = "github:ghostty-org/ghostty";
-    zed.url = "github:zed-industries/zed";
+    # not using the original repo because of https://github.com/zed-industries/zed/issues/22098
+    zed.url = "github:danielgafni/zed";
     caligula.url = "github:ifd3f/caligula";
     nil.url = "github:oxalica/nil";
     cachix.url = "github:cachix/cachix";
@@ -143,12 +144,14 @@
       "https://nix-community.cachix.org"
       "https://cachix.cachix.org"
       "https://helix.cachix.org"
+      "danielgafni.cachix.org"
     ];
     extra-trusted-public-keys = [
       "ghostty.cachix.org-1:QB389yTa6gTyneehvqG58y0WnHjQOqgnA+wBnpWWxns="
       "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
       "cachix.cachix.org-1:eWNHQldwUO7G2VkjpnjDbWwy4KQ/HNxht7H4SSoMckM="
       "helix.cachix.org-1:ejp9KQpR1FBI2onstMQ34yogDm4OgU2ru6lIwPvuCVs="
+      "danielgafni.cachix.org-1:ZdXJoJEqeiGGOf/MtAiocqj7/vvFbA2MWFVwopJ2WQM="
     ];
   };
 }
