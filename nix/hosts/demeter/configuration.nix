@@ -12,6 +12,7 @@
     ./static_page.nix
     ./jellyfin.nix
     ./deluge.nix
+    ./secret.nix
   ];
 
   time.timeZone = "Europe/London";

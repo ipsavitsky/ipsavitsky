@@ -2,7 +2,7 @@
 {
   services.nginx = {
     enable = true;
-    virtualHosts."localhost" = {
+    virtualHosts."personal_page" = {
       root = "${savitsky-dev.packages.${pkgs.system}.default}/static";
       listen = [
         {
