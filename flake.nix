@@ -144,7 +144,7 @@
       "https://nix-community.cachix.org"
       "https://cachix.cachix.org"
       "https://helix.cachix.org"
-      "danielgafni.cachix.org"
+      "https://danielgafni.cachix.org"
     ];
     extra-trusted-public-keys = [
       "ghostty.cachix.org-1:QB389yTa6gTyneehvqG58y0WnHjQOqgnA+wBnpWWxns="

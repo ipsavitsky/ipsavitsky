@@ -5,7 +5,7 @@
 }:
 {
   programs.zed-editor = {
-    enable = true;
+    enable = false;
     package = zed.packages."${pkgs.system}".default;
   };
 }
