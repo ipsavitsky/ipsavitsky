@@ -147,6 +147,7 @@
       spotify
       gparted
       nmap
+      transmission_4-qt
     ]
     ++ [
       zen-browser.packages."${pkgs.system}".default
