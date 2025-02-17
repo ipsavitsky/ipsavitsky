@@ -21,6 +21,7 @@
       url = "github:nix-community/emacs-overlay";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nix-minecraft.url = "github:Infinidoge/nix-minecraft";
 
     sops-nix.url = "github:Mic92/sops-nix";
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
@@ -59,6 +60,7 @@
       gitlab_due_date,
       helix,
       savitsky-dev,
+      nix-minecraft,
     }:
     let
       system = "x86_64-linux";
@@ -124,6 +126,7 @@
           specialArgs = {
             inherit gitlab_due_date;
             inherit savitsky-dev;
+            inherit nix-minecraft;
           };
           modules = [
             raspberry-pi.nixosModules.raspberry-pi

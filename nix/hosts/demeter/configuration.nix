@@ -12,6 +12,7 @@
     ./static_page.nix
     ./jellyfin.nix
     ./transmission.nix
+    ./minecraft.nix
   ];
 
   time.timeZone = "Europe/London";
