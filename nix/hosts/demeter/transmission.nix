@@ -24,6 +24,7 @@
     group = "transmission";
     home = "/data/transmission";
     package = pkgs.transmission_4;
+    webHome = pkgs.flood-for-transmission;
     openPeerPorts = true;
     openRPCPort = true;
     # downloadDirPermissions = "0777";
