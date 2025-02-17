@@ -17,11 +17,16 @@
     };
   };
 
+  systemd.tmpfiles.rules = [
+    "d /data/minecraft 0700 minecraft minecraft -"
+  ];
+
   services.minecraft-servers = {
     enable = true;
     eula = true;
     openFirewall = true;
-    servers.vanilla = {
+    dataDir = "/data/minecraft";
+    servers.fabric = {
       enable = true;
       jvmOpts = "-Xmx4G -Xms2G";
 
