@@ -11,7 +11,6 @@
     ./cloudflared.nix
     ./static_page.nix
     ./jellyfin.nix
-    ./secret.nix
     ./transmission.nix
   ];
 

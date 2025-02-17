@@ -33,7 +33,6 @@
     gitlab_due_date.url = "github:ipsavitsky/gitlab_due_dates";
     helix.url = "github:helix-editor/helix";
     savitsky-dev.url = "github:ipsavitsky/savitsky.dev";
-    secret.url = "git+ssh://git@github.com/ipsavitsky/secret?ref=main";
 
     raspberry-pi.url = "github:nix-community/raspberry-pi-nix";
     nixos-wsl.url = "github:nix-community/NixOS-WSL";
@@ -60,7 +59,6 @@
       gitlab_due_date,
       helix,
       savitsky-dev,
-      secret,
     }:
     let
       system = "x86_64-linux";
@@ -126,7 +124,6 @@
           specialArgs = {
             inherit gitlab_due_date;
             inherit savitsky-dev;
-            inherit secret;
           };
           modules = [
             raspberry-pi.nixosModules.raspberry-pi
