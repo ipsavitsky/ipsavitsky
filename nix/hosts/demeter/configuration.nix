@@ -44,6 +44,8 @@
     btrfs-progs
     cloudflared
     systemctl-tui
+    btop
+    tmux
   ];
 
   services = {

@@ -28,7 +28,9 @@
     dataDir = "/data/minecraft";
     servers.fabric = {
       enable = true;
-      jvmOpts = "-Xmx4G -Xms2G";
+      # Xmx is the maximum heap size
+      # Xms is the minimum heap size
+      jvmOpts = "-Xmx2G -Xms128mb";
 
       package = pkgs.minecraftServers.fabric-1_21_4;
     };
