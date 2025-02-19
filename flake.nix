@@ -127,6 +127,7 @@
             inherit gitlab_due_date;
             inherit savitsky-dev;
             inherit nix-minecraft;
+            inherit charmbracelet-nur;
           };
           modules = [
             raspberry-pi.nixosModules.raspberry-pi

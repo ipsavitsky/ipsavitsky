@@ -152,6 +152,7 @@
     ++ [
       zen-browser.packages."${pkgs.system}".default
       cachix.packages."${pkgs.system}".default
+      charmbracelet-nur.packages.${pkgs.system}.melt
     ];
 
   environment.gnome.excludePackages = (

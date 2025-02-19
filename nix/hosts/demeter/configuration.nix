@@ -1,5 +1,6 @@
 {
   pkgs,
+  charmbracelet-nur,
   ...
 }:
 {
@@ -46,6 +47,8 @@
     systemctl-tui
     btop
     tmux
+  ] ++ [
+    charmbracelet-nur.packages.${pkgs.system}.melt
   ];
 
   services = {
