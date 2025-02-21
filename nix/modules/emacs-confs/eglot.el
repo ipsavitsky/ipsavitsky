@@ -9,6 +9,7 @@
 (require 'elm-mode)
 (require 'zig-mode)
 (require 'lua-mode)
+(require 'rust-mode)
 
 (add-hook 'go-mode-hook #'eglot-ensure)
 (add-hook 'nix-mode-hook #'eglot-ensure)
@@ -21,3 +22,4 @@
 (add-hook 'elm-mode-hook #'eglot-ensure)
 (add-hook 'zig-mode-hook #'eglot-ensure)
 (add-hook 'lua-mode-hook #'eglot-ensure)
+(add-hook 'rust-mode-hook 'eglot-ensure)

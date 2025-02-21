@@ -28,6 +28,7 @@
         elm-mode
         zig-mode
         lua-mode
+        rust-mode
       ];
   };
 
