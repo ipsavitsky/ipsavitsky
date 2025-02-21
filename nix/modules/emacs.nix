@@ -27,6 +27,7 @@
         yaml-mode
         elm-mode
         zig-mode
+        lua-mode
       ];
   };
 
