@@ -16,4 +16,9 @@
     openFirewall = true;
     dataDir = "/data/radarr";
   };
+
+  services.prowlarr = {
+    enable = true;
+    openFirewall = true;
+  };
 }
