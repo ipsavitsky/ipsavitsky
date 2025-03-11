@@ -27,7 +27,7 @@
     webHome = pkgs.flood-for-transmission;
     openPeerPorts = true;
     openRPCPort = true;
-    # downloadDirPermissions = "0777";
+    downloadDirPermissions = "0777";
     settings = {
       message-level = 3;
       incomplete-dir-enabled = false;
