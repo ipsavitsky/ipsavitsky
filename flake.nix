@@ -26,8 +26,9 @@
     sops-nix.url = "github:Mic92/sops-nix";
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
     ghostty.url = "github:ghostty-org/ghostty";
-    # not using the original repo because of https://github.com/zed-industries/zed/issues/22098
-    zed.url = "github:danielgafni/zed";
+    zed.url = "github:zed-industries/zed";
+    vulnix.url = "github:nix-community/vulnix";
+    deadnix.url = "github:astro/deadnix";
     caligula.url = "github:ifd3f/caligula";
     nil.url = "github:oxalica/nil";
     cachix.url = "github:cachix/cachix";
@@ -41,7 +42,6 @@
 
   outputs =
     {
-      self,
       nixpkgs,
       charmbracelet-nur,
       treefmt-nix,
@@ -55,12 +55,15 @@
       raspberry-pi,
       zed,
       caligula,
+      vulnix,
+      deadnix,
       nil,
       cachix,
       gitlab_due_date,
       helix,
       savitsky-dev,
       nix-minecraft,
+      ...
     }:
     let
       system = "x86_64-linux";
@@ -79,6 +82,8 @@
             terraform-ls
             (terraform.withPlugins (p: [ p.github ]))
             caligula.packages."${pkgs.system}".default
+            vulnix.packages."${pkgs.system}".default
+            deadnix.packages."${pkgs.system}".default
             ssh-to-age
             age
             sops
