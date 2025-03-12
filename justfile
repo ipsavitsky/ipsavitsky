@@ -5,4 +5,4 @@ check_system host: (build_system host)
     nvd diff /run/current-system ./result
 
 switch host: (check_system host)
-    ./result/bin/switch-to-configuration
+    sudo ./result/bin/switch-to-configuration switch
