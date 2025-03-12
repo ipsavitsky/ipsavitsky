@@ -30,6 +30,7 @@
     zed.url = "github:danielgafni/zed";
     vulnix.url = "github:nix-community/vulnix";
     deadnix.url = "github:astro/deadnix";
+    statix.url = "github:oppiliappan/statix";
     caligula.url = "github:ifd3f/caligula";
     nil.url = "github:oxalica/nil";
     cachix.url = "github:cachix/cachix";
@@ -59,6 +60,7 @@
       caligula,
       vulnix,
       deadnix,
+      statix,
       nil,
       cachix,
       gitu,
@@ -87,6 +89,7 @@
             caligula.packages."${pkgs.system}".default
             vulnix.packages."${pkgs.system}".default
             deadnix.packages."${pkgs.system}".default
+            statix.packages."${pkgs.system}".default
             ssh-to-age
             age
             sops

@@ -21,9 +21,11 @@
     useGlobalPkgs = true;
   };
 
-  wsl.enable = true;
-  wsl.defaultUser = "ilya";
-  wsl.wslConf.network.hostname = "hephaestus";
+  wsl = {
+    enable = true;
+    defaultUser = "ilya";
+    wslConf.network.hostname = "hephaestus";
+  };
 
   nix.settings = {
     experimental-features = [

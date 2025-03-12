@@ -1,5 +1,4 @@
-{ ... }:
-{
+_: {
   systemd.tmpfiles.rules = [
     "d /data/jellyfin 0700 jellyfin jellyfin -"
     "d /data/jellyfin-cache 0700 jellyfin jellyfin -"

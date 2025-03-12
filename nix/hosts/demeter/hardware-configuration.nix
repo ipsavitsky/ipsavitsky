@@ -1,5 +1,4 @@
-{ ... }:
-{
+_: {
   raspberry-pi-nix.board = "bcm2712"; # this is raspberry pi 5
 
   hardware = {
