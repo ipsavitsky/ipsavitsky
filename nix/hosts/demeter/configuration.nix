@@ -1,6 +1,7 @@
 {
   pkgs,
   charmbracelet-nur,
+  home-manager,
   ...
 }:
 {
@@ -29,6 +30,16 @@
     ];
   };
 
+  home-manager = {
+    users.ilya = {
+      imports = [
+        ../../modules/direnv.nix
+        ../../modules/git.nix
+      ];
+      home.stateVersion = "24.11";
+    };
+  };
+
   users.users = {
     root.initialPassword = "root";
     ilya = {
@@ -49,7 +60,6 @@
       cloudflared
       systemctl-tui
       btop
-      tmux
     ]
     ++ [
       charmbracelet-nur.packages.${pkgs.system}.melt

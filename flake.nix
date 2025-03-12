@@ -1,6 +1,7 @@
 {
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-24.11";
+    flake-utils.url = "github:numtide/flake-utils";
     charmbracelet-nur = {
       url = "github:charmbracelet/nur";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -48,6 +49,7 @@
   outputs =
     {
       nixpkgs,
+      flake-utils,
       charmbracelet-nur,
       treefmt-nix,
       nixos-wsl,
@@ -74,36 +76,39 @@
       nix-minecraft,
       ...
     }:
-    let
-      system = "x86_64-linux";
-      pkgs = import nixpkgs {
-        inherit system;
-        config.allowUnfree = true;
-      };
-    in
-    {
-      formatter.${system} = (treefmt-nix.lib.evalModule pkgs ./treefmt.nix).config.build.wrapper;
-
-      devShells.${system} = {
-        default = pkgs.mkShell {
-          packages = with pkgs; [
-            nil.packages."${pkgs.system}".default
-            terraform-ls
-            (terraform.withPlugins (p: [ p.github ]))
-            caligula.packages."${pkgs.system}".default
-            vulnix.packages."${pkgs.system}".default
-            deadnix.packages."${pkgs.system}".default
-            statix.packages."${pkgs.system}".default
-            nom.packages."${pkgs.system}".default
-            nvd.packages."${pkgs.system}".nvd
-            ssh-to-age
-            age
-            sops
-            just
-          ];
+    flake-utils.lib.eachDefaultSystem (
+      system:
+      let
+        pkgs = import nixpkgs {
+          inherit system;
+          config.allowUnfree = true;
         };
-      };
+      in
+      {
+        formatter = (treefmt-nix.lib.evalModule pkgs ./treefmt.nix).config.build.wrapper;
 
+        devShells = {
+          default = pkgs.mkShell {
+            packages = with pkgs; [
+              nil.packages."${pkgs.system}".default
+              terraform-ls
+              (terraform.withPlugins (p: [ p.github ]))
+              caligula.packages."${pkgs.system}".default
+              vulnix.packages."${pkgs.system}".default
+              deadnix.packages."${pkgs.system}".default
+              statix.packages."${pkgs.system}".default
+              nom.packages."${pkgs.system}".default
+              nvd.packages."${pkgs.system}".nvd
+              ssh-to-age
+              age
+              sops
+              just
+            ];
+          };
+        };
+      }
+    )
+    // {
       nixosConfigurations = {
         hephaestus = nixpkgs.lib.nixosSystem {
           specialArgs = {
@@ -112,7 +117,7 @@
             inherit gitu;
             inherit charmbracelet-nur;
           };
-          inherit system;
+          system = "x86_64-linux";
           modules = [
             ./nix/hosts/hephaestus/configuration.nix
             nixos-wsl.nixosModules.wsl
@@ -133,7 +138,7 @@
             inherit charmbracelet-nur;
             mods-hm = mods-home-manager;
           };
-          inherit system;
+          system = "x86_64-linux";
           modules = [
             ./nix/hosts/zeus/configuration.nix
             home-manager.nixosModules.home-manager
@@ -153,6 +158,7 @@
             raspberry-pi.nixosModules.raspberry-pi
             raspberry-pi.nixosModules.sd-image
             sops-nix.nixosModules.sops
+            home-manager.nixosModules.home-manager
             ./nix/hosts/demeter/configuration.nix
           ];
         };
