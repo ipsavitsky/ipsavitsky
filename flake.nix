@@ -31,6 +31,8 @@
     vulnix.url = "github:nix-community/vulnix";
     deadnix.url = "github:astro/deadnix";
     statix.url = "github:oppiliappan/statix";
+    nom.url = "github:maralorn/nix-output-monitor";
+    nvd.url = "git+https://git.sr.ht/~khumba/nvd";
     caligula.url = "github:ifd3f/caligula";
     nil.url = "github:oxalica/nil";
     cachix.url = "github:cachix/cachix";
@@ -61,6 +63,8 @@
       vulnix,
       deadnix,
       statix,
+      nom,
+      nvd,
       nil,
       cachix,
       gitu,
@@ -90,9 +94,12 @@
             vulnix.packages."${pkgs.system}".default
             deadnix.packages."${pkgs.system}".default
             statix.packages."${pkgs.system}".default
+            nom.packages."${pkgs.system}".default
+            nvd.packages."${pkgs.system}".nvd
             ssh-to-age
             age
             sops
+            just
           ];
         };
       };
