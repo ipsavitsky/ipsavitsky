@@ -40,17 +40,20 @@
     };
   };
 
-  environment.systemPackages = with pkgs; [
-    neofetch
-    nmap
-    btrfs-progs
-    cloudflared
-    systemctl-tui
-    btop
-    tmux
-  ] ++ [
-    charmbracelet-nur.packages.${pkgs.system}.melt
-  ];
+  environment.systemPackages =
+    with pkgs;
+    [
+      neofetch
+      nmap
+      btrfs-progs
+      cloudflared
+      systemctl-tui
+      btop
+      tmux
+    ]
+    ++ [
+      charmbracelet-nur.packages.${pkgs.system}.melt
+    ];
 
   services = {
     openssh = {
