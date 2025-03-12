@@ -8,8 +8,8 @@
   imports = [
     ./hardware-configuration.nix
     ./gitlab_dd.nix
-    ./tandoor.nix
-    ./postgres.nix
+    # ./tandoor.nix
+    # ./postgres.nix
     ./cloudflared.nix
     ./static_page.nix
     ./jellyfin.nix

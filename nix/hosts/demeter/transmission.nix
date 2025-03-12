@@ -9,7 +9,7 @@
   };
 
   systemd.tmpfiles.rules = [
-    "d /data/transmission 0700 transmission transmission -"
+    "d /data/transmission 0755 transmission transmission -"
   ];
 
   systemd.services.transmission = {
