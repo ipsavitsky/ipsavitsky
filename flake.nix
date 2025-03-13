@@ -22,25 +22,54 @@
       url = "github:nix-community/emacs-overlay";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    nix-minecraft.url = "github:Infinidoge/nix-minecraft";
+    nix-minecraft = {
+      url = "github:Infinidoge/nix-minecraft";
+      inputs.flake-utils.follows = "flake-utils";
+    };
 
     sops-nix.url = "github:Mic92/sops-nix";
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
-    ghostty.url = "github:ghostty-org/ghostty";
+    ghostty = {
+      url = "github:ghostty-org/ghostty";
+      inputs.flake-utils.follows = "flake-utils";
+    };
     # not using the original repo because of https://github.com/zed-industries/zed/issues/22098
     zed.url = "github:danielgafni/zed";
     vulnix.url = "github:nix-community/vulnix";
-    deadnix.url = "github:astro/deadnix";
+    deadnix = {
+      url = "github:astro/deadnix";
+      inputs.utils.follows = "flake-utils";
+    };
     statix.url = "github:oppiliappan/statix";
-    nom.url = "github:maralorn/nix-output-monitor";
-    nvd.url = "git+https://git.sr.ht/~khumba/nvd";
-    caligula.url = "github:ifd3f/caligula";
-    nil.url = "github:oxalica/nil";
-    cachix.url = "github:cachix/cachix";
+    nom = {
+      url = "github:maralorn/nix-output-monitor";
+      inputs.flake-utils.follows = "flake-utils";
+    };
+    nvd = {
+      url = "git+https://git.sr.ht/~khumba/nvd";
+      inputs.flake-utils.follows = "flake-utils";
+    };
+    caligula = {
+      url = "github:ifd3f/caligula";
+      inputs.flake-utils.follows = "flake-utils";
+    };
+    nil = {
+      url = "github:oxalica/nil";
+      inputs.flake-utils.follows = "flake-utils";
+    };
     gitu.url = "github:altsem/gitu";
-    gitlab_due_date.url = "github:ipsavitsky/gitlab_due_dates";
-    helix.url = "github:helix-editor/helix";
-    savitsky-dev.url = "github:ipsavitsky/savitsky.dev";
+    gitlab_due_date = {
+      url = "github:ipsavitsky/gitlab_due_dates";
+      inputs.flake-utils.follows = "flake-utils";
+    };
+    helix = {
+      url = "github:helix-editor/helix";
+      inputs.flake-utils.follows = "flake-utils";
+    };
+    savitsky-dev = {
+      url = "github:ipsavitsky/savitsky.dev";
+      inputs.flake-utils.follows = "flake-utils";
+    };
 
     raspberry-pi.url = "github:nix-community/raspberry-pi-nix";
     nixos-wsl.url = "github:nix-community/NixOS-WSL";
@@ -68,7 +97,6 @@
       nom,
       nvd,
       nil,
-      cachix,
       gitu,
       gitlab_due_date,
       helix,
@@ -131,11 +159,13 @@
             inherit ghostty;
             inherit zen-browser;
             inherit zed;
-            inherit cachix;
             inherit home-manager;
             inherit helix;
             inherit gitu;
             inherit charmbracelet-nur;
+            inherit nom;
+            inherit statix;
+            inherit deadnix;
             mods-hm = mods-home-manager;
           };
           system = "x86_64-linux";

@@ -6,7 +6,9 @@
   mods-hm,
   helix,
   zed,
-  cachix,
+  nom,
+  deadnix,
+  statix,
   charmbracelet-nur,
   ...
 }:
@@ -151,8 +153,10 @@
     ]
     ++ [
       zen-browser.packages."${pkgs.system}".default
-      cachix.packages."${pkgs.system}".default
       charmbracelet-nur.packages.${pkgs.system}.melt
+      nom.packages.${pkgs.system}.default
+      statix.packages.${pkgs.system}.default
+      deadnix.packages.${pkgs.system}.default
     ];
 
   environment.gnome.excludePackages = with pkgs; [
