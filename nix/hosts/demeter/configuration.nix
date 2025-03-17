@@ -1,7 +1,6 @@
 {
   pkgs,
   charmbracelet-nur,
-  home-manager,
   ...
 }:
 {

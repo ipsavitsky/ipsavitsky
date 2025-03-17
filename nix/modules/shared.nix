@@ -13,6 +13,7 @@
       circumflex
       btop
       home-manager
+      systemctl-tui
     ]
     ++ [ gitu.packages.${pkgs.system}.gitu ];
 
