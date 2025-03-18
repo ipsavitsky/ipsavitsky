@@ -10,6 +10,7 @@
     ./zellij.nix
     ./mods.nix
     ./helix.nix
+    ./starship.nix
   ];
 
   home.stateVersion = "24.11";
