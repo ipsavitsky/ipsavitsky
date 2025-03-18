@@ -26,9 +26,9 @@
       url = "github:Infinidoge/nix-minecraft";
       inputs.flake-utils.follows = "flake-utils";
     };
+    nix-flatpak.url = "github:gmodena/nix-flatpak";
 
     sops-nix.url = "github:Mic92/sops-nix";
-    zen-browser.url = "github:0xc000022070/zen-browser-flake";
     ghostty = {
       url = "github:ghostty-org/ghostty";
       inputs.flake-utils.follows = "flake-utils";
@@ -85,7 +85,6 @@
       home-manager,
       sops-nix,
       emacs-overlay,
-      zen-browser,
       mods-home-manager,
       ghostty,
       raspberry-pi,
@@ -102,6 +101,7 @@
       helix,
       savitsky-dev,
       nix-minecraft,
+      nix-flatpak,
       ...
     }:
     flake-utils.lib.eachDefaultSystem (
@@ -127,6 +127,7 @@
               statix.packages."${pkgs.system}".default
               nom.packages."${pkgs.system}".default
               nvd.packages."${pkgs.system}".nvd
+              home-manager.packages."${pkgs.system}".home-manager
               ssh-to-age
               age
               sops
@@ -137,6 +138,29 @@
       }
     )
     // {
+      homeConfigurations = {
+        hermes = home-manager.lib.homeManagerConfiguration {
+          pkgs = import nixpkgs {
+            system = "x86_64-linux";
+            overlays = [
+              emacs-overlay.overlay
+            ];
+          };
+
+          modules = [
+            ./nix/hosts/hermes/home.nix
+          ];
+
+          extraSpecialArgs = {
+            mods-hm = mods-home-manager;
+            inherit helix;
+            inherit ghostty;
+            inherit zed;
+            inherit charmbracelet-nur;
+          };
+        };
+      };
+
       nixosConfigurations = {
         hephaestus = nixpkgs.lib.nixosSystem {
           specialArgs = {
@@ -157,7 +181,6 @@
         zeus = nixpkgs.lib.nixosSystem {
           specialArgs = {
             inherit ghostty;
-            inherit zen-browser;
             inherit zed;
             inherit home-manager;
             inherit helix;
@@ -172,6 +195,7 @@
           modules = [
             ./nix/hosts/zeus/configuration.nix
             home-manager.nixosModules.home-manager
+            nix-flatpak.nixosModules.nix-flatpak
             { nixpkgs.overlays = [ emacs-overlay.overlay ]; }
           ];
         };

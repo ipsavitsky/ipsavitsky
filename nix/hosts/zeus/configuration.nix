@@ -1,7 +1,6 @@
 {
   config,
   pkgs,
-  zen-browser,
   ghostty,
   mods-hm,
   helix,
@@ -108,6 +107,12 @@
     ollama = {
       acceleration = "cuda";
     };
+    flatpak = {
+      enable = true;
+      packages = [
+        "app.zen_browser.zen"
+      ];
+    };
   };
 
   # console.keyMap = "uk";
@@ -152,7 +157,6 @@
       transmission_4-qt
     ]
     ++ [
-      zen-browser.packages."${pkgs.system}".default
       charmbracelet-nur.packages.${pkgs.system}.melt
       nom.packages.${pkgs.system}.default
       statix.packages.${pkgs.system}.default
