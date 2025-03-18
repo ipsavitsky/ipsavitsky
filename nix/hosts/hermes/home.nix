@@ -19,15 +19,36 @@
       with pkgs;
       [
         btop
-        cowsay
-        helm-ls
-        ladybird
         opentofu
         skopeo
+        taplo
+        agg
+        asciinema
+        difftastic
+        fd
+        systemctl-tui
+        dive
+        glab
+        gopls
+        go-tools
+        terraform-docs
+        pandoc_3_5
+        shellcheck
+        checkov
+        pipenv
+        poetry
+        uv
+        yubikey-manager
+        helm-ls
+        mermaid-cli
+        yaml-language-server
+        bash-language-server
+        renovate
       ]
       ++ [
         charmbracelet-nur.packages.${pkgs.system}.melt
         charmbracelet-nur.packages.${pkgs.system}.vhs
+        charmbracelet-nur.packages.${pkgs.system}.gum
         nom.packages.${pkgs.system}.default
         statix.packages.${pkgs.system}.default
         deadnix.packages.${pkgs.system}.default
