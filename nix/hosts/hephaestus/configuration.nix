@@ -25,6 +25,7 @@
     enable = true;
     defaultUser = "ilya";
     wslConf.network.hostname = "hephaestus";
+    interop.register = true;
   };
 
   nix.settings = {
