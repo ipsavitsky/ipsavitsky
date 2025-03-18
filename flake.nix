@@ -157,6 +157,10 @@
             inherit ghostty;
             inherit zed;
             inherit charmbracelet-nur;
+            inherit nom;
+            inherit statix;
+            inherit deadnix;
+            inherit gitu;
           };
         };
       };
