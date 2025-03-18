@@ -5,7 +5,7 @@
     package = pkgs.zellij;
     enableBashIntegration = true;
     settings = {
-      # theme = "dracula";
+      theme = "dracula";
       # simplified_ui = true;
     };
   };
