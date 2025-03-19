@@ -7,6 +7,4 @@
     ./dconf.nix
     ./zed.nix
   ];
-
-  home.stateVersion = "24.11";
 }

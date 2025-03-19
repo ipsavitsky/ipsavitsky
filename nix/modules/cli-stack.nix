@@ -11,7 +11,6 @@
     ./mods.nix
     ./helix.nix
     ./starship.nix
+    ./index.nix
   ];
-
-  home.stateVersion = "24.11";
 }

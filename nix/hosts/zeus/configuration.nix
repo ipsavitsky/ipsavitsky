@@ -9,6 +9,7 @@
   deadnix,
   statix,
   charmbracelet-nur,
+  nix-index-database,
   ...
 }:
 
@@ -22,7 +23,9 @@
     users.ilya = {
       imports = [
         ../../modules/full-stack.nix
+        nix-index-database.hmModules.nix-index
       ];
+      home.stateVersion = "24.11";
     };
     extraSpecialArgs = {
       inherit mods-hm;
@@ -30,6 +33,7 @@
       inherit ghostty;
       inherit zed;
       inherit charmbracelet-nur;
+      inherit nix-index-database;
     };
     useGlobalPkgs = true;
   };

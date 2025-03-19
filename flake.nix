@@ -27,6 +27,10 @@
       inputs.flake-utils.follows = "flake-utils";
     };
     nix-flatpak.url = "github:gmodena/nix-flatpak";
+    nix-index-database = {
+      url = "github:nix-community/nix-index-database";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     sops-nix.url = "github:Mic92/sops-nix";
     ghostty = {
@@ -102,6 +106,7 @@
       savitsky-dev,
       nix-minecraft,
       nix-flatpak,
+      nix-index-database,
       ...
     }:
     flake-utils.lib.eachDefaultSystem (
@@ -149,6 +154,7 @@
 
           modules = [
             ./nix/hosts/hermes/home.nix
+            nix-index-database.hmModules.nix-index
           ];
 
           extraSpecialArgs = {
@@ -161,6 +167,7 @@
             inherit statix;
             inherit deadnix;
             inherit gitu;
+            inherit nix-index-database;
           };
         };
       };
@@ -172,6 +179,7 @@
             inherit helix;
             inherit gitu;
             inherit charmbracelet-nur;
+            inherit nix-index-database;
           };
           system = "x86_64-linux";
           modules = [
@@ -193,6 +201,7 @@
             inherit nom;
             inherit statix;
             inherit deadnix;
+            inherit nix-index-database;
             mods-hm = mods-home-manager;
           };
           system = "x86_64-linux";

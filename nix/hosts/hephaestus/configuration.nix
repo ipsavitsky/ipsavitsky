@@ -2,6 +2,7 @@
   mods-hm,
   helix,
   charmbracelet-nur,
+  nix-index-database,
   ...
 }:
 {
@@ -11,12 +12,15 @@
     users.ilya = {
       imports = [
         ../../modules/cli-stack.nix
+        nix-index-database.hmModules.nix-index
       ];
+      home.stateVersion = "24.11";
     };
     extraSpecialArgs = {
       inherit mods-hm;
       inherit helix;
       inherit charmbracelet-nur;
+      inherit nix-index-database;
     };
     useGlobalPkgs = true;
   };
