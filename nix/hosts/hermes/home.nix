@@ -44,6 +44,7 @@
         yaml-language-server
         bash-language-server
         renovate
+        mani
       ]
       ++ [
         charmbracelet-nur.packages.${pkgs.system}.melt

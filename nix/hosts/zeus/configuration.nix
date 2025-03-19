@@ -155,6 +155,7 @@
       gparted
       nmap
       transmission_4-qt
+      mani
     ]
     ++ [
       charmbracelet-nur.packages.${pkgs.system}.melt
