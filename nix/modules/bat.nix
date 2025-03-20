@@ -4,7 +4,6 @@
     enable = true;
     package = pkgs.bat;
     config = {
-      theme = "Dracula";
       italic-text = "always";
     };
     extraPackages = with pkgs.bat-extras; [

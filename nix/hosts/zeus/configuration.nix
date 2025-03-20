@@ -10,6 +10,7 @@
   statix,
   charmbracelet-nur,
   nix-index-database,
+  gitu,
   ...
 }:
 
@@ -34,6 +35,7 @@
       inherit zed;
       inherit charmbracelet-nur;
       inherit nix-index-database;
+      inherit gitu;
     };
     useGlobalPkgs = true;
   };

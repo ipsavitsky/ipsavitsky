@@ -10,6 +10,14 @@
       url = "github:numtide/treefmt-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    stylix = {
+      url = "github:danth/stylix/release-24.11";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        home-manager.follows = "home-manager";
+        flake-utils.follows = "flake-utils";
+      };
+    };
     home-manager = {
       url = "github:nix-community/home-manager/release-24.11";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -81,6 +89,7 @@
 
   outputs =
     {
+      self,
       nixpkgs,
       flake-utils,
       charmbracelet-nur,
@@ -107,6 +116,7 @@
       nix-minecraft,
       nix-flatpak,
       nix-index-database,
+      stylix,
       ...
     }:
     flake-utils.lib.eachDefaultSystem (
@@ -116,9 +126,15 @@
           inherit system;
           config.allowUnfree = true;
         };
+
+        treefmtModule = treefmt-nix.lib.evalModule pkgs ./treefmt.nix;
       in
       {
-        formatter = (treefmt-nix.lib.evalModule pkgs ./treefmt.nix).config.build.wrapper;
+        formatter = treefmtModule.config.build.wrapper;
+
+        checks = {
+          formatting = treefmtModule.config.build.check self;
+        };
 
         devShells = {
           default = pkgs.mkShell {
@@ -153,6 +169,7 @@
           };
 
           modules = [
+            stylix.homeManagerModules.stylix
             ./nix/hosts/hermes/home.nix
             nix-index-database.hmModules.nix-index
           ];
@@ -183,6 +200,7 @@
           };
           system = "x86_64-linux";
           modules = [
+            stylix.nixosModules.stylix
             ./nix/hosts/hephaestus/configuration.nix
             nixos-wsl.nixosModules.wsl
             home-manager.nixosModules.home-manager
@@ -206,6 +224,7 @@
           };
           system = "x86_64-linux";
           modules = [
+            stylix.nixosModules.stylix
             ./nix/hosts/zeus/configuration.nix
             home-manager.nixosModules.home-manager
             nix-flatpak.nixosModules.nix-flatpak

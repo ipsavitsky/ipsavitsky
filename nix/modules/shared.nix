@@ -1,21 +1,11 @@
-{ pkgs, gitu, ... }:
+{ pkgs, ... }:
 {
-  environment.systemPackages =
-    with pkgs;
-    [
-      tree
-      cloc
-      xclip
-      fd
-      ripgrep
-      file
-      wget
-      circumflex
-      btop
-      home-manager
-      systemctl-tui
-    ]
-    ++ [ gitu.packages.${pkgs.system}.gitu ];
+  environment.systemPackages = with pkgs; [
+    xclip
+    file
+    wget
+    home-manager
+  ];
 
   fonts.packages = with pkgs; [
     fira-code

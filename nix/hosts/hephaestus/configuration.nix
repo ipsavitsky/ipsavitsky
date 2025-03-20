@@ -3,6 +3,7 @@
   helix,
   charmbracelet-nur,
   nix-index-database,
+  gitu,
   ...
 }:
 {
@@ -21,6 +22,7 @@
       inherit helix;
       inherit charmbracelet-nur;
       inherit nix-index-database;
+      inherit gitu;
     };
     useGlobalPkgs = true;
   };

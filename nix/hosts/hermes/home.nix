@@ -4,11 +4,16 @@
   nom,
   statix,
   deadnix,
-  gitu,
   ...
 }:
 {
   imports = [ ../../modules/full-stack.nix ];
+
+  stylix = {
+    enable = true;
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/dracula.yaml";
+    image = ../../../assets/background.jpg;
+  };
 
   home = {
     stateVersion = "24.11";
@@ -18,21 +23,12 @@
     packages =
       with pkgs;
       [
-        btop
         opentofu
         skopeo
         taplo
-        agg
-        asciinema
-        difftastic
-        fd
-        systemctl-tui
-        dive
-        glab
         gopls
         go-tools
         terraform-docs
-        pandoc_3_5
         shellcheck
         checkov
         pipenv
@@ -44,7 +40,6 @@
         yaml-language-server
         bash-language-server
         renovate
-        mani
       ]
       ++ [
         charmbracelet-nur.packages.${pkgs.system}.melt
@@ -53,7 +48,6 @@
         nom.packages.${pkgs.system}.default
         statix.packages.${pkgs.system}.default
         deadnix.packages.${pkgs.system}.default
-        gitu.packages.${pkgs.system}.default
       ];
   };
 

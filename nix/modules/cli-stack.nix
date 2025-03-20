@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, gitu, ... }:
 {
   imports = [
     ./bash.nix
@@ -13,4 +13,27 @@
     ./starship.nix
     ./index.nix
   ];
+
+  home.packages =
+    with pkgs;
+    [
+      tree
+      cloc
+      fd
+      ripgrep
+      btop
+      circumflex
+      systemctl-tui
+      systemctl-tui
+      dive
+      glab
+      agg
+      asciinema
+      difftastic
+      pandoc_3_5
+      mani
+    ]
+    ++ [
+      gitu.packages.${pkgs.system}.gitu
+    ];
 }
