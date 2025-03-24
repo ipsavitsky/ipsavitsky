@@ -10,7 +10,7 @@
   imports = [ ../../modules/full-stack.nix ];
 
   stylix = {
-    enable = true;
+    enable = false;
     base16Scheme = "${pkgs.base16-schemes}/share/themes/dracula.yaml";
     image = ../../../assets/background.jpg;
   };
