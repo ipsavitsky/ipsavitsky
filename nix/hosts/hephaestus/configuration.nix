@@ -32,7 +32,10 @@
   wsl = {
     enable = true;
     defaultUser = "ilya";
-    wslConf.network.hostname = "hephaestus";
+    wslConf.network = {
+      hostname = "hephaestus";
+      generateResolvConf = true;
+    };
     interop.register = true;
   };
 
