@@ -18,6 +18,10 @@
         flake-utils.follows = "flake-utils";
       };
     };
+    srvos = {
+      url = "github:nix-community/srvos";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     home-manager = {
       url = "github:nix-community/home-manager/release-24.11";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -117,6 +121,7 @@
       nix-flatpak,
       nix-index-database,
       stylix,
+      srvos,
       ...
     }:
     flake-utils.lib.eachDefaultSystem (
@@ -203,6 +208,8 @@
             ./nix/hosts/hephaestus/configuration.nix
             nixos-wsl.nixosModules.wsl
             home-manager.nixosModules.home-manager
+            srvos.nixosModules.desktop
+            srvos.nixosModules.mixins-nix-experimental
             { nixpkgs.overlays = [ emacs-overlay.overlay ]; }
           ];
         };
@@ -227,6 +234,8 @@
             ./nix/hosts/zeus/configuration.nix
             home-manager.nixosModules.home-manager
             nix-flatpak.nixosModules.nix-flatpak
+            srvos.nixosModules.desktop
+            srvos.nixosModules.mixins-nix-experimental
             { nixpkgs.overlays = [ emacs-overlay.overlay ]; }
           ];
         };
@@ -243,7 +252,10 @@
             raspberry-pi.nixosModules.raspberry-pi
             raspberry-pi.nixosModules.sd-image
             sops-nix.nixosModules.sops
-            home-manager.nixosModules.home-manager
+            srvos.nixosModules.server
+            srvos.nixosModules.mixins-nginx
+            srvos.nixosModules.mixins-terminfo
+            srvos.nixosModules.mixins-nix-experimental
             ./nix/hosts/demeter/configuration.nix
           ];
         };

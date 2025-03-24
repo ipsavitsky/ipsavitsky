@@ -1327,6 +1327,7 @@
         "raspberry-pi": "raspberry-pi",
         "savitsky-dev": "savitsky-dev",
         "sops-nix": "sops-nix",
+        "srvos": "srvos",
         "statix": "statix_2",
         "stylix": "stylix",
         "treefmt-nix": "treefmt-nix",
@@ -1624,6 +1625,26 @@
       "original": {
         "owner": "Mic92",
         "repo": "sops-nix",
+        "type": "github"
+      }
+    },
+    "srvos": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1742432134,
+        "narHash": "sha256-J9BMk5uEXGZqe3ksA+TNjpuWx67r6qwa6MCS+ayDTqw=",
+        "owner": "nix-community",
+        "repo": "srvos",
+        "rev": "60a187c45762fcc5ed0f3c97e1da890d0ed3f695",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "repo": "srvos",
         "type": "github"
       }
     },
