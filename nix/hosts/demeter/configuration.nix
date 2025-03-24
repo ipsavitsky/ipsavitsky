@@ -54,6 +54,9 @@
       charmbracelet-nur.packages.${pkgs.system}.melt
     ];
 
+  # https://github.com/NixOS/nixos-hardware/issues/858
+  boot.initrd.systemd.tpm2.enable = false;
+
   services = {
     openssh = {
       enable = true;
