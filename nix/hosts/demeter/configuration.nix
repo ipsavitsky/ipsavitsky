@@ -78,6 +78,7 @@
       "nix-command"
       "flakes"
     ];
+    trusted-users = [ "ilya" ];
   };
 
   system.stateVersion = "24.11";
