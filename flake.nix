@@ -169,9 +169,7 @@
           };
 
           modules = [
-            stylix.homeManagerModules.stylix
             ./nix/hosts/hermes/home.nix
-            nix-index-database.hmModules.nix-index
           ];
 
           extraSpecialArgs = {

@@ -15,7 +15,6 @@
       imports = [
         ../../modules/cli-stack.nix
         ../../modules/stylix.nix
-        nix-index-database.hmModules.nix-index
       ];
       home.stateVersion = "24.11";
     };

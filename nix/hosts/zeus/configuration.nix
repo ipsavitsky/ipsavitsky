@@ -25,7 +25,6 @@
     users.ilya = {
       imports = [
         ../../modules/full-stack.nix
-        nix-index-database.hmModules.nix-index
         ../../modules/stylix.nix
       ];
       home.stateVersion = "24.11";
