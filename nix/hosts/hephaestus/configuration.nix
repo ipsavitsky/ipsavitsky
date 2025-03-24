@@ -4,6 +4,7 @@
   charmbracelet-nur,
   nix-index-database,
   gitu,
+  stylix,
   ...
 }:
 {
@@ -13,6 +14,7 @@
     users.ilya = {
       imports = [
         ../../modules/cli-stack.nix
+        ../../modules/stylix.nix
         nix-index-database.hmModules.nix-index
       ];
       home.stateVersion = "24.11";
@@ -23,6 +25,7 @@
       inherit charmbracelet-nur;
       inherit nix-index-database;
       inherit gitu;
+      inherit stylix;
     };
     useGlobalPkgs = true;
   };

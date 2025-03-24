@@ -1,5 +1,6 @@
 {
   pkgs,
+  lib,
   charmbracelet-nur,
   nom,
   statix,
@@ -7,13 +8,12 @@
   ...
 }:
 {
-  imports = [ ../../modules/full-stack.nix ];
+  imports = [
+    ../../modules/full-stack.nix
+    ../../modules/stylix.nix
+  ];
 
-  stylix = {
-    enable = false;
-    base16Scheme = "${pkgs.base16-schemes}/share/themes/dracula.yaml";
-    image = ../../../assets/background.jpg;
-  };
+  stylix.enable = lib.mkForce false;
 
   home = {
     stateVersion = "24.11";

@@ -185,6 +185,7 @@
             inherit deadnix;
             inherit gitu;
             inherit nix-index-database;
+            inherit stylix;
           };
         };
       };
@@ -197,10 +198,10 @@
             inherit gitu;
             inherit charmbracelet-nur;
             inherit nix-index-database;
+            inherit stylix;
           };
           system = "x86_64-linux";
           modules = [
-            stylix.nixosModules.stylix
             ./nix/hosts/hephaestus/configuration.nix
             nixos-wsl.nixosModules.wsl
             home-manager.nixosModules.home-manager
@@ -220,11 +221,11 @@
             inherit statix;
             inherit deadnix;
             inherit nix-index-database;
+            inherit stylix;
             mods-hm = mods-home-manager;
           };
           system = "x86_64-linux";
           modules = [
-            stylix.nixosModules.stylix
             ./nix/hosts/zeus/configuration.nix
             home-manager.nixosModules.home-manager
             nix-flatpak.nixosModules.nix-flatpak
