@@ -125,6 +125,7 @@
       stylix,
       srvos,
       nixGL,
+      yazi,
       ...
     }:
     flake-utils.lib.eachDefaultSystem (
@@ -193,6 +194,7 @@
             inherit nix-index-database;
             inherit stylix;
             inherit nixGL;
+            inherit yazi;
           };
         };
       };
@@ -206,6 +208,7 @@
             inherit charmbracelet-nur;
             inherit nix-index-database;
             inherit stylix;
+            inherit yazi;
           };
           system = "x86_64-linux";
           modules = [
@@ -231,6 +234,7 @@
             inherit deadnix;
             inherit nix-index-database;
             inherit stylix;
+            inherit yazi;
             mods-hm = mods-home-manager;
           };
           system = "x86_64-linux";

@@ -17,6 +17,7 @@
     ./ripgrep.nix
     ./btop.nix
     ./pandoc.nix
+    ./yazi.nix
   ];
 
   home.packages =

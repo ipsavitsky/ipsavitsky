@@ -12,6 +12,7 @@
   nix-index-database,
   gitu,
   stylix,
+  yazi,
   ...
 }:
 
@@ -38,6 +39,7 @@
       inherit nix-index-database;
       inherit gitu;
       inherit stylix;
+      inherit yazi;
     };
     useGlobalPkgs = true;
   };
