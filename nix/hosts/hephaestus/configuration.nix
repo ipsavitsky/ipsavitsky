@@ -1,4 +1,5 @@
 {
+  lib,
   mods-hm,
   helix,
   charmbracelet-nur,
@@ -17,6 +18,7 @@
         ../../modules/cli-stack.nix
         ../../modules/stylix.nix
       ];
+      stylix.enable = lib.mkForce false;
       home.stateVersion = "24.11";
     };
     extraSpecialArgs = {

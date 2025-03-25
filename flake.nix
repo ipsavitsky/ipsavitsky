@@ -86,8 +86,15 @@
       url = "github:ipsavitsky/savitsky.dev";
       inputs.flake-utils.follows = "flake-utils";
     };
-    nixGL.url = "github:nix-community/nixGL";
-    yazi.url = "github:sxyazi/yazi";
+    nixGL = {
+      url = "github:nix-community/nixGL";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.flake-utils.follows = "flake-utils";
+    };
+    yazi = {
+      url = "github:sxyazi/yazi";
+      inputs.flake-utils.follows = "flake-utils";
+    };
 
     raspberry-pi.url = "github:nix-community/raspberry-pi-nix";
     nixos-wsl.url = "github:nix-community/NixOS-WSL";
