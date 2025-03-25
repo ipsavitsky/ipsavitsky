@@ -12,6 +12,11 @@
     ./helix.nix
     ./starship.nix
     ./index.nix
+    ./newsboat.nix
+    ./fd.nix
+    ./ripgrep.nix
+    ./btop.nix
+    ./pandoc.nix
   ];
 
   home.packages =
@@ -19,18 +24,13 @@
     [
       tree
       cloc
-      fd
-      ripgrep
-      btop
       circumflex
-      systemctl-tui
       systemctl-tui
       dive
       glab
       agg
       asciinema
       difftastic
-      pandoc_3_5
       mani
     ]
     ++ [
