@@ -1,8 +1,8 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 {
   programs.kitty = {
     enable = true;
-    package = pkgs.kitty;
+    package = config.lib.nixGL.wrap pkgs.kitty;
     shellIntegration.enableBashIntegration = true;
   };
 }

@@ -5,6 +5,7 @@
   nom,
   statix,
   deadnix,
+  nixGL,
   ...
 }:
 {
@@ -48,7 +49,15 @@
         nom.packages.${pkgs.system}.default
         statix.packages.${pkgs.system}.default
         deadnix.packages.${pkgs.system}.default
+        nixGL.packages.${pkgs.system}.nixGLIntel
       ];
+  };
+
+  nixGL = {
+    inherit (nixGL) packages;
+    defaultWrapper = "mesa";
+    offloadWrapper = "mesa";
+    installScripts = [ "mesa" ];
   };
 
   programs.bash = {

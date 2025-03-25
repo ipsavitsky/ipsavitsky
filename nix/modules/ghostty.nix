@@ -1,12 +1,13 @@
 {
   pkgs,
+  config,
   ghostty,
   ...
 }:
 {
   programs.ghostty = {
     enable = true;
-    package = ghostty.packages."${pkgs.system}".default;
+    package = config.lib.nixGL.wrap ghostty.packages."${pkgs.system}".default;
     enableBashIntegration = true;
     installBatSyntax = true;
     settings = {

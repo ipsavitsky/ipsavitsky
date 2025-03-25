@@ -86,6 +86,8 @@
       url = "github:ipsavitsky/savitsky.dev";
       inputs.flake-utils.follows = "flake-utils";
     };
+    nixGL.url = "github:nix-community/nixGL";
+    yazi.url = "github:sxyazi/yazi";
 
     raspberry-pi.url = "github:nix-community/raspberry-pi-nix";
     nixos-wsl.url = "github:nix-community/NixOS-WSL";
@@ -122,6 +124,7 @@
       nix-index-database,
       stylix,
       srvos,
+      nixGL,
       ...
     }:
     flake-utils.lib.eachDefaultSystem (
@@ -189,6 +192,7 @@
             inherit gitu;
             inherit nix-index-database;
             inherit stylix;
+            inherit nixGL;
           };
         };
       };
