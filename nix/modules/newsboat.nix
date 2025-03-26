@@ -16,6 +16,10 @@ _: {
         title = "codethink";
         url = "https://social.codethink.co.uk/@codethink.rss";
       }
+      {
+        title = "The Register | Software";
+        url = "https://www.theregister.com/software/headlines.atom";
+      }
     ];
   };
 }
