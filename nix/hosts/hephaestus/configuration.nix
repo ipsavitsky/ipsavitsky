@@ -17,9 +17,7 @@
     users.ilya = {
       imports = [
         ../../modules/cli-stack.nix
-        ../../modules/stylix.nix
       ];
-      stylix.enable = lib.mkForce false;
       home.stateVersion = "24.11";
     };
     extraSpecialArgs = {

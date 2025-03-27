@@ -13,22 +13,10 @@
     ../../modules/stylix.nix
   ];
 
-  # stylix.enable = lib.mkForce false;
+  # for some reason kde gets enabled and breaks gnome configuration when set??
   stylix = {
-    autoEnable = false;
-    targets = {
-      bat.enable = true;
-      btop.enable = true;
-      emacs.enable = true;
-      fzf.enable = true;
-      ghostty.enable = true;
-      helix.enable = true;
-      kitty.enable = true;
-      # starship.enable = true; # only available on latest main :(
-      yazi.enable = true;
-      # zed.enable = true; # only available on latest main :(
-      zellij.enable = true;
-    };
+    polarity = "dark";
+    targets.kde.enable = false;
   };
 
   home = {
