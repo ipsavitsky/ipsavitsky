@@ -1,4 +1,9 @@
-{ pkgs, gitu, ... }:
+{
+  pkgs,
+  gitu,
+  script-pile,
+  ...
+}:
 {
   imports = [
     ./bash.nix
@@ -35,6 +40,7 @@
       mani
     ]
     ++ [
-      gitu.packages.${pkgs.system}.gitu
+      gitu.packages.${pkgs.system}.default
+      script-pile.packages.${pkgs.system}.plot_loc
     ];
 }

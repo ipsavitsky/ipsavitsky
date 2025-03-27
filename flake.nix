@@ -95,6 +95,10 @@
       url = "github:sxyazi/yazi";
       inputs.flake-utils.follows = "flake-utils";
     };
+    script-pile = {
+      url = "github:ipsavitsky/script_pile";
+      inputs.flake-utils.follows = "flake-utils";
+    };
 
     raspberry-pi.url = "github:nix-community/raspberry-pi-nix";
     nixos-wsl.url = "github:nix-community/NixOS-WSL";
@@ -133,6 +137,7 @@
       srvos,
       nixGL,
       yazi,
+      script-pile,
       ...
     }:
     flake-utils.lib.eachDefaultSystem (
@@ -202,6 +207,7 @@
             inherit stylix;
             inherit nixGL;
             inherit yazi;
+            inherit script-pile;
           };
         };
       };
@@ -216,6 +222,7 @@
             inherit nix-index-database;
             inherit stylix;
             inherit yazi;
+            inherit script-pile;
           };
           system = "x86_64-linux";
           modules = [
@@ -242,6 +249,7 @@
             inherit nix-index-database;
             inherit stylix;
             inherit yazi;
+            inherit script-pile;
             mods-hm = mods-home-manager;
           };
           system = "x86_64-linux";

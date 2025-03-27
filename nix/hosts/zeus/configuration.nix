@@ -13,6 +13,7 @@
   gitu,
   stylix,
   yazi,
+  script-pile,
   ...
 }:
 
@@ -40,6 +41,7 @@
       inherit gitu;
       inherit stylix;
       inherit yazi;
+      inherit script-pile;
     };
     useGlobalPkgs = true;
   };
