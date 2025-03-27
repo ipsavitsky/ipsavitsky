@@ -1,6 +1,5 @@
 {
   pkgs,
-  lib,
   charmbracelet-nur,
   nom,
   statix,
@@ -14,7 +13,23 @@
     ../../modules/stylix.nix
   ];
 
-  stylix.enable = lib.mkForce false;
+  # stylix.enable = lib.mkForce false;
+  stylix = {
+    autoEnable = false;
+    targets = {
+      bat.enable = true;
+      btop.enable = true;
+      emacs.enable = true;
+      fzf.enable = true;
+      ghostty.enable = true;
+      helix.enable = true;
+      kitty.enable = true;
+      # starship.enable = true; # only available on latest main :(
+      yazi.enable = true;
+      # zed.enable = true; # only available on latest main :(
+      zellij.enable = true;
+    };
+  };
 
   home = {
     stateVersion = "24.11";
