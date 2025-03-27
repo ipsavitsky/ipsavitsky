@@ -229,8 +229,6 @@
             ./nix/hosts/hephaestus/configuration.nix
             nixos-wsl.nixosModules.wsl
             home-manager.nixosModules.home-manager
-            srvos.nixosModules.desktop
-            srvos.nixosModules.mixins-nix-experimental
             { nixpkgs.overlays = [ emacs-overlay.overlay ]; }
           ];
         };
