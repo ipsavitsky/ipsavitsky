@@ -30,7 +30,12 @@
   };
 
   users.users = {
-    root.initialPassword = "root";
+    root = {
+      initialPassword = "root";
+      openssh.authorizedKeys.keys = [
+        "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGF6pkBKgzxw7EEBJOjCoSoGlcOF3I0yMmHrEmFqXR1R ilya@nixos"
+      ];
+    };
     ilya = {
       isNormalUser = true;
       openssh.authorizedKeys.keys = [
