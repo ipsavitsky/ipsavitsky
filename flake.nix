@@ -99,6 +99,7 @@
       url = "github:ipsavitsky/script_pile";
       inputs.flake-utils.follows = "flake-utils";
     };
+    nothingverse.url = "github:ipsavitsky/nothingverse";
 
     raspberry-pi.url = "github:nix-community/raspberry-pi-nix";
     nixos-wsl.url = "github:nix-community/NixOS-WSL";
@@ -138,6 +139,7 @@
       nixGL,
       yazi,
       script-pile,
+      nothingverse,
       ...
     }:
     flake-utils.lib.eachDefaultSystem (
@@ -268,6 +270,7 @@
             inherit savitsky-dev;
             inherit nix-minecraft;
             inherit charmbracelet-nur;
+            inherit nothingverse;
           };
           modules = [
             raspberry-pi.nixosModules.raspberry-pi

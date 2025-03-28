@@ -15,6 +15,7 @@
     ./transmission.nix
     ./minecraft.nix
     ./arr.nix
+    ./nothingverse.nix
   ];
 
   time.timeZone = "Europe/London";
