@@ -1,8 +1,6 @@
 _: {
   programs.newsboat = {
     enable = true;
-    # newsboat package option does not exist :(
-    # package = pkgs.newsboat;
     urls = [
       {
         title = "xkcd";
@@ -19,6 +17,14 @@ _: {
       {
         title = "The Register | Software";
         url = "https://www.theregister.com/software/headlines.atom";
+      }
+      {
+        title = "RBC";
+        url = "https://rssexport.rbc.ru/rbcnews/news/30/full.rss";
+      }
+      {
+        title = "WIRED | Top stories";
+        url = "https://www.wired.com/feed/rss";
       }
     ];
   };
