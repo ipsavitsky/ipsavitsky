@@ -18,6 +18,7 @@
       quiet = false;
       status-text = "Generating";
       theme = "dracula";
+      fanciness = 10;
       apis = {
         ollama = {
           base-url = "http://localhost:11434/api";
