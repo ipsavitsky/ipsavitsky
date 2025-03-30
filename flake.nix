@@ -73,7 +73,7 @@
       url = "github:oxalica/nil";
       inputs.flake-utils.follows = "flake-utils";
     };
-    gitu.url = "github:altsem/gitu";
+    gitu.url = "github:ipsavitsky/gitu/fix-nix-build";
     gitlab_due_date = {
       url = "github:ipsavitsky/gitlab_due_dates";
       inputs.flake-utils.follows = "flake-utils";
