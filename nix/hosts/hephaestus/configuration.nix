@@ -1,5 +1,4 @@
 {
-  lib,
   mods-hm,
   helix,
   charmbracelet-nur,
