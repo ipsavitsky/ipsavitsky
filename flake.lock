@@ -630,16 +630,15 @@
         "nixpkgs": "nixpkgs_5"
       },
       "locked": {
-        "lastModified": 1743337646,
+        "lastModified": 1743345045,
         "narHash": "sha256-BsB5oBnwr3McPa2XYr5SHSozw8EZCX274Jn0fpOVFuQ=",
-        "owner": "ipsavitsky",
+        "owner": "altsem",
         "repo": "gitu",
-        "rev": "d13e61709f1257d2c025aa0a3978adaec75ade27",
+        "rev": "016986c2407cae7dfe652873aa70b1ecdf325beb",
         "type": "github"
       },
       "original": {
-        "owner": "ipsavitsky",
-        "ref": "fix-nix-build",
+        "owner": "altsem",
         "repo": "gitu",
         "type": "github"
       }
