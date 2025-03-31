@@ -26,6 +26,10 @@ _: {
         title = "WIRED | Top stories";
         url = "https://www.wired.com/feed/rss";
       }
+      {
+        title = "The Verge";
+        url = "https://www.theverge.com/rss/index.xml";
+      }
     ];
   };
 }
