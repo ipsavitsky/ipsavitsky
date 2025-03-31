@@ -100,6 +100,10 @@
       inputs.flake-utils.follows = "flake-utils";
     };
     nothingverse.url = "github:ipsavitsky/nothingverse";
+    nix-tree = {
+      url = "github:utdemir/nix-tree";
+      inputs.flake-utils.follows = "flake-utils";
+    };
 
     raspberry-pi.url = "github:nix-community/raspberry-pi-nix";
     nixos-wsl.url = "github:nix-community/NixOS-WSL";
@@ -140,6 +144,7 @@
       yazi,
       script-pile,
       nothingverse,
+      nix-tree,
       ...
     }:
     flake-utils.lib.eachDefaultSystem (
@@ -210,6 +215,7 @@
             inherit nixGL;
             inherit yazi;
             inherit script-pile;
+            inherit nix-tree;
           };
         };
       };
@@ -225,6 +231,7 @@
             inherit stylix;
             inherit yazi;
             inherit script-pile;
+            inherit nix-tree;
           };
           system = "x86_64-linux";
           modules = [
@@ -250,6 +257,7 @@
             inherit stylix;
             inherit yazi;
             inherit script-pile;
+            inherit nix-tree;
             mods-hm = mods-home-manager;
           };
           system = "x86_64-linux";

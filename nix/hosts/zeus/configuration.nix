@@ -14,6 +14,7 @@
   stylix,
   yazi,
   script-pile,
+  nix-tree,
   ...
 }:
 
@@ -42,6 +43,7 @@
       inherit stylix;
       inherit yazi;
       inherit script-pile;
+      inherit nix-tree;
     };
     useGlobalPkgs = true;
   };
