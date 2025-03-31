@@ -99,7 +99,10 @@
       url = "github:ipsavitsky/script_pile";
       inputs.flake-utils.follows = "flake-utils";
     };
-    nothingverse.url = "github:ipsavitsky/nothingverse";
+    nothingverse = {
+      url = "github:ipsavitsky/nothingverse";
+      inputs.flake-utils.follows = "flake-utils";
+    };
     nix-tree = {
       url = "github:utdemir/nix-tree";
       inputs.flake-utils.follows = "flake-utils";
