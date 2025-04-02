@@ -16,6 +16,7 @@
     ./minecraft.nix
     ./arr.nix
     ./nothingverse.nix
+    ./hledger.nix
   ];
 
   time.timeZone = "Europe/London";
