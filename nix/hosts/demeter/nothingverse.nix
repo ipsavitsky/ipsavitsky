@@ -4,7 +4,14 @@
     nothingverse.nixosModules.nothingverse
   ];
 
-  services.ollama.enable = true;
+  systemd.tmpfiles.rules = [
+    "d /data/ollama 0700 ollama ollama -"
+  ];
+
+  services.ollama = {
+    enable = true;
+    home = "/data/ollama";
+  };
 
   networking.firewall.allowedTCPPorts = [ 5000 ];
 
