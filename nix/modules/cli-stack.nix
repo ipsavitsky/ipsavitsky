@@ -3,6 +3,7 @@
   gitu,
   script-pile,
   nix-tree,
+  nix-melt,
   ...
 }:
 {
@@ -44,5 +45,6 @@
       gitu.packages.${pkgs.system}.default
       script-pile.packages.${pkgs.system}.plot_loc
       nix-tree.packages.${pkgs.system}.default
+      nix-melt.packages.${pkgs.system}.default
     ];
 }

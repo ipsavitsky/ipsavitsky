@@ -107,6 +107,7 @@
       url = "github:utdemir/nix-tree";
       inputs.flake-utils.follows = "flake-utils";
     };
+    nix-melt.url = "github:nix-community/nix-melt";
 
     raspberry-pi.url = "github:nix-community/raspberry-pi-nix";
     nixos-wsl.url = "github:nix-community/NixOS-WSL";
@@ -148,6 +149,7 @@
       script-pile,
       nothingverse,
       nix-tree,
+      nix-melt,
       ...
     }:
     flake-utils.lib.eachDefaultSystem (
@@ -219,6 +221,7 @@
             inherit yazi;
             inherit script-pile;
             inherit nix-tree;
+            inherit nix-melt;
           };
         };
       };
@@ -235,6 +238,7 @@
             inherit yazi;
             inherit script-pile;
             inherit nix-tree;
+            inherit nix-melt;
           };
           system = "x86_64-linux";
           modules = [
@@ -261,6 +265,7 @@
             inherit yazi;
             inherit script-pile;
             inherit nix-tree;
+            inherit nix-melt;
             mods-hm = mods-home-manager;
           };
           system = "x86_64-linux";

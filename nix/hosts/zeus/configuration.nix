@@ -15,6 +15,7 @@
   yazi,
   script-pile,
   nix-tree,
+  nix-melt,
   ...
 }:
 
@@ -44,6 +45,7 @@
       inherit yazi;
       inherit script-pile;
       inherit nix-tree;
+      inherit nix-melt;
     };
     useGlobalPkgs = true;
   };
