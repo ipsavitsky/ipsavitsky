@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 {
   imports = [
     ./cli-stack.nix
@@ -6,5 +6,9 @@
     ./ghostty.nix
     ./dconf.nix
     ./zed.nix
+  ];
+
+  home.packages = with pkgs; [
+    localsend
   ];
 }
