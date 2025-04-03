@@ -10,6 +10,8 @@
 
   services.ollama = {
     enable = true;
+    user = "ollama";
+    group = "ollama";
     home = "/data/ollama";
   };
 

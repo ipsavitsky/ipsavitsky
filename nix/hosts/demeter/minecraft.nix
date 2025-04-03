@@ -22,9 +22,9 @@
     };
   };
 
-  systemd.tmpfiles.rules = [
-    "d /data/minecraft 0700 minecraft minecraft -"
-  ];
+  # systemd.tmpfiles.rules = [
+  #   "d /data/minecraft 0700 minecraft minecraft -"
+  # ];
 
   services.minecraft-servers = {
     enable = false;
