@@ -8,7 +8,8 @@
     ./hardware-configuration.nix
     ./gitlab_dd.nix
     # ./tandoor.nix
-    # ./postgres.nix
+    ./postgres.nix
+    ./miniflux.nix
     ./cloudflared.nix
     ./static_page.nix
     ./jellyfin.nix
