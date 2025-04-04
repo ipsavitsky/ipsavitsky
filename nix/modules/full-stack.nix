@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 {
   imports = [
     ./cli-stack.nix
@@ -9,6 +9,6 @@
   ];
 
   home.packages = with pkgs; [
-    localsend
+    (config.lib.nixGL.wrap localsend)
   ];
 }
