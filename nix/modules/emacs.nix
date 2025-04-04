@@ -6,7 +6,7 @@
     extraPackages =
       epkgs: with epkgs; [
         magit
-        dracula-theme
+        dirvish
         which-key
         undo-tree
         all-the-icons
