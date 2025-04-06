@@ -41,11 +41,11 @@
 ;; enable parenthesis autocompletion
 (electric-pair-mode)
 
-(dirvish-override-dired-mode 1)
-
 (load-file "~/.config/emacs/corfu.el")
 
 (load-file "~/.config/emacs/direnv.el")
+
+(load-file "~/.config/emacs/dirvish.el")
 
 (load-file "~/.config/emacs/eglot.el")
 
