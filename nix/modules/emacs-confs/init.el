@@ -54,3 +54,5 @@
 (load-file "~/.config/emacs/undo-tree.el")
 
 (load-file "~/.config/emacs/vertico.el")
+
+(load-file "~/.config/emacs/mermaid.el")

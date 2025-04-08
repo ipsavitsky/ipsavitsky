@@ -11,6 +11,7 @@
         undo-tree
         all-the-icons
         direnv
+        ob-mermaid
 
         corfu
         vertico
@@ -37,4 +38,12 @@
     source = ./emacs-confs;
     recursive = true;
   };
+
+  home.file.".config/emacs/mermaid.el".text = ''
+    (setq ob-mermaid-cli-path "${pkgs.mermaid-cli}/bin/mmdc")
+
+    (org-babel-do-load-languages
+        'org-babel-load-languages
+        '((mermaid . t)))
+  '';
 }
