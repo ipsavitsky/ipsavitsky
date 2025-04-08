@@ -41,6 +41,9 @@
 ;; enable parenthesis autocompletion
 (electric-pair-mode)
 
+(add-hook 'org-mode-hook #'org-modern-mode)
+(add-hook 'org-agenda-finalize-hook #'org-modern-agenda)
+
 (load-file "~/.config/emacs/corfu.el")
 
 (load-file "~/.config/emacs/direnv.el")

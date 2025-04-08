@@ -11,7 +11,9 @@
         undo-tree
         all-the-icons
         direnv
+
         ob-mermaid
+        org-modern
 
         corfu
         vertico
