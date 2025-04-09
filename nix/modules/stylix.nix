@@ -1,12 +1,12 @@
 {
   pkgs,
   config,
-  stylix,
+  inputs,
   ...
 }:
 {
   imports = [
-    stylix.homeManagerModules.stylix
+    inputs.stylix.homeManagerModules.stylix
   ];
 
   stylix = {

@@ -1,7 +1,7 @@
-{ pkgs, helix, ... }:
+{ pkgs, inputs, ... }:
 {
   programs.helix = {
     enable = true;
-    package = helix.packages."${pkgs.system}".default;
+    package = inputs.helix.packages.${pkgs.system}.default;
   };
 }

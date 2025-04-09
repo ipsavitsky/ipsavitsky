@@ -1,9 +1,6 @@
 {
   pkgs,
-  gitu,
-  script-pile,
-  nix-tree,
-  nix-melt,
+  inputs,
   ...
 }:
 {
@@ -29,6 +26,7 @@
 
   home.packages =
     with pkgs;
+    with inputs;
     [
       tree
       cloc
@@ -40,8 +38,7 @@
       asciinema
       difftastic
       mani
-    ]
-    ++ [
+
       gitu.packages.${pkgs.system}.default
       script-pile.packages.${pkgs.system}.plot_loc
       nix-tree.packages.${pkgs.system}.default

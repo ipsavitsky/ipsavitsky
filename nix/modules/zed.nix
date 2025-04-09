@@ -1,13 +1,13 @@
 {
-  zed,
   pkgs,
   config,
+  inputs,
   ...
 }:
 {
   programs.zed-editor = {
     enable = true;
-    package = config.lib.nixGL.wrap zed.packages."${pkgs.system}".default;
+    package = config.lib.nixGL.wrap inputs.zed.packages.${pkgs.system}.default;
     extensions = [
       "nix"
       "rust"

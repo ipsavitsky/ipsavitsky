@@ -1,7 +1,7 @@
-{ nothingverse, ... }:
+{ inputs, ... }:
 {
   imports = [
-    nothingverse.nixosModules.nothingverse
+    inputs.nothingverse.nixosModules.nothingverse
   ];
 
   systemd.tmpfiles.rules = [

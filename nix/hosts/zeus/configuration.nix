@@ -1,21 +1,7 @@
 {
   pkgs,
   config,
-  ghostty,
-  mods-hm,
-  helix,
-  zed,
-  nom,
-  deadnix,
-  statix,
-  charmbracelet-nur,
-  nix-index-database,
-  gitu,
-  stylix,
-  yazi,
-  script-pile,
-  nix-tree,
-  nix-melt,
+  inputs,
   ...
 }:
 
@@ -34,18 +20,7 @@
       home.stateVersion = "24.11";
     };
     extraSpecialArgs = {
-      inherit mods-hm;
-      inherit helix;
-      inherit ghostty;
-      inherit zed;
-      inherit charmbracelet-nur;
-      inherit nix-index-database;
-      inherit gitu;
-      inherit stylix;
-      inherit yazi;
-      inherit script-pile;
-      inherit nix-tree;
-      inherit nix-melt;
+      inherit inputs;
     };
     useGlobalPkgs = true;
   };
@@ -159,10 +134,9 @@
     ];
   };
 
-  nixpkgs.config.allowUnfree = true;
-
   environment.systemPackages =
     with pkgs;
+    with inputs;
     [
       blueman
       telegram-desktop
@@ -171,8 +145,7 @@
       nmap
       transmission_4-qt
       mani
-    ]
-    ++ [
+
       charmbracelet-nur.packages.${pkgs.system}.melt
       nom.packages.${pkgs.system}.default
       statix.packages.${pkgs.system}.default
@@ -197,13 +170,7 @@
     atomix # puzzle game
   ];
 
-  nix.settings = {
-    experimental-features = [
-      "nix-command"
-      "flakes"
-    ];
-    trusted-users = [ "ilya" ];
-  };
+  nix.settings.trusted-users = [ "ilya" ];
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

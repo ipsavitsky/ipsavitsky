@@ -1,10 +1,6 @@
 {
   pkgs,
-  charmbracelet-nur,
-  nom,
-  statix,
-  deadnix,
-  nixGL,
+  inputs,
   ...
 }:
 {
@@ -26,6 +22,7 @@
 
     packages =
       with pkgs;
+      with inputs;
       [
         opentofu
         skopeo
@@ -44,8 +41,7 @@
         yaml-language-server
         bash-language-server
         renovate
-      ]
-      ++ [
+
         charmbracelet-nur.packages.${pkgs.system}.melt
         charmbracelet-nur.packages.${pkgs.system}.vhs
         charmbracelet-nur.packages.${pkgs.system}.gum
@@ -57,7 +53,7 @@
   };
 
   nixGL = {
-    inherit (nixGL) packages;
+    inherit (inputs.nixGL) packages;
     defaultWrapper = "mesa";
     offloadWrapper = "mesa";
     installScripts = [ "mesa" ];

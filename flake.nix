@@ -118,40 +118,16 @@
       self,
       nixpkgs,
       flake-utils,
-      charmbracelet-nur,
       treefmt-nix,
       nixos-wsl,
       home-manager,
       sops-nix,
       emacs-overlay,
-      mods-home-manager,
-      ghostty,
       raspberry-pi,
-      zed,
-      caligula,
-      vulnix,
-      deadnix,
-      statix,
-      nom,
-      nvd,
-      nil,
-      gitu,
-      gitlab_due_date,
-      helix,
-      savitsky-dev,
-      nix-minecraft,
       nix-flatpak,
-      nix-index-database,
-      stylix,
       srvos,
-      nixGL,
-      yazi,
-      script-pile,
-      nothingverse,
-      nix-tree,
-      nix-melt,
       ...
-    }:
+    }@inputs:
     flake-utils.lib.eachDefaultSystem (
       system:
       let
@@ -171,22 +147,26 @@
 
         devShells = {
           default = pkgs.mkShell {
-            packages = with pkgs; [
-              nil.packages."${pkgs.system}".default
-              terraform-ls
-              (terraform.withPlugins (p: [ p.github ]))
-              caligula.packages."${pkgs.system}".default
-              vulnix.packages."${pkgs.system}".default
-              deadnix.packages."${pkgs.system}".default
-              statix.packages."${pkgs.system}".default
-              nom.packages."${pkgs.system}".default
-              nvd.packages."${pkgs.system}".nvd
-              home-manager.packages."${pkgs.system}".home-manager
-              ssh-to-age
-              age
-              sops
-              just
-            ];
+            packages =
+              with pkgs;
+              with inputs;
+              [
+                terraform-ls
+                (terraform.withPlugins (p: [ p.github ]))
+                ssh-to-age
+                age
+                sops
+                just
+
+                caligula.packages.${pkgs.system}.default
+                nil.packages.${pkgs.system}.default
+                vulnix.packages.${pkgs.system}.default
+                deadnix.packages.${pkgs.system}.default
+                statix.packages.${pkgs.system}.default
+                nom.packages.${pkgs.system}.default
+                nvd.packages.${pkgs.system}.nvd
+                home-manager.packages.${pkgs.system}.home-manager
+              ];
           };
         };
       }
@@ -206,22 +186,7 @@
           ];
 
           extraSpecialArgs = {
-            mods-hm = mods-home-manager;
-            inherit helix;
-            inherit ghostty;
-            inherit zed;
-            inherit charmbracelet-nur;
-            inherit nom;
-            inherit statix;
-            inherit deadnix;
-            inherit gitu;
-            inherit nix-index-database;
-            inherit stylix;
-            inherit nixGL;
-            inherit yazi;
-            inherit script-pile;
-            inherit nix-tree;
-            inherit nix-melt;
+            inherit inputs;
           };
         };
       };
@@ -229,16 +194,7 @@
       nixosConfigurations = {
         hephaestus = nixpkgs.lib.nixosSystem {
           specialArgs = {
-            mods-hm = mods-home-manager;
-            inherit helix;
-            inherit gitu;
-            inherit charmbracelet-nur;
-            inherit nix-index-database;
-            inherit stylix;
-            inherit yazi;
-            inherit script-pile;
-            inherit nix-tree;
-            inherit nix-melt;
+            inherit inputs;
           };
           system = "x86_64-linux";
           modules = [
@@ -251,22 +207,7 @@
 
         zeus = nixpkgs.lib.nixosSystem {
           specialArgs = {
-            inherit ghostty;
-            inherit zed;
-            inherit home-manager;
-            inherit helix;
-            inherit gitu;
-            inherit charmbracelet-nur;
-            inherit nom;
-            inherit statix;
-            inherit deadnix;
-            inherit nix-index-database;
-            inherit stylix;
-            inherit yazi;
-            inherit script-pile;
-            inherit nix-tree;
-            inherit nix-melt;
-            mods-hm = mods-home-manager;
+            inherit inputs;
           };
           system = "x86_64-linux";
           modules = [
@@ -275,18 +216,20 @@
             nix-flatpak.nixosModules.nix-flatpak
             srvos.nixosModules.desktop
             srvos.nixosModules.mixins-nix-experimental
-            { nixpkgs.overlays = [ emacs-overlay.overlay ]; }
+            {
+              nixpkgs = {
+                overlays = [ emacs-overlay.overlay ];
+                # cuda modules are unfree
+                config.allowUnfree = true;
+              };
+            }
           ];
         };
 
         demeter = nixpkgs.lib.nixosSystem {
           system = "aarch64-linux";
           specialArgs = {
-            inherit gitlab_due_date;
-            inherit savitsky-dev;
-            inherit nix-minecraft;
-            inherit charmbracelet-nur;
-            inherit nothingverse;
+            inherit inputs;
           };
           modules = [
             raspberry-pi.nixosModules.raspberry-pi

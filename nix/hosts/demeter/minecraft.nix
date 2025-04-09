@@ -1,17 +1,17 @@
 {
-  nix-minecraft,
   pkgs,
   lib,
+  inputs,
   ...
 }:
 {
   imports = [
-    nix-minecraft.nixosModules.minecraft-servers
+    inputs.nix-minecraft.nixosModules.minecraft-servers
   ];
 
   nixpkgs = {
     overlays = [
-      nix-minecraft.overlay
+      inputs.nix-minecraft.overlay
     ];
     config = {
       allowUnfreePredicate =
@@ -22,9 +22,9 @@
     };
   };
 
-  # systemd.tmpfiles.rules = [
-  #   "d /data/minecraft 0700 minecraft minecraft -"
-  # ];
+  systemd.tmpfiles.rules = [
+    "d /data/minecraft 0700 minecraft minecraft -"
+  ];
 
   services.minecraft-servers = {
     enable = false;

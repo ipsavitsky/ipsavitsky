@@ -1,20 +1,18 @@
 {
   pkgs,
-  charmbracelet-nur,
+  inputs,
   ...
 }:
 {
   imports = [
     ./hardware-configuration.nix
     ./gitlab_dd.nix
-    # ./tandoor.nix
     ./postgres.nix
     ./miniflux.nix
     ./cloudflared.nix
     ./static_page.nix
     ./jellyfin.nix
     ./transmission.nix
-    ./minecraft.nix
     ./arr.nix
     ./nothingverse.nix
     ./hledger.nix
@@ -45,6 +43,7 @@
 
   environment.systemPackages =
     with pkgs;
+    with inputs;
     [
       neofetch
       nmap
@@ -52,8 +51,7 @@
       cloudflared
       systemctl-tui
       btop
-    ]
-    ++ [
+
       charmbracelet-nur.packages.${pkgs.system}.melt
     ];
 
@@ -79,13 +77,7 @@
     age.keyFile = "/home/ilya/.config/sops/age/keys.txt";
   };
 
-  nix.settings = {
-    experimental-features = [
-      "nix-command"
-      "flakes"
-    ];
-    trusted-users = [ "ilya" ];
-  };
+  nix.settings.trusted-users = [ "ilya" ];
 
   system.stateVersion = "24.11";
 }

@@ -1,14 +1,5 @@
 {
-  mods-hm,
-  helix,
-  charmbracelet-nur,
-  nix-index-database,
-  gitu,
-  stylix,
-  yazi,
-  script-pile,
-  nix-tree,
-  nix-melt,
+  inputs,
   ...
 }:
 {
@@ -22,16 +13,7 @@
       home.stateVersion = "24.11";
     };
     extraSpecialArgs = {
-      inherit mods-hm;
-      inherit helix;
-      inherit charmbracelet-nur;
-      inherit nix-index-database;
-      inherit gitu;
-      inherit stylix;
-      inherit yazi;
-      inherit script-pile;
-      inherit nix-tree;
-      inherit nix-melt;
+      inherit inputs;
     };
     useGlobalPkgs = true;
   };
@@ -46,13 +28,7 @@
     interop.register = true;
   };
 
-  nix.settings = {
-    experimental-features = [
-      "nix-command"
-      "flakes"
-    ];
-    trusted-users = [ "ilya" ];
-  };
+  nix.settings.trusted-users = [ "ilya" ];
 
   boot = {
     binfmt.emulatedSystems = [

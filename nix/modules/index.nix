@@ -1,12 +1,12 @@
-{ nix-index-database, pkgs, ... }:
+{ pkgs, inputs, ... }:
 {
   imports = [
-    nix-index-database.hmModules.nix-index
+    inputs.nix-index-database.hmModules.nix-index
   ];
 
   programs.nix-index = {
     enable = true;
-    package = nix-index-database.packages.${pkgs.system}.default;
+    package = inputs.nix-index-database.packages.${pkgs.system}.default;
   };
   programs.nix-index-database.comma.enable = true;
 }
