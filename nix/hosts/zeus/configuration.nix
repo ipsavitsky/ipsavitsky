@@ -118,7 +118,6 @@
         gnome.enable = true;
       };
     };
-    # displayManager.defaultSession = "xfce";
     blueman.enable = true;
     ollama = {
       acceleration = "cuda";
@@ -205,8 +204,6 @@
     ];
     trusted-users = [ "ilya" ];
   };
-
-  programs.xfconf.enable = true;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
