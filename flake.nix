@@ -213,7 +213,6 @@
           modules = [
             ./nix/hosts/zeus/configuration.nix
             home-manager.nixosModules.home-manager
-            nix-flatpak.nixosModules.nix-flatpak
             srvos.nixosModules.desktop
             srvos.nixosModules.mixins-nix-experimental
             {

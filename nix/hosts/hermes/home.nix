@@ -1,5 +1,6 @@
 {
   pkgs,
+  lib,
   inputs,
   ...
 }:
@@ -8,6 +9,14 @@
     ../../modules/full-stack.nix
     ../../modules/stylix.nix
   ];
+
+  programs.zed-editor.enable = lib.mkForce false;
+
+  services.flatpak = {
+    packages = [
+      "dev.zed.Zed"
+    ];
+  };
 
   # for some reason kde gets enabled and breaks gnome configuration when set??
   stylix = {

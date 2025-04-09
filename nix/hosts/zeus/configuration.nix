@@ -97,15 +97,7 @@
     ollama = {
       acceleration = "cuda";
     };
-    flatpak = {
-      enable = true;
-      packages = [
-        "app.zen_browser.zen"
-      ];
-    };
   };
-
-  # console.keyMap = "uk";
 
   services.printing.enable = true;
 
