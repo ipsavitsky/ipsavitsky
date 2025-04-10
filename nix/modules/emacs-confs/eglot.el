@@ -10,11 +10,13 @@
 (require 'zig-mode)
 (require 'lua-mode)
 (require 'rust-mode)
+(require 'tuareg)
 
 (add-hook 'go-mode-hook #'eglot-ensure)
 (add-hook 'nix-mode-hook #'eglot-ensure)
 (add-hook 'terraform-mode-hook #'eglot-ensure)
 (add-hook 'c-mode-hook #'eglot-ensure)
+(add-hook 'c++-mode-hook #'eglot-ensure)
 (add-hook 'haskell-mode-hook #'eglot-ensure)
 (add-hook 'python-mode-hook #'eglot-ensure)
 (add-hook 'markdown-mode-hook #'eglot-ensure)
@@ -23,3 +25,4 @@
 (add-hook 'zig-mode-hook #'eglot-ensure)
 (add-hook 'lua-mode-hook #'eglot-ensure)
 (add-hook 'rust-mode-hook 'eglot-ensure)
+(add-hook 'tuareg-mode-hook 'eglot-ensure)
