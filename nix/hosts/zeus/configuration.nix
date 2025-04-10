@@ -9,6 +9,8 @@
   imports = [
     ./hardware-configuration.nix
     ../../modules/shared.nix
+
+    inputs.nix-flatpak.nixosModules.nix-flatpak
   ];
 
   home-manager = {
@@ -23,6 +25,13 @@
       inherit inputs;
     };
     useGlobalPkgs = true;
+  };
+
+  services.flatpak = {
+    enable = true;
+    packages = [
+      "app.zen_browser.zen"
+    ];
   };
 
   # Bootloader.
