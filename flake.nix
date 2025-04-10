@@ -241,6 +241,40 @@
             ./nix/hosts/demeter/configuration.nix
           ];
         };
+
+        # apollo = nixpkgs.lib.nixosSystem {
+        #   system = "x86_64-linux";
+        #   specialArgs = {
+        #     inherit inputs;
+        #   };
+        #   modules = [
+        #     srvos.nixosModules.server
+        #     srvos.nixosModules.mixins-nginx
+        #     srvos.nixosModules.mixins-terminfo
+        #     srvos.nixosModules.mixins-nix-experimental
+        #     ./nix/hosts/apollo/configuration.nix
+        #   ];
+        # };
+
+        # cronos = nixpkgs.lib.nixosSystem {
+        #   specialArgs = {
+        #     inherit inputs;
+        #   };
+        #   system = "x86_64-linux";
+        #   modules = [
+        #     ./nix/hosts/cronos/configuration.nix
+        #     home-manager.nixosModules.home-manager
+        #     srvos.nixosModules.desktop
+        #     srvos.nixosModules.mixins-nix-experimental
+        #     {
+        #       nixpkgs = {
+        #         overlays = [ emacs-overlay.overlay ];
+        #         # cuda modules are unfree
+        #         config.allowUnfree = true;
+        #       };
+        #     }
+        #   ];
+        # };
       };
     };
 
