@@ -34,10 +34,6 @@
       url = "github:nix-community/emacs-overlay";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    nix-minecraft = {
-      url = "github:Infinidoge/nix-minecraft";
-      inputs.flake-utils.follows = "flake-utils";
-    };
     nix-flatpak.url = "github:gmodena/nix-flatpak";
     nix-index-database = {
       url = "github:nix-community/nix-index-database";
@@ -248,6 +244,7 @@
             inherit inputs;
           };
           modules = [
+            sops-nix.nixosModules.sops
             srvos.nixosModules.server
             srvos.nixosModules.mixins-nginx
             srvos.nixosModules.mixins-terminfo

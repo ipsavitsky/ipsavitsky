@@ -6,6 +6,11 @@
 {
   imports = [
     ./hardware-configuration.nix
+    ./nothingverse.nix
+    ./hledger.nix
+    ./gitlab_dd.nix
+    ./miniflux.nix
+    ./cloudflared.nix
   ];
 
   boot.loader.systemd-boot.enable = true;
@@ -59,6 +64,11 @@
     };
 
     fail2ban.enable = true;
+  };
+
+  sops = {
+    defaultSopsFile = ../../../secrets/demeter.yaml;
+    age.keyFile = "/home/ilya/.config/sops/age/keys.txt";
   };
 
   nix.settings.trusted-users = [ "ilya" ];
