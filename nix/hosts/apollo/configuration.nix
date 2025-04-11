@@ -11,6 +11,7 @@
     ./gitlab_dd.nix
     ./miniflux.nix
     ./cloudflared.nix
+    ./ntfy-sh.nix
   ];
 
   boot.loader.systemd-boot.enable = true;
