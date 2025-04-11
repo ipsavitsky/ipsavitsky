@@ -11,6 +11,7 @@
         undo-tree
         all-the-icons
         direnv
+        mistty
 
         ob-mermaid
         org-modern

@@ -19,6 +19,16 @@
         ../../modules/full-stack.nix
         ../../modules/stylix.nix
       ];
+
+      wayland.windowManager.sway = {
+        enable = true;
+        wrapperFeatures.gtk = true;
+        config = {
+          modifier = "Mod4";
+          terminal = "ghostty";
+        };
+      };
+
       home.stateVersion = "24.11";
     };
     extraSpecialArgs = {
@@ -124,7 +134,11 @@
     };
     bluetooth.enable = true;
   };
-  security.rtkit.enable = true;
+
+  security = {
+    rtkit.enable = true;
+    polkit.enable = true;
+  };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.ilya = {
