@@ -242,19 +242,19 @@
           ];
         };
 
-        # apollo = nixpkgs.lib.nixosSystem {
-        #   system = "x86_64-linux";
-        #   specialArgs = {
-        #     inherit inputs;
-        #   };
-        #   modules = [
-        #     srvos.nixosModules.server
-        #     srvos.nixosModules.mixins-nginx
-        #     srvos.nixosModules.mixins-terminfo
-        #     srvos.nixosModules.mixins-nix-experimental
-        #     ./nix/hosts/apollo/configuration.nix
-        #   ];
-        # };
+        apollo = nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          specialArgs = {
+            inherit inputs;
+          };
+          modules = [
+            srvos.nixosModules.server
+            srvos.nixosModules.mixins-nginx
+            srvos.nixosModules.mixins-terminfo
+            srvos.nixosModules.mixins-nix-experimental
+            ./nix/hosts/apollo/configuration.nix
+          ];
+        };
 
         # cronos = nixpkgs.lib.nixosSystem {
         #   specialArgs = {
