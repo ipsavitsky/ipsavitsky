@@ -21,15 +21,6 @@
         inputs.sops-nix.homeManagerModules.sops
       ];
 
-      wayland.windowManager.sway = {
-        enable = true;
-        wrapperFeatures.gtk = true;
-        config = {
-          modifier = "Mod4";
-          terminal = "ghostty";
-        };
-      };
-
       sops.age.keyFile = "/home/ilya/.config/sops/age/keys.txt";
 
       home.stateVersion = "24.11";
@@ -65,7 +56,6 @@
   networking = {
     hostName = "zeus";
     networkmanager.enable = true;
-    # nameservers = ["192.168.55.102"];
   };
 
   # Set your time zone.
@@ -86,7 +76,13 @@
     LC_TIME = "en_GB.UTF-8";
   };
 
+  programs.sway = {
+    enable = true;
+    wrapperFeatures.gtk = true;
+  };
+
   services = {
+    gnome.gnome-keyring.enable = true;
     pipewire = {
       enable = true;
       alsa.enable = true;
@@ -101,11 +97,22 @@
         layout = "gb,us";
         options = "grp:alt_shift_toggle";
       };
-      displayManager = {
-        gdm.enable = true;
-      };
       desktopManager = {
         gnome.enable = true;
+      };
+    };
+    greetd = {
+      enable = true;
+      settings = {
+        default_session = {
+          command = ''${pkgs.greetd.tuigreet}/bin/tuigreet --time --cmd "sway --unsupported-gpu"'';
+          user = "ilya";
+        };
+
+        gnome = {
+          command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --cmd gnome-shell";
+          user = "ilya";
+        };
       };
     };
     blueman.enable = true;
