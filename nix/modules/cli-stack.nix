@@ -43,5 +43,7 @@
       script-pile.packages.${pkgs.system}.plot_loc
       nix-tree.packages.${pkgs.system}.default
       nix-melt.packages.${pkgs.system}.default
+      charmbracelet-nur.packages.${pkgs.system}.glow
+      charmbracelet-nur.packages.${pkgs.system}.melt
     ];
 }

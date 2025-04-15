@@ -111,8 +111,6 @@
       spotify
       gparted
       nmap
-
-      charmbracelet-nur.packages.${pkgs.system}.melt
     ];
 
   environment.gnome.excludePackages = with pkgs; [

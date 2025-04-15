@@ -161,7 +161,6 @@
       transmission_4-qt
       mani
 
-      charmbracelet-nur.packages.${pkgs.system}.melt
       nom.packages.${pkgs.system}.default
       statix.packages.${pkgs.system}.default
       deadnix.packages.${pkgs.system}.default

@@ -51,7 +51,6 @@
         bash-language-server
         renovate
 
-        charmbracelet-nur.packages.${pkgs.system}.melt
         charmbracelet-nur.packages.${pkgs.system}.vhs
         charmbracelet-nur.packages.${pkgs.system}.gum
         nom.packages.${pkgs.system}.default
