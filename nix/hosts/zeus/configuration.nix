@@ -37,13 +37,6 @@
     useGlobalPkgs = true;
   };
 
-  services.flatpak = {
-    enable = true;
-    packages = [
-      "app.zen_browser.zen"
-    ];
-  };
-
   # Bootloader.
   boot = {
     loader = {
@@ -116,9 +109,14 @@
     ollama = {
       acceleration = "cuda";
     };
+    flatpak = {
+      enable = true;
+      packages = [
+        "app.zen_browser.zen"
+      ];
+    };
+    printing.enable = true;
   };
-
-  services.printing.enable = true;
 
   hardware = {
     graphics.enable = true;

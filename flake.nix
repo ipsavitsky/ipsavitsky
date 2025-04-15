@@ -120,7 +120,6 @@
       sops-nix,
       emacs-overlay,
       raspberry-pi,
-      nix-flatpak,
       srvos,
       ...
     }@inputs:

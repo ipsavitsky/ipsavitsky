@@ -10,8 +10,6 @@
     ../../modules/stylix.nix
   ];
 
-  programs.zed-editor.enable = lib.mkForce false;
-
   services.flatpak = {
     packages = [
       "dev.zed.Zed"
@@ -67,24 +65,28 @@
     installScripts = [ "mesa" ];
   };
 
-  programs.bash = {
-    initExtra = ''
-      source "$HOME/.cargo/env"
-      source "$HOME/.ghcup/env"
-      BUN_INSTALL="$HOME/.bun";
-      GOPATH="$HOME/go";
-      GOBIN="$GOPATH/bin";
-      PATH="$BUN_INSTALL/bin:/usr/local/go/bin:$PATH";
-    '';
+  programs = {
+    # we disable zed in favor of installinf a flatpak
+    zed-editor.enable = lib.mkForce false;
+    bash = {
+      initExtra = ''
+        source "$HOME/.cargo/env"
+        source "$HOME/.ghcup/env"
+        BUN_INSTALL="$HOME/.bun";
+        GOPATH="$HOME/go";
+        GOBIN="$GOPATH/bin";
+        PATH="$BUN_INSTALL/bin:/usr/local/go/bin:$PATH";
+      '';
 
-    shellAliases = {
-      ls = "ls --color=auto";
-      grep = "grep --color=auto";
+      shellAliases = {
+        ls = "ls --color=auto";
+        grep = "grep --color=auto";
+      };
     };
-  };
 
-  programs.k9s = {
-    enable = true;
-    package = pkgs.k9s;
+    k9s = {
+      enable = true;
+      package = pkgs.k9s;
+    };
   };
 }
