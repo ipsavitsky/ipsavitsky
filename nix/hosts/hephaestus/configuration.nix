@@ -9,7 +9,10 @@
     users.ilya = {
       imports = [
         ../../modules/cli-stack.nix
+        inputs.sops-nix.homeManagerModules.sops
       ];
+      sops.age.keyFile = "/home/ilya/.config/sops/age/keys.txt";
+
       home.stateVersion = "24.11";
     };
     extraSpecialArgs = {

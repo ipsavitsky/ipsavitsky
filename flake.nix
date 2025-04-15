@@ -178,6 +178,7 @@
 
           modules = [
             ./nix/hosts/hermes/home.nix
+            sops-nix.homeManagerModules.sops
           ];
 
           extraSpecialArgs = {

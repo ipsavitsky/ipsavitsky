@@ -18,6 +18,7 @@
       imports = [
         ../../modules/full-stack.nix
         ../../modules/stylix.nix
+        inputs.sops-nix.homeManagerModules.sops
       ];
 
       wayland.windowManager.sway = {
@@ -28,6 +29,8 @@
           terminal = "ghostty";
         };
       };
+
+      sops.age.keyFile = "/home/ilya/.config/sops/age/keys.txt";
 
       home.stateVersion = "24.11";
     };

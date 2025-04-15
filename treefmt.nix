@@ -2,7 +2,7 @@ _: {
   projectRootFile = "flake.nix";
   settings.global.excludes = [
     "**/.terraform.lock.hcl" # no formatting the lock file!
-    "secrets/demeter.yaml" # no formatting the generate
+    "secrets/*.yaml" # no formatting the generates
     "*.el" # no formatters available for those styles
     "*.org"
   ];

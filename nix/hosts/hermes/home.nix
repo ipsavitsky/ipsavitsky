@@ -66,7 +66,7 @@
   };
 
   programs = {
-    # we disable zed in favor of installinf a flatpak
+    # we disable zed in favor of installing a flatpak
     zed-editor.enable = lib.mkForce false;
     bash = {
       initExtra = ''
@@ -89,4 +89,6 @@
       package = pkgs.k9s;
     };
   };
+
+  sops.age.keyFile = "/home/ilyasavitsky/.config/sops/age/keys.txt";
 }
