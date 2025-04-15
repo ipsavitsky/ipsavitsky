@@ -6,16 +6,9 @@
 {
   imports = [
     ./hardware-configuration.nix
-    ./gitlab_dd.nix
-    ./postgres.nix
-    ./miniflux.nix
-    ./cloudflared.nix
-    ./static_page.nix
     ./jellyfin.nix
     ./transmission.nix
     ./arr.nix
-    ./nothingverse.nix
-    ./hledger.nix
   ];
 
   time.timeZone = "Europe/London";

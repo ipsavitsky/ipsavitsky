@@ -12,6 +12,7 @@
     ./miniflux.nix
     ./cloudflared.nix
     ./ntfy-sh.nix
+    ./static_page.nix
   ];
 
   boot.loader.systemd-boot.enable = true;
