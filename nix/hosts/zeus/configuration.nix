@@ -79,6 +79,9 @@
   programs.sway = {
     enable = true;
     wrapperFeatures.gtk = true;
+    extraOptions = [
+      "--unsupported-gpu"
+    ];
   };
 
   services = {
@@ -102,7 +105,13 @@
       };
     };
 
-    displayManager.ly.enable = true;
+    displayManager.ly = {
+      enable = true;
+      settings = {
+        animation = "doom";
+        bigclock = "en";
+      };
+    };
     blueman.enable = true;
     ollama = {
       acceleration = "cuda";
