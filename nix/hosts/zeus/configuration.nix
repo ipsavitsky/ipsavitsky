@@ -101,20 +101,8 @@
         gnome.enable = true;
       };
     };
-    greetd = {
-      enable = true;
-      settings = {
-        default_session = {
-          command = ''${pkgs.greetd.tuigreet}/bin/tuigreet --time --cmd "sway --unsupported-gpu"'';
-          user = "ilya";
-        };
 
-        gnome = {
-          command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --cmd gnome-shell";
-          user = "ilya";
-        };
-      };
-    };
+    displayManager.ly.enable = true;
     blueman.enable = true;
     ollama = {
       acceleration = "cuda";
