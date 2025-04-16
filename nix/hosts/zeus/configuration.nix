@@ -21,6 +21,18 @@
         inputs.sops-nix.homeManagerModules.sops
       ];
 
+      wayland.windowManager.sway = {
+        enable = true;
+        package = null;
+        wrapperFeatures.gtk = true; # Fixes common issues with GTK 3 apps
+        config = {
+          modifier = "Mod4";
+          terminal = "ghostty";
+        };
+      };
+
+      programs.waybar.enable = true;
+
       sops.age.keyFile = "/home/ilya/.config/sops/age/keys.txt";
 
       home.stateVersion = "24.11";
@@ -78,7 +90,6 @@
 
   programs.sway = {
     enable = true;
-    wrapperFeatures.gtk = true;
     extraOptions = [
       "--unsupported-gpu"
     ];
@@ -109,7 +120,6 @@
       enable = true;
       settings = {
         animation = "doom";
-        bigclock = "en";
       };
     };
     blueman.enable = true;
