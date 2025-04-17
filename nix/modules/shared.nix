@@ -24,7 +24,7 @@
   services = {
     ollama = {
       enable = true;
-      loadModels = [ "phi4" ];
+      loadModels = [ "gemma3:12b" ];
     };
   };
 

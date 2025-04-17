@@ -13,7 +13,7 @@
     package = inputs.charmbracelet-nur.packages.${pkgs.system}.mods;
     enableBashIntegration = true;
     settings = {
-      default-model = "phi4";
+      default-model = "gemma3:12b";
       quiet = false;
       status-text = "Generating";
       theme = "dracula";
@@ -25,7 +25,7 @@
             "llama3.2" = {
               max-input-chars = 650000;
             };
-            "phi4" = {
+            "gemma3:12b" = {
               max-input-chars = 650000;
             };
           };
