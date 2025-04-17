@@ -119,7 +119,7 @@
     displayManager.ly = {
       enable = true;
       settings = {
-        animation = "doom";
+        # animation = "doom";
       };
     };
     blueman.enable = true;
