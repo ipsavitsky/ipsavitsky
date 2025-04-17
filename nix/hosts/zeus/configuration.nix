@@ -29,10 +29,6 @@
           modifier = "Mod4";
           terminal = "ghostty";
         };
-        extraConfig = ''
-          # output Unknown-1 mode 3840x2160@60Hz
-          output Unknown-1 scale 1.8
-        '';
       };
 
       programs.waybar.enable = true;
@@ -56,7 +52,7 @@
         device = "nodev";
         useOSProber = true;
         efiSupport = true;
-        # gfxmodeEfi = "1280x720";
+        gfxmodeEfi = "1280x720";
       };
       efi = {
         canTouchEfiVariables = true;
@@ -106,6 +102,18 @@
       alsa.enable = true;
       alsa.support32Bit = true;
       pulse.enable = true;
+    };
+    xserver = {
+      enable = true;
+      videoDrivers = [ "nvidia" ];
+      xkb = {
+        variant = "";
+        layout = "gb,us";
+        options = "grp:alt_shift_toggle";
+      };
+      desktopManager = {
+        gnome.enable = true;
+      };
     };
 
     displayManager.ly = {
@@ -172,6 +180,24 @@
       statix.packages.${pkgs.system}.default
       deadnix.packages.${pkgs.system}.default
     ];
+
+  environment.gnome.excludePackages = with pkgs; [
+    gnome-photos
+    gnome-tour
+    gedit # text editor
+    cheese
+    gnome-music
+    gnome-terminal
+    epiphany # web browser
+    geary # email reader
+    evince # document viewer
+    gnome-characters
+    totem # video player
+    tali # poker game
+    iagno # go game
+    hitori # sudoku game
+    atomix # puzzle game
+  ];
 
   nix.settings.trusted-users = [ "ilya" ];
 
