@@ -24,5 +24,5 @@
 (add-hook 'elm-mode-hook #'eglot-ensure)
 (add-hook 'zig-mode-hook #'eglot-ensure)
 (add-hook 'lua-mode-hook #'eglot-ensure)
-(add-hook 'rust-mode-hook 'eglot-ensure)
-(add-hook 'tuareg-mode-hook 'eglot-ensure)
+(add-hook 'rust-mode-hook #'eglot-ensure)
+(add-hook 'tuareg-mode-hook #'eglot-ensure)

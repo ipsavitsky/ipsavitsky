@@ -33,6 +33,7 @@
         zig-mode
         lua-mode
         rust-mode
+        d-mode
         tuareg
       ];
   };
