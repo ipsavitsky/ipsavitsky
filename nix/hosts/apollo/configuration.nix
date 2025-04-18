@@ -13,6 +13,7 @@
     ./cloudflared.nix
     ./ntfy-sh.nix
     ./static_page.nix
+    ./silverbullet.nix
   ];
 
   boot.loader.systemd-boot.enable = true;
