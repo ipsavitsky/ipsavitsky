@@ -11,6 +11,7 @@
 (require 'lua-mode)
 (require 'rust-mode)
 (require 'tuareg)
+(require 'd-mode)
 
 (add-hook 'go-mode-hook #'eglot-ensure)
 (add-hook 'nix-mode-hook #'eglot-ensure)
@@ -26,3 +27,8 @@
 (add-hook 'lua-mode-hook #'eglot-ensure)
 (add-hook 'rust-mode-hook #'eglot-ensure)
 (add-hook 'tuareg-mode-hook #'eglot-ensure)
+(add-hook 'd-mode-hook #'eglot-ensure)
+
+(with-eval-after-load 'eglot
+  (add-to-list 'eglot-server-programs
+	       '(d-mode . ("serve-d"))))
