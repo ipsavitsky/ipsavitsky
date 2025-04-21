@@ -155,12 +155,13 @@
     polkit.enable = true;
   };
 
-  # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.ilya = {
     isNormalUser = true;
     extraGroups = [
       "networkmanager"
       "wheel"
+      "dialout"
+      "uucp"
     ];
   };
 
