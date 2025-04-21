@@ -104,6 +104,7 @@
       inputs.flake-utils.follows = "flake-utils";
     };
     nix-melt.url = "github:nix-community/nix-melt";
+    pomidor.url = "github:ipsavitsky/pomidor";
 
     raspberry-pi.url = "github:nix-community/raspberry-pi-nix";
     nixos-wsl.url = "github:nix-community/NixOS-WSL";
