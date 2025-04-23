@@ -564,11 +564,11 @@
         "treefmt-nix": "treefmt-nix"
       },
       "locked": {
-        "lastModified": 1745067515,
-        "narHash": "sha256-Fd3c3s5fdWaQDeAt04eZ4Kk9iabxH5XLUvYh+4FvxCA=",
+        "lastModified": 1745397058,
+        "narHash": "sha256-JXx5HZQa/nP9q9zhp0LzSn4kYi83iXBd0vk6EPc4U7E=",
         "owner": "ipsavitsky",
         "repo": "gitlab_due_dates",
-        "rev": "50ac049cb63e726fc0548d496beecd03e987e61e",
+        "rev": "722c38f722756c0db8019af257843d87d45b13f8",
         "type": "github"
       },
       "original": {
