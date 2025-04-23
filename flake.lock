@@ -564,11 +564,11 @@
         "treefmt-nix": "treefmt-nix"
       },
       "locked": {
-        "lastModified": 1745397058,
-        "narHash": "sha256-JXx5HZQa/nP9q9zhp0LzSn4kYi83iXBd0vk6EPc4U7E=",
+        "lastModified": 1745444585,
+        "narHash": "sha256-gYyEp4sn/TWkLHxlUaC3Y82qTX29v7pOGmMGzSXzVGM=",
         "owner": "ipsavitsky",
         "repo": "gitlab_due_dates",
-        "rev": "722c38f722756c0db8019af257843d87d45b13f8",
+        "rev": "e9d2ec91df0072141b0e0ec29feceec7e7832d65",
         "type": "github"
       },
       "original": {
@@ -1426,11 +1426,11 @@
         "treefmt-nix": "treefmt-nix_3"
       },
       "locked": {
-        "lastModified": 1745257960,
-        "narHash": "sha256-08KWQysrIzQSRgKu4qbU1/7mYFA8RXVYPZ9pHBvHG/Y=",
+        "lastModified": 1745444448,
+        "narHash": "sha256-SzidaQm/58YHe5ePp1FfGLbIim+5BL4x31BIvfshvvM=",
         "owner": "ipsavitsky",
         "repo": "pomidor",
-        "rev": "7cd5d1374899b2ea2736579ffe8147a8d0669565",
+        "rev": "c9f80e804f0118fd0ade34bd886a53424e3ded77",
         "type": "github"
       },
       "original": {
