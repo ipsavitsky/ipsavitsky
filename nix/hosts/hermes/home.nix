@@ -48,6 +48,7 @@
         yaml-language-server
         bash-language-server
         renovate
+        mdbook
 
         charmbracelet-nur.packages.${pkgs.system}.vhs
         charmbracelet-nur.packages.${pkgs.system}.gum
