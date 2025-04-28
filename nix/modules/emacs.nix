@@ -34,6 +34,8 @@
         lua-mode
         rust-mode
         d-mode
+        js2-mode
+        typescript-mode
         tuareg
       ];
   };
