@@ -2,6 +2,7 @@
   pkgs,
   lib,
   inputs,
+  config,
   ...
 }:
 {
@@ -49,6 +50,7 @@
         bash-language-server
         renovate
         mdbook
+        (config.lib.nixGL.wrap quasselClient)
 
         charmbracelet-nur.packages.${pkgs.system}.vhs
         charmbracelet-nur.packages.${pkgs.system}.gum
