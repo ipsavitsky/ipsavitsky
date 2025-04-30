@@ -40,9 +40,6 @@
         terraform-docs
         shellcheck
         checkov
-        pipenv
-        poetry
-        uv
         yubikey-manager
         helm-ls
         mermaid-cli
