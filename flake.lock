@@ -1887,11 +1887,11 @@
         "uv2nix": "uv2nix"
       },
       "locked": {
-        "lastModified": 1746005775,
-        "narHash": "sha256-9oGJ9Upk5vnuj8/8Spj2kkKUtTi6gR2hFwlaKDzBXUU=",
+        "lastModified": 1746034064,
+        "narHash": "sha256-0YdY1VyS4jTlTqwh0Fg4TmRsxJCsOUzDyaVqa4l2wwo=",
         "owner": "ipsavitsky",
         "repo": "script_pile",
-        "rev": "3c04356afa0ad06335b5196f491d6f707368612a",
+        "rev": "d8949e559197449aaaa0d3b0c7165af5fbfb39c4",
         "type": "github"
       },
       "original": {

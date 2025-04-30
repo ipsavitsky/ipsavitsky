@@ -40,7 +40,7 @@
       mani
 
       gitu.packages.${pkgs.system}.default
-      script-pile.packages.${pkgs.system}.plot_loc
+      script-pile.packages.${pkgs.system}.ploc
       nix-tree.packages.${pkgs.system}.default
       nix-melt.packages.${pkgs.system}.default
       charmbracelet-nur.packages.${pkgs.system}.glow
