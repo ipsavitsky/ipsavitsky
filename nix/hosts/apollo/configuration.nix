@@ -7,7 +7,6 @@
   imports = [
     ./hardware-configuration.nix
     ./nothingverse.nix
-    ./hledger.nix
     ./gitlab_dd.nix
     ./miniflux.nix
     ./cloudflared.nix

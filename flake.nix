@@ -74,10 +74,7 @@
       url = "github:ipsavitsky/gitlab_due_dates";
       inputs.flake-utils.follows = "flake-utils";
     };
-    helix = {
-      url = "github:helix-editor/helix";
-      inputs.flake-utils.follows = "flake-utils";
-    };
+    helix.url = "github:helix-editor/helix";
     savitsky-dev = {
       url = "github:ipsavitsky/savitsky.dev";
       inputs.flake-utils.follows = "flake-utils";
