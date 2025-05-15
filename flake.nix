@@ -105,6 +105,10 @@
 
     raspberry-pi.url = "github:nix-community/raspberry-pi-nix";
     nixos-wsl.url = "github:nix-community/NixOS-WSL";
+    ntfyer = {
+      url = "github:ipsavitsky/ntfyer";
+      inputs.flake-utils.follows = "flake-utils";
+    };
   };
 
   outputs =
@@ -207,6 +211,7 @@
           modules = [
             ./nix/hosts/zeus/configuration.nix
             home-manager.nixosModules.home-manager
+            sops-nix.nixosModules.sops
             srvos.nixosModules.desktop
             srvos.nixosModules.mixins-nix-experimental
             {
