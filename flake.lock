@@ -1419,11 +1419,11 @@
         "nixpkgs": "nixpkgs_14"
       },
       "locked": {
-        "lastModified": 1747305989,
-        "narHash": "sha256-+A1I8wcSazkKcJ4q2V08Z56IynRS7ETnAim4q6hkySk=",
+        "lastModified": 1747337835,
+        "narHash": "sha256-G5M9Gr2d2Hz1qOUdJJ8mdyBkO0xKc71XHiWClH6Z55Y=",
         "owner": "ipsavitsky",
         "repo": "ntfyer",
-        "rev": "b4cfec8834be5d99880d6b2045512a660bee2789",
+        "rev": "69a5eb917b38d69bba595d1ef63bde085492eed5",
         "type": "github"
       },
       "original": {

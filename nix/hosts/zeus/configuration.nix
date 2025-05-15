@@ -134,7 +134,7 @@
     };
     printing.enable = true;
     ntfyer = {
-      enable = true;
+      enable = false;
       configurationFile = config.sops.secrets."ntfyer/config.zon".path;
     };
   };
@@ -209,6 +209,10 @@
   sops = {
     defaultSopsFile = ../../../secrets/demeter.yaml;
     age.keyFile = "/home/ilya/.config/sops/age/keys.txt";
+  };
+
+  sops.secrets."ntfyer/config.zon" = pkgs.lib.mkIf config.services.ntfyer.enable {
+    owner = "ntfyer";
   };
 
   # This value determines the NixOS release from which the default
