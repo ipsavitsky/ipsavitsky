@@ -71,7 +71,6 @@
     bash = {
       initExtra = ''
         source "$HOME/.cargo/env"
-        source "$HOME/.ghcup/env"
         BUN_INSTALL="$HOME/.bun";
         GOPATH="$HOME/go";
         GOBIN="$GOPATH/bin";
