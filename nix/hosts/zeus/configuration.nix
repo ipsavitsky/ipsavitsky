@@ -30,13 +30,9 @@
           modifier = "Mod4";
           terminal = "ghostty";
         };
-        extraConfig = ''
-          output * scale 1.5
-        '';
       };
 
       programs.waybar.enable = true;
-      services.mako.enable = true;
 
       sops.age.keyFile = "/home/ilya/.config/sops/age/keys.txt";
 
@@ -108,6 +104,18 @@
       alsa.support32Bit = true;
       pulse.enable = true;
     };
+    xserver = {
+      enable = true;
+      videoDrivers = [ "nvidia" ];
+      xkb = {
+        variant = "";
+        layout = "gb,us";
+        options = "grp:alt_shift_toggle";
+      };
+      desktopManager = {
+        gnome.enable = true;
+      };
+    };
     displayManager.ly = {
       enable = true;
       settings = {
@@ -126,7 +134,7 @@
     };
     printing.enable = true;
     ntfyer = {
-      enable = true;
+      enable = false;
       configurationFile = config.sops.secrets."ntfyer/config.zon".path;
     };
   };
@@ -177,6 +185,24 @@
       statix.packages.${pkgs.system}.default
       deadnix.packages.${pkgs.system}.default
     ];
+
+  environment.gnome.excludePackages = with pkgs; [
+    gnome-photos
+    gnome-tour
+    gedit # text editor
+    cheese
+    gnome-music
+    gnome-terminal
+    epiphany # web browser
+    geary # email reader
+    evince # document viewer
+    gnome-characters
+    totem # video player
+    tali # poker game
+    iagno # go game
+    hitori # sudoku game
+    atomix # puzzle game
+  ];
 
   nix.settings.trusted-users = [ "ilya" ];
 
