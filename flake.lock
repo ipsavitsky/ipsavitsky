@@ -1416,14 +1416,15 @@
         "flake-utils": [
           "flake-utils"
         ],
-        "nixpkgs": "nixpkgs_14"
+        "nixpkgs": "nixpkgs_14",
+        "treefmt-nix": "treefmt-nix_3"
       },
       "locked": {
-        "lastModified": 1747337835,
-        "narHash": "sha256-G5M9Gr2d2Hz1qOUdJJ8mdyBkO0xKc71XHiWClH6Z55Y=",
+        "lastModified": 1747394515,
+        "narHash": "sha256-xyFvqf0fl2stjcD8wMr3Xsged6UxqF7cdE1DYuUTXxM=",
         "owner": "ipsavitsky",
         "repo": "ntfyer",
-        "rev": "69a5eb917b38d69bba595d1ef63bde085492eed5",
+        "rev": "b5bb4f41d297b582481a47ded2cd496a40aa1471",
         "type": "github"
       },
       "original": {
@@ -1457,7 +1458,7 @@
       "inputs": {
         "dlang-tools": "dlang-tools",
         "nixpkgs": "nixpkgs_17",
-        "treefmt-nix": "treefmt-nix_3"
+        "treefmt-nix": "treefmt-nix_4"
       },
       "locked": {
         "lastModified": 1746694515,
@@ -1607,7 +1608,7 @@
         "srvos": "srvos",
         "statix": "statix",
         "stylix": "stylix",
-        "treefmt-nix": "treefmt-nix_5",
+        "treefmt-nix": "treefmt-nix_6",
         "vulnix": "vulnix",
         "yazi": "yazi",
         "zed": "zed"
@@ -1918,7 +1919,7 @@
         "nixpkgs": "nixpkgs_20",
         "pyproject-build-systems": "pyproject-build-systems",
         "pyproject-nix": "pyproject-nix",
-        "treefmt-nix": "treefmt-nix_4",
+        "treefmt-nix": "treefmt-nix_5",
         "uv2nix": "uv2nix"
       },
       "locked": {
@@ -2177,16 +2178,16 @@
     "treefmt-nix_3": {
       "inputs": {
         "nixpkgs": [
-          "pomidor",
+          "ntfyer",
           "nixpkgs"
         ]
       },
       "locked": {
-        "lastModified": 1746216483,
-        "narHash": "sha256-4h3s1L/kKqt3gMDcVfN8/4v2jqHrgLIe4qok4ApH5x4=",
+        "lastModified": 1747299117,
+        "narHash": "sha256-JGjCVbxS+9t3tZ2IlPQ7sdqSM4c+KmIJOXVJPfWmVOU=",
         "owner": "numtide",
         "repo": "treefmt-nix",
-        "rev": "29ec5026372e0dec56f890e50dbe4f45930320fd",
+        "rev": "e758f27436367c23bcd63cd973fa5e39254b530e",
         "type": "github"
       },
       "original": {
@@ -2198,7 +2199,7 @@
     "treefmt-nix_4": {
       "inputs": {
         "nixpkgs": [
-          "script-pile",
+          "pomidor",
           "nixpkgs"
         ]
       },
@@ -2219,6 +2220,7 @@
     "treefmt-nix_5": {
       "inputs": {
         "nixpkgs": [
+          "script-pile",
           "nixpkgs"
         ]
       },
@@ -2237,6 +2239,26 @@
       }
     },
     "treefmt-nix_6": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1746216483,
+        "narHash": "sha256-4h3s1L/kKqt3gMDcVfN8/4v2jqHrgLIe4qok4ApH5x4=",
+        "owner": "numtide",
+        "repo": "treefmt-nix",
+        "rev": "29ec5026372e0dec56f890e50dbe4f45930320fd",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "repo": "treefmt-nix",
+        "type": "github"
+      }
+    },
+    "treefmt-nix_7": {
       "inputs": {
         "nixpkgs": [
           "vulnix",
@@ -2288,7 +2310,7 @@
         "flake-parts": "flake-parts_2",
         "flake-root": "flake-root",
         "nixpkgs": "nixpkgs_23",
-        "treefmt-nix": "treefmt-nix_6"
+        "treefmt-nix": "treefmt-nix_7"
       },
       "locked": {
         "lastModified": 1745323073,
