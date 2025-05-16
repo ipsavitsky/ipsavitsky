@@ -1420,11 +1420,11 @@
         "treefmt-nix": "treefmt-nix_3"
       },
       "locked": {
-        "lastModified": 1747394515,
-        "narHash": "sha256-xyFvqf0fl2stjcD8wMr3Xsged6UxqF7cdE1DYuUTXxM=",
+        "lastModified": 1747428929,
+        "narHash": "sha256-hb30tC2U6GzEN7qKwE7G9E2I46MWCrHHNkRlmBW1D8k=",
         "owner": "ipsavitsky",
         "repo": "ntfyer",
-        "rev": "b5bb4f41d297b582481a47ded2cd496a40aa1471",
+        "rev": "5c27d975af91c16171e39f166fbf4b22d9d7aae6",
         "type": "github"
       },
       "original": {

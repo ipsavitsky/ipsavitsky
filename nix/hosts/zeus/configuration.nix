@@ -134,7 +134,7 @@
     };
     printing.enable = true;
     ntfyer = {
-      enable = false;
+      enable = true;
       configurationFile = config.sops.secrets."ntfyer/config.zon".path;
     };
   };
@@ -212,7 +212,7 @@
   };
 
   sops.secrets."ntfyer/config.zon" = pkgs.lib.mkIf config.services.ntfyer.enable {
-    owner = "ntfyer";
+    owner = "ilya";
   };
 
   # This value determines the NixOS release from which the default
