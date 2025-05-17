@@ -37,6 +37,7 @@
         js2-mode
         typescript-mode
         tuareg
+        renpy
       ];
   };
 
