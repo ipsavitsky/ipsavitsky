@@ -11,6 +11,7 @@
     ./ghostty.nix
     ./dconf.nix
     ./zed.nix
+    ./ntfyer.nix
 
     inputs.nix-flatpak.homeManagerModules.nix-flatpak
   ];

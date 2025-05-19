@@ -3,7 +3,6 @@ keys:
   - &demeter age1mrh87dc9gwz096gvr7wldzxefy5j9gv8n8r4mh4ru4gtdhfw7q9qfeds99
   - &apollo age1zdf522459znfe9gaj7faakle0k03jwwzu5eny9lq76afqw27nclseelaa2
   - &hermes age18eh6kd5cwa37j2zur2hrzr6rpnz6tj9002qrku566ejlfyw3rfxqftmdjt
-  - &hephaestus age123fillmeinlater
 creation_rules:
   - path_regex: secrets/demeter.yaml$
     key_groups:
@@ -16,4 +15,3 @@ creation_rules:
       - age:
           - *zeus
           - *hermes
-          - *hephaestus

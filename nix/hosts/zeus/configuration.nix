@@ -11,7 +11,6 @@
     ../../modules/shared.nix
 
     inputs.nix-flatpak.nixosModules.nix-flatpak
-    inputs.ntfyer.nixosModules.ntfyer
   ];
 
   home-manager = {
@@ -133,10 +132,6 @@
       ];
     };
     printing.enable = true;
-    ntfyer = {
-      enable = true;
-      configurationFile = config.sops.secrets."ntfyer/config.zon".path;
-    };
   };
 
   hardware = {
@@ -205,15 +200,6 @@
   ];
 
   nix.settings.trusted-users = [ "ilya" ];
-
-  sops = {
-    defaultSopsFile = ../../../secrets/demeter.yaml;
-    age.keyFile = "/home/ilya/.config/sops/age/keys.txt";
-  };
-
-  sops.secrets."ntfyer/config.zon" = pkgs.lib.mkIf config.services.ntfyer.enable {
-    owner = "ilya";
-  };
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
