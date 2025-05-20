@@ -4,10 +4,6 @@
   ...
 }:
 {
-  imports = [
-    inputs.mods-home-manager.homeManagerModules.mods
-  ];
-
   programs.mods = {
     enable = true;
     package = inputs.charmbracelet-nur.packages.${pkgs.system}.mods;

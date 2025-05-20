@@ -1,6 +1,6 @@
 {
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-24.11";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05";
     flake-utils.url = "github:numtide/flake-utils";
     charmbracelet-nur = {
       url = "github:charmbracelet/nur";
@@ -11,11 +11,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     stylix = {
-      url = "github:danth/stylix/release-24.11";
+      url = "github:danth/stylix/release-25.05";
       inputs = {
         nixpkgs.follows = "nixpkgs";
         home-manager.follows = "home-manager";
-        flake-utils.follows = "flake-utils";
       };
     };
     srvos = {
@@ -23,11 +22,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     home-manager = {
-      url = "github:nix-community/home-manager/release-24.11";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    mods-home-manager = {
-      url = "github:ipsavitsky/mods-home-manager";
+      url = "github:nix-community/home-manager/release-25.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     emacs-overlay = {
@@ -39,7 +34,6 @@
       url = "github:nix-community/nix-index-database";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
     sops-nix.url = "github:Mic92/sops-nix";
     ghostty = {
       url = "github:ghostty-org/ghostty";
@@ -102,7 +96,6 @@
     };
     nix-melt.url = "github:nix-community/nix-melt";
     pomidor.url = "github:ipsavitsky/pomidor";
-
     raspberry-pi.url = "github:nix-community/raspberry-pi-nix";
     nixos-wsl.url = "github:nix-community/NixOS-WSL";
     ntfyer = {
