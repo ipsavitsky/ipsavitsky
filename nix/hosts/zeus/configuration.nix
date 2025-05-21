@@ -63,6 +63,12 @@
     binfmt.emulatedSystems = [
       "aarch64-linux"
     ];
+
+    kernelModules = [
+      "nvidia"
+      "nvidia_modeset"
+      "nvidia_uvm"
+    ];
   };
 
   networking = {
