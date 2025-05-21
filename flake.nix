@@ -102,6 +102,7 @@
       url = "github:ipsavitsky/ntfyer";
       inputs.flake-utils.follows = "flake-utils";
     };
+    waybar.url = "github:Alexays/waybar";
   };
 
   outputs =

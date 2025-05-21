@@ -27,16 +27,26 @@
         wrapperFeatures.gtk = true; # Fixes common issues with GTK 3 apps
         config = {
           modifier = "Mod4";
+          menu = (pkgs.lib.getExe config.home-manager.users.ilya.programs.fuzzel.package);
           terminal = "ghostty";
           output = {
             "*" = {
               scale = "2";
             };
           };
+          bars = [ { command = (pkgs.lib.getExe config.home-manager.users.ilya.programs.waybar.package); } ];
         };
       };
 
-      programs.waybar.enable = true;
+      programs = {
+        waybar = {
+          enable = true;
+          package = inputs.waybar.packages."x86_64-linux".default;
+        };
+        fuzzel.enable = true;
+      };
+
+      services.mako.enable = true;
 
       sops.age.keyFile = "/home/ilya/.config/sops/age/keys.txt";
 
