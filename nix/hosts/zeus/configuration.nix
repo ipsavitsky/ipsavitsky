@@ -28,6 +28,11 @@
         config = {
           modifier = "Mod4";
           terminal = "ghostty";
+          output = {
+            "*" = {
+              scale = "2";
+            };
+          };
         };
       };
 
@@ -62,12 +67,6 @@
 
     binfmt.emulatedSystems = [
       "aarch64-linux"
-    ];
-
-    kernelModules = [
-      "nvidia"
-      "nvidia_modeset"
-      "nvidia_uvm"
     ];
   };
 
@@ -109,24 +108,8 @@
       alsa.support32Bit = true;
       pulse.enable = true;
     };
-    xserver = {
-      enable = true;
-      videoDrivers = [ "nvidia" ];
-      xkb = {
-        variant = "";
-        layout = "gb,us";
-        options = "grp:alt_shift_toggle";
-      };
-      desktopManager = {
-        gnome.enable = true;
-      };
-    };
-    displayManager.ly = {
-      enable = true;
-      settings = {
-        # animation = "doom";
-      };
-    };
+    xserver.videoDrivers = [ "nvidia" ];
+    displayManager.ly.enable = true;
     blueman.enable = true;
     ollama = {
       acceleration = "cuda";
@@ -181,29 +164,12 @@
       nmap
       transmission_4-qt
       mani
+      nvtopPackages.nvidia
 
       nom.packages.${pkgs.system}.default
       statix.packages.${pkgs.system}.default
       deadnix.packages.${pkgs.system}.default
     ];
-
-  environment.gnome.excludePackages = with pkgs; [
-    gnome-photos
-    gnome-tour
-    gedit # text editor
-    cheese
-    gnome-music
-    gnome-terminal
-    epiphany # web browser
-    geary # email reader
-    evince # document viewer
-    gnome-characters
-    totem # video player
-    tali # poker game
-    iagno # go game
-    hitori # sudoku game
-    atomix # puzzle game
-  ];
 
   nix.settings.trusted-users = [ "ilya" ];
 
