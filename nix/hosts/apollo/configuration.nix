@@ -13,6 +13,7 @@
     ./ntfy-sh.nix
     ./static_page.nix
     ./silverbullet.nix
+    ./network-ms.nix
   ];
 
   boot.loader.systemd-boot.enable = true;
