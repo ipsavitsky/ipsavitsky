@@ -772,16 +772,15 @@
         "nixpkgs": "nixpkgs_6"
       },
       "locked": {
-        "lastModified": 1747940375,
-        "narHash": "sha256-Fx8oBq/csVvIWw7ymavK5g1ggOetxUatHVEKPv4VpL0=",
+        "lastModified": 1747951739,
+        "narHash": "sha256-qVHDsVB3B0JlZ2aLHKE01hi923qg+4b/BMWeuE6ljos=",
         "owner": "ooo-team",
         "repo": "network-master-server",
-        "rev": "64637a9bd2ec5b1aa63e49db37df7fda65448417",
+        "rev": "b19f38134ad072ebe3b68d8b7d5dfd591341b2e1",
         "type": "github"
       },
       "original": {
         "owner": "ooo-team",
-        "ref": "ipsavitsky/flake_deployment",
         "repo": "network-master-server",
         "type": "github"
       }

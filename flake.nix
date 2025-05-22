@@ -103,7 +103,7 @@
       inputs.flake-utils.follows = "flake-utils";
     };
     waybar.url = "github:Alexays/waybar";
-    network-master-server.url = "github:ooo-team/network-master-server/ipsavitsky/flake_deployment";
+    network-master-server.url = "github:ooo-team/network-master-server";
   };
 
   outputs =
