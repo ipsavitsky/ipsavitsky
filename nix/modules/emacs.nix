@@ -39,6 +39,7 @@
         tuareg
         renpy
         gleam-ts-mode
+        jsonnet-mode
       ];
   };
 
