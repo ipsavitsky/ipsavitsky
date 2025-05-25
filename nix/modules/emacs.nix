@@ -40,6 +40,8 @@
         renpy
         gleam-ts-mode
         jsonnet-mode
+        typst-ts-mode
+        just-mode
       ];
   };
 
