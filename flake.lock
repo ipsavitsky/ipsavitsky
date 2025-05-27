@@ -1992,11 +1992,11 @@
         "nixpkgs": "nixpkgs_20"
       },
       "locked": {
-        "lastModified": 1747558896,
-        "narHash": "sha256-zFDHYTU1gOQoomgB4C/fanibZYeuO7/3NsqbPTcGDus=",
+        "lastModified": 1748201407,
+        "narHash": "sha256-q67WsolhbmowwNYYI+x84TpqhNo4X0t2LkI86YlYX00=",
         "owner": "ipsavitsky",
         "repo": "savitsky.dev",
-        "rev": "cf7423e10d14323ead0afb7b28ef4a5db273ea55",
+        "rev": "5cea4dabb3b5763e937b1f2df484f5d4d3656069",
         "type": "github"
       },
       "original": {
