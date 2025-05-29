@@ -86,6 +86,10 @@
       url = "github:ipsavitsky/script_pile";
       inputs.flake-utils.follows = "flake-utils";
     };
+    ploc = {
+      url = "github:ipsavitsky/ploc";
+      inputs.flake-utils.follows = "flake-utils";
+    };
     nothingverse = {
       url = "github:ipsavitsky/nothingverse";
       inputs.flake-utils.follows = "flake-utils";
