@@ -14,6 +14,7 @@
     ./static_page.nix
     ./silverbullet.nix
     ./network-ms.nix
+    ./renovate.nix
   ];
 
   boot.loader.systemd-boot.enable = true;
