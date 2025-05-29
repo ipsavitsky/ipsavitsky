@@ -53,13 +53,17 @@
           fuzzel.enable = true;
           swaylock = {
             enable = true;
-            package = pkgs.swaylock-effects;
+            package = inputs.wayland-overlay.packages."x86_64-linux".swaylock-effects;
           };
         };
 
         services = {
-          mako.enable = true;
+          mako = {
+            enable = true;
+            package = inputs.wayland-overlay.packages."x86_64-linux".mako;
+          };
           swayidle = {
+            package = inputs.wayland-overlay.packages."x86_64-linux".swayidle;
             enable = true;
             extraArgs = [ "-d" ];
             timeouts =
@@ -139,6 +143,7 @@
 
   programs.sway = {
     enable = true;
+    package = pkgs.swayfx;
     extraOptions = [
       "--unsupported-gpu"
     ];

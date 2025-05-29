@@ -1,8 +1,8 @@
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 {
   programs.emacs = {
     enable = true;
-    package = pkgs.emacs-git;
+    package = inputs.emacs-overlay.packages.${pkgs.system}.emacs-git;
     extraPackages =
       epkgs: with epkgs; [
         magit

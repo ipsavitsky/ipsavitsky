@@ -11,7 +11,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     stylix = {
-      url = "github:danth/stylix/release-25.05";
+      url = "github:nix-community/stylix/release-25.05";
       inputs = {
         nixpkgs.follows = "nixpkgs";
         home-manager.follows = "home-manager";
@@ -24,6 +24,9 @@
     home-manager = {
       url = "github:nix-community/home-manager/release-25.05";
       inputs.nixpkgs.follows = "nixpkgs";
+    };
+    wayland-overlay = {
+      url = "github:nix-community/nixpkgs-wayland";
     };
     emacs-overlay = {
       url = "github:nix-community/emacs-overlay";
@@ -119,7 +122,6 @@
       nixos-wsl,
       home-manager,
       sops-nix,
-      emacs-overlay,
       raspberry-pi,
       srvos,
       ...
@@ -172,9 +174,6 @@
         hermes = home-manager.lib.homeManagerConfiguration {
           pkgs = import nixpkgs {
             system = "x86_64-linux";
-            overlays = [
-              emacs-overlay.overlay
-            ];
           };
 
           modules = [
@@ -198,7 +197,6 @@
             ./nix/hosts/hephaestus/configuration.nix
             nixos-wsl.nixosModules.wsl
             home-manager.nixosModules.home-manager
-            { nixpkgs.overlays = [ emacs-overlay.overlay ]; }
           ];
         };
 
@@ -215,7 +213,6 @@
             srvos.nixosModules.mixins-nix-experimental
             {
               nixpkgs = {
-                overlays = [ emacs-overlay.overlay ];
                 # cuda modules are unfree
                 config.allowUnfree = true;
               };
