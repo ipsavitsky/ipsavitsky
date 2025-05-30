@@ -920,15 +920,16 @@
         "nixpkgs": "nixpkgs_7"
       },
       "locked": {
-        "lastModified": 1748561721,
-        "narHash": "sha256-XLAwYj8IBwemeCb/TKos+/10V914DpOoJ3ENAIHMsno=",
+        "lastModified": 1748643922,
+        "narHash": "sha256-DKINGU9aogBG+3OMZdO/VRUOe7NfBJhlnhQn6K/XkRo=",
         "owner": "ooo-team",
         "repo": "network-master-server",
-        "rev": "2c101837efa5921b1ecce8441e4054f620ff4646",
+        "rev": "a5ce9d0d16e3952b51f47621d76cbae755924e02",
         "type": "github"
       },
       "original": {
         "owner": "ooo-team",
+        "ref": "turn",
         "repo": "network-master-server",
         "type": "github"
       }

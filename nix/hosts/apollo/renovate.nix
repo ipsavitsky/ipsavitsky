@@ -1,6 +1,6 @@
 { pkgs, config, ... }:
 {
-  sops.secrets."renovate/github_com" = {};
+  sops.secrets."renovate/github_com" = { };
   services.renovate = {
     enable = true;
     schedule = "daily";

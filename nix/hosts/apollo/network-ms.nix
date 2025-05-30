@@ -7,5 +7,8 @@
     inputs.network-master-server.nixosModules.network-master-server
   ];
 
-  services.network-master-server.enable = true;
+  services.network-master-server = {
+    enable = true;
+    users = "a=a,b=b";
+  };
 }
