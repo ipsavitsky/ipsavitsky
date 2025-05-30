@@ -920,11 +920,11 @@
         "nixpkgs": "nixpkgs_7"
       },
       "locked": {
-        "lastModified": 1747951739,
-        "narHash": "sha256-qVHDsVB3B0JlZ2aLHKE01hi923qg+4b/BMWeuE6ljos=",
+        "lastModified": 1748561721,
+        "narHash": "sha256-XLAwYj8IBwemeCb/TKos+/10V914DpOoJ3ENAIHMsno=",
         "owner": "ooo-team",
         "repo": "network-master-server",
-        "rev": "b19f38134ad072ebe3b68d8b7d5dfd591341b2e1",
+        "rev": "2c101837efa5921b1ecce8441e4054f620ff4646",
         "type": "github"
       },
       "original": {
