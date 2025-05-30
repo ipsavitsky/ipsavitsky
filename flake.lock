@@ -1781,11 +1781,11 @@
         "uv2nix": "uv2nix"
       },
       "locked": {
-        "lastModified": 1748513376,
-        "narHash": "sha256-vueapaTiVPcFymVwh1P97qYAg7cxw0gU4PPqABPNEfM=",
+        "lastModified": 1748599648,
+        "narHash": "sha256-ZJ8L1lUy0UoXztVf4fBdzKRirPT/z523UHB0WkPgImg=",
         "owner": "ipsavitsky",
         "repo": "ploc",
-        "rev": "ded8ce3cb684a4de0cfc70b0a6c3305d53fb466a",
+        "rev": "691492306951add21c3658781ffef636a181e955",
         "type": "github"
       },
       "original": {
