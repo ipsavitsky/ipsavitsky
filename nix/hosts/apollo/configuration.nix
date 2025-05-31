@@ -13,7 +13,6 @@
     ./ntfy-sh.nix
     ./static_page.nix
     ./silverbullet.nix
-    ./network-ms.nix
     ./renovate.nix
   ];
 
