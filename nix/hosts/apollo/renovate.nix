@@ -7,6 +7,10 @@
     validateSettings = true;
     runtimePackages = with pkgs; [
       go
+      cargo
+      rustc
+      uv
+      python3
       config.nix.package
       git
       openssh
