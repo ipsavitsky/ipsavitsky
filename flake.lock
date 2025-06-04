@@ -1747,11 +1747,11 @@
         "uv2nix": "uv2nix"
       },
       "locked": {
-        "lastModified": 1748599648,
-        "narHash": "sha256-ZJ8L1lUy0UoXztVf4fBdzKRirPT/z523UHB0WkPgImg=",
+        "lastModified": 1749029143,
+        "narHash": "sha256-XfeuNjbBs9fnzQAaDt6zhckbF0Jso+c3KZzv78ky47o=",
         "owner": "ipsavitsky",
         "repo": "ploc",
-        "rev": "691492306951add21c3658781ffef636a181e955",
+        "rev": "b255e266dac988dbf6404afe7f00a8c9ad5553c3",
         "type": "github"
       },
       "original": {
