@@ -14,6 +14,9 @@
     ./static_page.nix
     ./silverbullet.nix
     ./renovate.nix
+    ./jellyfin.nix
+    ./transmission.nix
+    ./arr.nix
   ];
 
   boot.loader.systemd-boot.enable = true;
@@ -51,6 +54,7 @@
       cloudflared
       systemctl-tui
       btop
+      btrfs-progs
 
       charmbracelet-nur.packages.${pkgs.system}.melt
     ];

@@ -6,9 +6,6 @@
 {
   imports = [
     ./hardware-configuration.nix
-    ./jellyfin.nix
-    ./transmission.nix
-    ./arr.nix
   ];
 
   time.timeZone = "Europe/London";
@@ -40,8 +37,6 @@
     [
       neofetch
       nmap
-      btrfs-progs
-      cloudflared
       systemctl-tui
       btop
 

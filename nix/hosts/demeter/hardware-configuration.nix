@@ -28,9 +28,4 @@ _: {
       };
     };
   };
-
-  fileSystems."/data" = {
-    device = "/dev/disk/by-uuid/31c1a1fe-90b1-4f12-b55c-69be3a0bcbc3";
-    fsType = "btrfs";
-  };
 }
