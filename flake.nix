@@ -110,6 +110,7 @@
       inputs.flake-utils.follows = "flake-utils";
     };
     waybar.url = "github:Alexays/waybar";
+    swayfx.url = "github:WillPower3309/swayfx";
   };
 
   outputs =

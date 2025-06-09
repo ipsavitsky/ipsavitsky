@@ -61,6 +61,13 @@
           mako = {
             enable = true;
             package = inputs.wayland-overlay.packages."x86_64-linux".mako;
+            settings = {
+              actions = true;
+              icons = true;
+              ignore-timout = false;
+              default-timeout = 10;
+              markup = true;
+            };
           };
           swayidle = {
             package = inputs.wayland-overlay.packages."x86_64-linux".swayidle;
@@ -143,7 +150,7 @@
 
   programs.sway = {
     enable = true;
-    package = pkgs.swayfx;
+    package = inputs.swayfx.packages.${pkgs.system}.default;
     extraOptions = [
       "--unsupported-gpu"
     ];
