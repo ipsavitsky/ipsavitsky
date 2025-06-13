@@ -13,6 +13,10 @@
 (require 'tuareg)
 (require 'd-mode)
 
+(setq py-keep-windows-configuration t)
+(setq py-split-window-on-execute nil)
+(setq py-shell-switch-buffers-on-execute-p nil)
+
 (add-hook 'go-mode-hook #'eglot-ensure)
 (add-hook 'nix-mode-hook #'eglot-ensure)
 (add-hook 'terraform-mode-hook #'eglot-ensure)
