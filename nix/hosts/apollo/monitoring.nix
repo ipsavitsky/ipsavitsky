@@ -3,8 +3,8 @@
 }:
 
 let
-  prometheusPort = 9090;
-  pushgatewayPort = 9091;
+  prometheusPort = 9098;
+  pushgatewayPort = 9099;
   grafanaPort = 4000;
 in
 {
