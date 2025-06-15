@@ -62,10 +62,7 @@
       url = "github:ifd3f/caligula";
       inputs.flake-utils.follows = "flake-utils";
     };
-    nil = {
-      url = "github:oxalica/nil";
-      inputs.flake-utils.follows = "flake-utils";
-    };
+    nil.url = "github:oxalica/nil";
     gitu.url = "github:altsem/gitu";
     gitlab_due_date = {
       url = "github:ipsavitsky/gitlab_due_dates";
