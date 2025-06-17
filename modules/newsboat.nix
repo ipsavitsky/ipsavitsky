@@ -1,7 +1,7 @@
 { config, ... }:
 {
   sops.secrets."newsboat/miniflux_token" = {
-    sopsFile = ../../secrets/hm.yaml;
+    sopsFile = ../secrets/hm.yaml;
   };
 
   programs.newsboat = {

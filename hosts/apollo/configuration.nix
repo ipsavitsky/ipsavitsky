@@ -76,7 +76,7 @@
   };
 
   sops = {
-    defaultSopsFile = ../../../secrets/demeter.yaml;
+    defaultSopsFile = ../../secrets/demeter.yaml;
     age.keyFile = "/home/ilya/.config/sops/age/keys.txt";
   };
 

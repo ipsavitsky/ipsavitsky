@@ -14,6 +14,6 @@
   };
 
   sops.secrets."ntfyer/config.zon" = {
-    sopsFile = ../../secrets/hm.yaml;
+    sopsFile = ../secrets/hm.yaml;
   };
 }

@@ -174,7 +174,7 @@
           };
 
           modules = [
-            ./nix/hosts/hermes/home.nix
+            ./hosts/hermes/home.nix
             sops-nix.homeManagerModules.sops
           ];
 
@@ -191,7 +191,7 @@
           };
           system = "x86_64-linux";
           modules = [
-            ./nix/hosts/hephaestus/configuration.nix
+            ./hosts/hephaestus/configuration.nix
             nixos-wsl.nixosModules.wsl
             home-manager.nixosModules.home-manager
           ];
@@ -203,7 +203,7 @@
           };
           system = "x86_64-linux";
           modules = [
-            ./nix/hosts/zeus/configuration.nix
+            ./hosts/zeus/configuration.nix
             home-manager.nixosModules.home-manager
             sops-nix.nixosModules.sops
             srvos.nixosModules.desktop
@@ -230,7 +230,7 @@
             srvos.nixosModules.mixins-nginx
             srvos.nixosModules.mixins-terminfo
             srvos.nixosModules.mixins-nix-experimental
-            ./nix/hosts/demeter/configuration.nix
+            ./hosts/demeter/configuration.nix
           ];
         };
 
@@ -245,7 +245,7 @@
             srvos.nixosModules.mixins-nginx
             srvos.nixosModules.mixins-terminfo
             srvos.nixosModules.mixins-nix-experimental
-            ./nix/hosts/apollo/configuration.nix
+            ./hosts/apollo/configuration.nix
           ];
         };
 
