@@ -109,6 +109,7 @@
     waybar.url = "github:Alexays/waybar";
     swayfx.url = "github:WillPower3309/swayfx";
     nixos-hardware.url = "github:nixos/nixos-hardware";
+    sb_mcp.url = "github:ipsavitsky/sb_mcp";
   };
 
   outputs =

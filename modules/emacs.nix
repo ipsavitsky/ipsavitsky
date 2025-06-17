@@ -1,4 +1,4 @@
-{ pkgs, inputs, ... }:
+{ pkgs, lib, inputs, ... }:
 {
   programs.emacs = {
     enable = true;
@@ -56,7 +56,7 @@
   };
 
   home.file.".config/emacs/mermaid.el".text = ''
-    (setq ob-mermaid-cli-path "${pkgs.mermaid-cli}/bin/mmdc")
+    (setq ob-mermaid-cli-path "${lib.getExe' pkgs.mermaid-cli "mmdc"}")
 
     (org-babel-do-load-languages
         'org-babel-load-languages

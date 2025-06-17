@@ -1,5 +1,6 @@
 {
   pkgs,
+  lib,
   inputs,
   ...
 }:
@@ -14,6 +15,11 @@
       status-text = "Generating";
       theme = "dracula";
       fanciness = 10;
+      mcp-servers = {
+        filesystem = {
+          command = lib.getExe' inputs.sb_mcp.packages."x86_64-linux".default "sb_mcp";
+        };
+      };
       apis = {
         ollama = {
           base-url = "http://localhost:11434/api";
