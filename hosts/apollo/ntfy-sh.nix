@@ -6,13 +6,11 @@ _: {
     "d /var/lib/ntfy-sh/attachments 0700 ntfy-sh ntfy-sh -"
   ];
 
-  networking.firewall.allowedTCPPorts = [ 4321 ];
-
   services.ntfy-sh = {
     enable = true;
     settings = {
       base-url = "https://ntfy.savitsky.dev";
-      listen-http = "0.0.0.0:4321";
+      listen-http = "127.0.0.1:4321";
       auth-file = "/var/lib/ntfy-sh/user.db";
       auth-default-access = "deny-all";
       cache-file = "/var/lib/ntfy-sh/cache.db";

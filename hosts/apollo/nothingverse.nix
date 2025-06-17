@@ -10,10 +10,8 @@
     group = "ollama";
   };
 
-  networking.firewall.allowedTCPPorts = [ 5000 ];
-
   services.nothingverse = {
     enable = true;
-    url = "http://0.0.0.0:5000";
+    url = "http://127.0.0.1:5000";
   };
 }

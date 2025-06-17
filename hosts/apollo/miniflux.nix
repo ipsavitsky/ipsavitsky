@@ -4,12 +4,10 @@
     owner = "miniflux";
   };
 
-  networking.firewall.allowedTCPPorts = [ 5678 ];
-
   services.miniflux = {
     enable = true;
     config = {
-      LISTEN_ADDR = "0.0.0.0:5678";
+      LISTEN_ADDR = "127.0.0.1:5678";
     };
     adminCredentialsFile = config.sops.secrets."miniflux/admin_creds.sh".path;
   };
