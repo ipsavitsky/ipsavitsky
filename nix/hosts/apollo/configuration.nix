@@ -18,6 +18,7 @@
     ./transmission.nix
     ./arr.nix
     ./monitoring.nix
+    ./actual.nix
   ];
 
   boot.loader.systemd-boot.enable = true;
