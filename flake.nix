@@ -108,6 +108,7 @@
     };
     waybar.url = "github:Alexays/waybar";
     swayfx.url = "github:WillPower3309/swayfx";
+    nixos-hardware.url = "github:nixos/nixos-hardware";
   };
 
   outputs =
@@ -121,6 +122,7 @@
       sops-nix,
       raspberry-pi,
       srvos,
+      nixos-hardware,
       ...
     }@inputs:
     flake-utils.lib.eachDefaultSystem (
@@ -230,6 +232,7 @@
             srvos.nixosModules.mixins-nginx
             srvos.nixosModules.mixins-terminfo
             srvos.nixosModules.mixins-nix-experimental
+            nixos-hardware.nixosModules.raspberry-pi-5
             ./hosts/demeter/configuration.nix
           ];
         };

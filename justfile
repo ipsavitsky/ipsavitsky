@@ -12,3 +12,6 @@ check_config host: (build_configuration host)
 
 configure conf: (check_config conf)
     ./result/bin/home-manager-generation switch
+
+build_sd_image host:
+	nom build .#nixosConfigurations.{{ host }}.config.system.build.sdImage

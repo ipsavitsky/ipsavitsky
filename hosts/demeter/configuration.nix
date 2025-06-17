@@ -5,6 +5,7 @@
 }:
 {
   imports = [
+    ./blocky.nix
     ./hardware-configuration.nix
   ];
 
@@ -58,11 +59,6 @@
     };
 
     fail2ban.enable = true;
-  };
-
-  sops = {
-    defaultSopsFile = ../../secrets/demeter.yaml;
-    age.keyFile = "/home/ilya/.config/sops/age/keys.txt";
   };
 
   nix.settings.trusted-users = [ "ilya" ];
