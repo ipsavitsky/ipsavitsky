@@ -194,6 +194,9 @@
             ./hosts/hermes/configuration.nix
             lanzaboote.nixosModules.lanzaboote
             home-manager.nixosModules.home-manager
+            sops-nix.nixosModules.sops
+            srvos.nixosModules.desktop
+            srvos.nixosModules.mixins-nix-experimental
             {
               nixpkgs = {
                 # cuda modules are unfree

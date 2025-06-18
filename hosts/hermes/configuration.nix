@@ -24,6 +24,7 @@
           # ../../modules/full-stack.nix
           ../../modules/stylix.nix
           inputs.sops-nix.homeManagerModules.sops
+          inputs.nix-flatpak.homeManagerModules.nix-flatpak
         ];
 
         wayland.windowManager.sway = {
