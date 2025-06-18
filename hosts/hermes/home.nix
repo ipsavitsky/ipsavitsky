@@ -19,7 +19,6 @@
   };
 
   home = {
-    stateVersion = "24.11";
     username = "ilya";
     homeDirectory = "/home/ilya";
 
