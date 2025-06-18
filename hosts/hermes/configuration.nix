@@ -21,7 +21,7 @@
       {
         imports = [
           ./home.nix
-          ../../modules/full-stack.nix
+          # ../../modules/full-stack.nix
           ../../modules/stylix.nix
           inputs.sops-nix.homeManagerModules.sops
         ];
@@ -34,11 +34,6 @@
             modifier = "Mod4";
             menu = (pkgs.lib.getExe hm-cfg.programs.fuzzel.package);
             terminal = "ghostty";
-            output = {
-              "*" = {
-                scale = "2";
-              };
-            };
             bars = [ { command = (pkgs.lib.getExe hm-cfg.programs.waybar.package); } ];
             keybindings = pkgs.lib.mkOptionDefault {
               "Mod4+l" = "exec ${pkgs.lib.getExe hm-cfg.programs.swaylock.package} -d --clock --indicator";
@@ -96,7 +91,7 @@
 
         sops.age.keyFile = "/home/ilya/.config/sops/age/keys.txt";
 
-        home.stateVersion = "24.11";
+        home.stateVersion = "25.05";
       };
     extraSpecialArgs = {
       inherit inputs;
@@ -229,5 +224,5 @@
   # this value at the release version of the first install of this system.
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "24.11"; # Did you read the comment?
+  system.stateVersion = "25.05"; # Did you read the comment?
 }

@@ -6,11 +6,6 @@
   ...
 }:
 {
-  imports = [
-    ../../modules/full-stack.nix
-    ../../modules/stylix.nix
-  ];
-
   services.flatpak = {
     packages = [
       "dev.zed.Zed"
