@@ -2,7 +2,7 @@ keys:
   - &zeus age1xhw6p6q8nv4mvuzz967tc42s5xr4p3qy0cd6eq8mjas6m9uf2s9sq9pgkf
   - &demeter age1mrh87dc9gwz096gvr7wldzxefy5j9gv8n8r4mh4ru4gtdhfw7q9qfeds99
   - &apollo age1zdf522459znfe9gaj7faakle0k03jwwzu5eny9lq76afqw27nclseelaa2
-  - &hermes age18eh6kd5cwa37j2zur2hrzr6rpnz6tj9002qrku566ejlfyw3rfxqftmdjt
+  - &hermes age1y7hx4j06hj9w4hdrfx9ynjc552xffx86mmazd7tzmdh7a965ugysfrcg4z
 creation_rules:
   - path_regex: secrets/demeter.yaml$
     key_groups:
@@ -10,6 +10,7 @@ creation_rules:
           - *zeus
           - *demeter
           - *apollo
+          - *hermes
   - path_regex: secrets/hm.yaml$
     key_groups:
       - age:

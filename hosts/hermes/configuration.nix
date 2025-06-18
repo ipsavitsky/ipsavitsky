@@ -21,7 +21,7 @@
       {
         imports = [
           ./home.nix
-          # ../../modules/full-stack.nix
+          ../../modules/full-stack.nix
           ../../modules/stylix.nix
           inputs.sops-nix.homeManagerModules.sops
           inputs.nix-flatpak.homeManagerModules.nix-flatpak
@@ -102,9 +102,7 @@
 
   # Bootloader.
   boot = {
-    loader = {
-      systemd-boot.enable = false;
-    };
+    loader.systemd-boot.enable = false;
     lanzaboote = {
       enable = true;
       pkiBundle = "/var/lib/sbctl";

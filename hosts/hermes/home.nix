@@ -13,10 +13,10 @@
   };
 
   # for some reason kde gets enabled and breaks gnome configuration when set??
-  stylix = {
-    polarity = "dark";
-    targets.kde.enable = false;
-  };
+  # stylix = {
+  #   polarity = "dark";
+  #   targets.kde.enable = false;
+  # };
 
   home = {
     username = "ilya";
