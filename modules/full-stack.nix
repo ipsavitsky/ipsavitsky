@@ -24,7 +24,7 @@
   };
 
   home.packages = with pkgs; [
-    (config.lib.nixGL.wrap localsend)
+    localsend
     pavucontrol
   ];
 }

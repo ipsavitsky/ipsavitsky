@@ -73,11 +73,6 @@
       url = "github:ipsavitsky/savitsky.dev";
       inputs.flake-utils.follows = "flake-utils";
     };
-    nixGL = {
-      url = "github:nix-community/nixGL";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.flake-utils.follows = "flake-utils";
-    };
     yazi = {
       url = "github:sxyazi/yazi";
       inputs.flake-utils.follows = "flake-utils";
@@ -110,6 +105,7 @@
     swayfx.url = "github:WillPower3309/swayfx";
     nixos-hardware.url = "github:nixos/nixos-hardware";
     sb_mcp.url = "github:ipsavitsky/sb_mcp";
+    lanzaboote.url = "github:nix-community/lanzaboote";
   };
 
   outputs =
@@ -124,6 +120,7 @@
       raspberry-pi,
       srvos,
       nixos-hardware,
+      lanzaboote,
       ...
     }@inputs:
     flake-utils.lib.eachDefaultSystem (
@@ -188,6 +185,24 @@
       };
 
       nixosConfigurations = {
+        hermes = nixpkgs.lib.nixosSystem {
+          specialArgs = {
+            inherit inputs;
+          };
+          system = "x86_64-linux";
+          modules = [
+            ./hosts/hermes/configuration.nix
+            lanzaboote.nixosModules.lanzaboote
+            home-manager.nixosModules.home-manager
+            {
+              nixpkgs = {
+                # cuda modules are unfree
+                config.allowUnfree = true;
+              };
+            }
+          ];
+        };
+
         hephaestus = nixpkgs.lib.nixosSystem {
           specialArgs = {
             inherit inputs;

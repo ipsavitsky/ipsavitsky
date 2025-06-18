@@ -20,6 +20,7 @@
       in
       {
         imports = [
+          ./home.nix
           ../../modules/full-stack.nix
           ../../modules/stylix.nix
           inputs.sops-nix.homeManagerModules.sops
@@ -107,26 +108,18 @@
   boot = {
     loader = {
       systemd-boot.enable = false;
-      grub = {
-        enable = true;
-        device = "nodev";
-        useOSProber = true;
-        efiSupport = true;
-        gfxmodeEfi = "1280x720";
-      };
-      efi = {
-        canTouchEfiVariables = true;
-        efiSysMountPoint = "/boot/efi";
-      };
     };
-
+    lanzaboote = {
+      enable = true;
+      pkiBundle = "/var/lib/sbctl";
+    };
     binfmt.emulatedSystems = [
       "aarch64-linux"
     ];
   };
 
   networking = {
-    hostName = "zeus";
+    hostName = "hermes";
     networkmanager.enable = true;
   };
 
@@ -221,6 +214,7 @@
       nmap
       transmission_4-qt
       nvtopPackages.nvidia
+      sbctl
 
       nom.packages.${pkgs.system}.default
       statix.packages.${pkgs.system}.default
@@ -235,5 +229,5 @@
   # this value at the release version of the first install of this system.
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "24.05"; # Did you read the comment?
+  system.stateVersion = "24.11"; # Did you read the comment?
 }

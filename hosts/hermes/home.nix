@@ -25,8 +25,8 @@
 
   home = {
     stateVersion = "24.11";
-    username = "ilyasavitsky";
-    homeDirectory = "/home/ilyasavitsky";
+    username = "ilya";
+    homeDirectory = "/home/ilya";
 
     packages =
       with pkgs;
@@ -47,22 +47,14 @@
         bash-language-server
         renovate
         mdbook
-        (config.lib.nixGL.wrap quasselClient)
+        quasselClient
 
         charmbracelet-nur.packages.${pkgs.system}.vhs
         charmbracelet-nur.packages.${pkgs.system}.gum
         nom.packages.${pkgs.system}.default
         statix.packages.${pkgs.system}.default
         deadnix.packages.${pkgs.system}.default
-        nixGL.packages.${pkgs.system}.nixGLIntel
       ];
-  };
-
-  nixGL = {
-    inherit (inputs.nixGL) packages;
-    defaultWrapper = "mesa";
-    offloadWrapper = "mesa";
-    installScripts = [ "mesa" ];
   };
 
   programs = {
@@ -89,5 +81,5 @@
     };
   };
 
-  sops.age.keyFile = "/home/ilyasavitsky/.config/sops/age/keys.txt";
+  sops.age.keyFile = "/home/ilya/.config/sops/age/keys.txt";
 }
