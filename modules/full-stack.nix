@@ -8,7 +8,6 @@
     ./cli-stack.nix
     ./hm/kitty.nix
     ./hm/ghostty.nix
-    ./hm/dconf.nix
     ./hm/zed.nix
     ./hm/ntfyer.nix
 
