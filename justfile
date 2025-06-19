@@ -7,11 +7,5 @@ switch host: (build_system host)
 build_configuration conf:
     nom build .#homeConfigurations.{{ conf }}.activationPackage
 
-check_config host: (build_configuration host)
-    nvd diff ~/.local/state/home-manager/gcroots/current-home ./result
-
-configure conf: (check_config conf)
-    ./result/bin/home-manager-generation switch
-
 build_sd_image host:
     nom build .#nixosConfigurations.{{ host }}.config.system.build.sdImage
