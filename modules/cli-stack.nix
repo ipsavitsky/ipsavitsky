@@ -5,23 +5,23 @@
 }:
 {
   imports = [
-    ./bash.nix
-    ./bat.nix
-    ./direnv.nix
-    ./emacs.nix
-    ./fzf.nix
-    ./git.nix
-    ./zellij.nix
-    ./mods.nix
-    ./helix.nix
-    ./starship.nix
-    ./index.nix
-    ./newsboat.nix
-    ./fd.nix
-    ./ripgrep.nix
-    ./btop.nix
-    ./pandoc.nix
-    ./yazi.nix
+    ./hm/bash.nix
+    ./hm/bat.nix
+    ./hm/direnv.nix
+    ./hm/emacs.nix
+    ./hm/fzf.nix
+    ./hm/git.nix
+    ./hm/zellij.nix
+    ./hm/mods.nix
+    ./hm/helix.nix
+    ./hm/starship.nix
+    ./hm/index.nix
+    ./hm/newsboat.nix
+    ./hm/fd.nix
+    ./hm/ripgrep.nix
+    ./hm/btop.nix
+    ./hm/pandoc.nix
+    ./hm/yazi.nix
   ];
 
   home.packages =

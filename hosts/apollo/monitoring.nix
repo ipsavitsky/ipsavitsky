@@ -1,6 +1,4 @@
-{
-  ...
-}:
+_:
 
 let
   prometheusPort = 9098;

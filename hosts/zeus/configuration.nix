@@ -14,91 +14,23 @@
   ];
 
   home-manager = {
-    users.ilya =
-      let
-        hm-cfg = config.home-manager.users.ilya;
-      in
-      {
-        imports = [
-          ../../modules/full-stack.nix
-          ../../modules/stylix.nix
-          inputs.sops-nix.homeManagerModules.sops
-        ];
+    users.ilya = {
+      imports = [
+        ../../modules/full-stack.nix
+        ../../modules/hm/stylix.nix
+        ../../modules/hm/sway.nix
+        inputs.sops-nix.homeManagerModules.sops
+      ];
 
-        wayland.windowManager.sway = {
-          enable = true;
-          package = null;
-          wrapperFeatures.gtk = true; # Fixes common issues with GTK 3 apps
-          config = {
-            modifier = "Mod4";
-            menu = (pkgs.lib.getExe hm-cfg.programs.fuzzel.package);
-            terminal = "ghostty";
-            output = {
-              "*" = {
-                scale = "2";
-              };
-            };
-            bars = [ { command = (pkgs.lib.getExe hm-cfg.programs.waybar.package); } ];
-            keybindings = pkgs.lib.mkOptionDefault {
-              "Mod4+l" = "exec ${pkgs.lib.getExe hm-cfg.programs.swaylock.package} -d --clock --indicator";
-            };
-          };
-        };
+      wayland.windowManager.sway.config.output."*".scale = "2";
 
-        programs = {
-          waybar = {
-            enable = true;
-            package = inputs.waybar.packages."x86_64-linux".default;
-          };
-          fuzzel.enable = true;
-          swaylock = {
-            enable = true;
-            package = inputs.wayland-overlay.packages."x86_64-linux".swaylock-effects;
-          };
-        };
+      sops.age.keyFile = "/home/ilya/.config/sops/age/keys.txt";
 
-        services = {
-          mako = {
-            enable = true;
-            package = inputs.wayland-overlay.packages."x86_64-linux".mako;
-            settings = {
-              actions = true;
-              icons = true;
-              ignore-timout = false;
-              default-timeout = 10;
-              markup = true;
-            };
-          };
-          swayidle = {
-            package = inputs.wayland-overlay.packages."x86_64-linux".swayidle;
-            enable = true;
-            extraArgs = [ "-d" ];
-            timeouts =
-              let
-                swaylock-pkg = pkgs.lib.getExe hm-cfg.programs.swaylock.package;
-                swaymsg-pkg = pkgs.lib.getExe' config.programs.sway.package "swaymsg";
-                lock-timout = 5 * 60;
-              in
-              [
-                {
-                  timeout = lock-timout;
-                  command = "${swaylock-pkg} -d --clock --indicator";
-                }
-                {
-                  timeout = lock-timout + 20;
-                  command = "${swaymsg-pkg} 'output * dpms off'";
-                  resumeCommand = "${swaymsg-pkg} 'output * dpms on'";
-                }
-              ];
-          };
-        };
-
-        sops.age.keyFile = "/home/ilya/.config/sops/age/keys.txt";
-
-        home.stateVersion = "24.11";
-      };
+      home.stateVersion = "24.11";
+    };
     extraSpecialArgs = {
       inherit inputs;
+      upper_config = config;
     };
     useGlobalPkgs = true;
   };

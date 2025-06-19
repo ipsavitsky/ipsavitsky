@@ -167,23 +167,6 @@
       }
     )
     // {
-      homeConfigurations = {
-        hermes = home-manager.lib.homeManagerConfiguration {
-          pkgs = import nixpkgs {
-            system = "x86_64-linux";
-          };
-
-          modules = [
-            ./hosts/hermes/home.nix
-            sops-nix.homeManagerModules.sops
-          ];
-
-          extraSpecialArgs = {
-            inherit inputs;
-          };
-        };
-      };
-
       nixosConfigurations = {
         hermes = nixpkgs.lib.nixosSystem {
           specialArgs = {

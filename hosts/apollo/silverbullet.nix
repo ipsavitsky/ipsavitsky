@@ -6,7 +6,7 @@
 
   services.silverbullet = {
     enable = true;
-    package = pkgs.silverbullet.overrideAttrs (oldAttrs: rec {
+    package = pkgs.silverbullet.overrideAttrs (_oldAttrs: rec {
       version = "0.10.4";
       src = pkgs.fetchurl {
         url = "https://github.com/silverbulletmd/silverbullet/releases/download/${version}/silverbullet.js";
