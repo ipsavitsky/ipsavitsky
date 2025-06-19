@@ -10,7 +10,7 @@
     package = inputs.charmbracelet-nur.packages.${pkgs.system}.mods;
     enableBashIntegration = true;
     settings = {
-      default-model = "gemma3:12b";
+      default-model = "qwen3:14b";
       quiet = false;
       status-text = "Generating";
       theme = "dracula";
@@ -24,10 +24,7 @@
         ollama = {
           base-url = "http://localhost:11434/api";
           models = {
-            "llama3.2" = {
-              max-input-chars = 650000;
-            };
-            "gemma3:12b" = {
+            "qwen3:14b" = {
               max-input-chars = 650000;
             };
           };
