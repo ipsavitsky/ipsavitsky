@@ -22,6 +22,12 @@ in
       keybindings = pkgs.lib.mkOptionDefault {
         "Mod4+l" = "exec ${pkgs.lib.getExe swaylock_package} -d --clock --indicator";
       };
+      input = {
+        "type:keyboard" = {
+          xkb_layout = "gb,us";
+          xkb_options = "grp:win_space_toggle";
+        };
+      };
     };
   };
 
@@ -48,7 +54,7 @@ in
         actions = true;
         icons = true;
         ignore-timeout = false;
-        default-timeout = 10;
+        # default-timeout = 10 * 1000;
         markup = true;
       };
     };

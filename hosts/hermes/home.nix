@@ -23,6 +23,71 @@
       ];
   };
 
+  services = {
+    kanshi = {
+      enable = true;
+      package = inputs.wayland-overlay.packages.x86_64-linux.kanshi;
+      settings = [
+        {
+          output = {
+            alias = "builtinMonitor";
+            criteria = "eDP-1";
+            mode = "1920x1200@60.001Hz";
+            position = "0,0";
+          };
+        }
+        {
+          output = {
+            alias = "leftPhillips";
+            criteria = "DP-5";
+            mode = "1920x1080@60Hz";
+            position = "0,0";
+          };
+        }
+        {
+          output = {
+            alias = "rightPhillips";
+            criteria = "DP-6";
+            mode = "1920x1080@60Hz";
+            position = "1080,0";
+          };
+        }
+        {
+          profile = {
+            name = "default";
+            outputs = [
+              {
+                criteria = "$builtinMonitor";
+                status = "enable";
+              }
+            ];
+          };
+        }
+        {
+          profile = {
+            name = "docked";
+            outputs = [
+              {
+                criteria = "$builtinMonitor";
+                status = "disable";
+              }
+              {
+                criteria = "$leftPhillips";
+                position = "0,0";
+                status = "enable";
+              }
+              {
+                criteria = "$rightPhillips";
+                position = "1920,0";
+                status = "enable";
+              }
+            ];
+          };
+        }
+      ];
+    };
+  };
+
   programs = {
     k9s = {
       enable = true;
