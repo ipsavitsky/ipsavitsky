@@ -1,12 +1,8 @@
-{
-  pkgs,
-  inputs,
-  ...
-}:
-{
+_: {
   programs.zed-editor = {
     enable = true;
-    package = inputs.zed.packages.${pkgs.system}.default;
+    # this does not build for some reason
+    # package = inputs.zed.packages.${pkgs.system}.default;
     extensions = [
       "nix"
       "rust"

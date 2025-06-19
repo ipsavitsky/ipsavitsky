@@ -32,7 +32,6 @@
       inherit inputs;
       upper_config = config;
     };
-    useGlobalPkgs = true;
   };
 
   # Bootloader.

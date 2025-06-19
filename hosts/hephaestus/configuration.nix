@@ -18,7 +18,6 @@
     extraSpecialArgs = {
       inherit inputs;
     };
-    useGlobalPkgs = true;
   };
 
   wsl = {

@@ -1624,18 +1624,15 @@
     },
     "nixpkgs_34": {
       "locked": {
-        "lastModified": 1737885589,
-        "narHash": "sha256-Zf0hSrtzaM1DEz8//+Xs51k/wdSajticVrATqDrfQjg=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "852ff1d9e153d8875a83602e03fdef8a63f0ecf8",
-        "type": "github"
+        "lastModified": 315532800,
+        "narHash": "sha256-G8NlvWGtbHDXaCFizKerV0hTrpwBZf3XlMrKwZHeJU8=",
+        "rev": "5395fb3ab3f97b9b7abca147249fa2e8ed27b192",
+        "type": "tarball",
+        "url": "https://releases.nixos.org/nixpkgs/nixpkgs-25.11pre816812.5395fb3ab3f9/nixexprs.tar.xz"
       },
       "original": {
-        "owner": "NixOS",
-        "ref": "nixos-unstable",
-        "repo": "nixpkgs",
-        "type": "github"
+        "type": "tarball",
+        "url": "https://channels.nixos.org/nixpkgs-unstable/nixexprs.tar.xz"
       }
     },
     "nixpkgs_4": {
@@ -3127,15 +3124,15 @@
         "rust-overlay": "rust-overlay_6"
       },
       "locked": {
-        "lastModified": 1739481645,
-        "narHash": "sha256-oifqcaGlHND0hJSNJ5eLijNSTr1NCb7vO7agZpyVnxY=",
-        "owner": "danielgafni",
+        "lastModified": 1750323360,
+        "narHash": "sha256-ij8qDfeIheOHJ5Qp2znFd1HaaYSWDJpbUG5kO4qw1GA=",
+        "owner": "zed-industries",
         "repo": "zed",
-        "rev": "673f7e3e2685e28638862f7650b6b7fda675eb1d",
+        "rev": "dec7baeb97d3676f38eeb74e82448a9327f2ff21",
         "type": "github"
       },
       "original": {
-        "owner": "danielgafni",
+        "owner": "zed-industries",
         "repo": "zed",
         "type": "github"
       }

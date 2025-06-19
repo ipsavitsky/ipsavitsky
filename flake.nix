@@ -42,8 +42,7 @@
       url = "github:ghostty-org/ghostty";
       inputs.flake-utils.follows = "flake-utils";
     };
-    # not using the original repo because of https://github.com/zed-industries/zed/issues/22098
-    zed.url = "github:danielgafni/zed";
+    zed.url = "github:zed-industries/zed";
     vulnix.url = "github:nix-community/vulnix";
     deadnix = {
       url = "github:astro/deadnix";
@@ -284,6 +283,7 @@
       "https://helix.cachix.org"
       "https://danielgafni.cachix.org"
       "https://gitu.cachix.org"
+      "https://zed.cachix.org"
     ];
     extra-trusted-public-keys = [
       "ghostty.cachix.org-1:QB389yTa6gTyneehvqG58y0WnHjQOqgnA+wBnpWWxns="
@@ -292,6 +292,7 @@
       "helix.cachix.org-1:ejp9KQpR1FBI2onstMQ34yogDm4OgU2ru6lIwPvuCVs="
       "danielgafni.cachix.org-1:ZdXJoJEqeiGGOf/MtAiocqj7/vvFbA2MWFVwopJ2WQM="
       "gitu.cachix.org-1:iUIaNys1l3W1LF/M8OXzaTl7N/OinGOlzdUJUSc+5eY="
+      "zed.cachix.org-1:/pHQ6dpMsAZk2DiP4WCL0p9YDNKWj2Q5FL20bNmw1cU="
     ];
   };
 }

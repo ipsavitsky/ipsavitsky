@@ -31,7 +31,6 @@
       inherit inputs;
       upper_config = config;
     };
-    useGlobalPkgs = true;
   };
 
   # Bootloader.
@@ -107,7 +106,7 @@
       modesetting.enable = true;
       powerManagement = {
         enable = true;
-        finegrained = true;
+        finegrained = false;
       };
       open = true;
       nvidiaSettings = true;
