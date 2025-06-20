@@ -8,6 +8,9 @@ _: {
       "rust"
       "python"
       "bash"
+      "go"
+      "zig"
+      "d"
     ];
     userSettings = {
       telemetry.metrics = false;
@@ -16,7 +19,7 @@ _: {
         "!nixd"
       ];
       load_direnv = "shell_hook";
-      base_keymap = "Emacs";
+      # base_keymap = "Emacs";
       # show_whitespaces = "all";
       language_models = {
         ollama = {
