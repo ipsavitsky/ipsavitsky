@@ -39,7 +39,7 @@
         {
           output = {
             alias = "leftPhillips";
-            criteria = "DP-5";
+            criteria = "Philips Consumer Electronics Company PHL 243V5 UK01750002520";
             mode = "1920x1080@60Hz";
             position = "0,0";
           };
@@ -47,7 +47,7 @@
         {
           output = {
             alias = "rightPhillips";
-            criteria = "DP-6";
+            criteria = "Philips Consumer Electronics Company PHL 243V5 UK01750002509";
             mode = "1920x1080@60Hz";
             position = "1080,0";
           };
