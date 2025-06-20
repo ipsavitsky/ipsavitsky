@@ -13,12 +13,13 @@ in
   wayland.windowManager.sway = {
     enable = true;
     package = null;
+    systemd.enable = true;
     wrapperFeatures.gtk = true;
     config = {
       modifier = "Mod4";
       menu = pkgs.lib.getExe fuzzel_package;
       terminal = "ghostty";
-      bars = [ { command = pkgs.lib.getExe waybar_package; } ];
+      bars = [ ];
       keybindings = pkgs.lib.mkOptionDefault {
         "Mod4+l" = "exec ${pkgs.lib.getExe swaylock_package} -d --clock --indicator";
       };
@@ -35,6 +36,10 @@ in
     waybar = {
       enable = true;
       package = waybar_package;
+      systemd = {
+        enable = true;
+        target = "sway-session.target";
+      };
     };
     fuzzel = {
       enable = true;
@@ -60,6 +65,7 @@ in
     };
     swayidle = {
       package = inputs.wayland-overlay.packages."x86_64-linux".swayidle;
+      systemdTarget = "sway-session.target";
       enable = true;
       extraArgs = [ "-d" ];
       timeouts =
