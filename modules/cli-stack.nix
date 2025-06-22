@@ -46,5 +46,6 @@
       charmbracelet-nur.packages.${pkgs.system}.glow
       charmbracelet-nur.packages.${pkgs.system}.melt
       pomidor.packages.${pkgs.system}.default
+      zemon.packages.${pkgs.system}.default
     ];
 }
