@@ -180,6 +180,8 @@
             sops-nix.nixosModules.sops
             srvos.nixosModules.desktop
             srvos.nixosModules.mixins-nix-experimental
+            # this a p14s gen4 but gen 3 is close enough
+            nixos-hardware.nixosModules.lenovo-thinkpad-p14s-intel-gen3
             {
               nixpkgs = {
                 # cuda modules are unfree
