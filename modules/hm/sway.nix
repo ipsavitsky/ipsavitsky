@@ -28,6 +28,9 @@ in
           xkb_layout = "gb,us";
           xkb_options = "grp:win_space_toggle";
         };
+        "ELAN0676:00 04F3:3195 Touchpad" = {
+          natural_scroll = "enable";
+        };
       };
     };
   };
