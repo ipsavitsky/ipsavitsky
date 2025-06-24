@@ -15,6 +15,7 @@
       status-text = "Generating";
       theme = "dracula";
       fanciness = 10;
+      topp = 1;
       mcp-servers = {
         filesystem = {
           command = lib.getExe' inputs.sb_mcp.packages."x86_64-linux".default "sb_mcp";
@@ -44,7 +45,7 @@
         google = {
           api-key-env = "GOOGLE_API_KEY";
           models = {
-            "gemini-2.5-flash-latest" = {
+            "gemini-2.5-flash" = {
               aliases = [
                 "gemini"
               ];
