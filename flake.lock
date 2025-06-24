@@ -2512,11 +2512,11 @@
         "uv2nix": "uv2nix_2"
       },
       "locked": {
-        "lastModified": 1750717391,
-        "narHash": "sha256-kd78EwXA11vWlpU0qDrxELTUk4mcDws1KNWBYQ/85p8=",
+        "lastModified": 1750776914,
+        "narHash": "sha256-IKJKFaskKAhSTfEhMwaWnYf3Yox1iPDhcvQ/CabU4CY=",
         "owner": "ipsavitsky",
         "repo": "sb_mcp",
-        "rev": "41c23c1d36e3802351743972765b5175bce911ba",
+        "rev": "eab884e31b1c89c4ffb79f527f2a36d26e0dc48c",
         "type": "github"
       },
       "original": {
