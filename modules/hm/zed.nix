@@ -1,4 +1,9 @@
-{ pkgs, inputs, ... }:
+{
+  pkgs,
+  inputs,
+  lib,
+  ...
+}:
 {
   programs.zed-editor = {
     enable = true;
@@ -33,6 +38,16 @@
               supports_thinking = true;
             }
           ];
+        };
+      };
+      context_servers = {
+        silverbullet = {
+          source = "custom";
+          command = {
+            path = lib.getExe' inputs.sb_mcp.packages."x86_64-linux".default "sb_mcp";
+            args = [ ];
+            env = { };
+          };
         };
       };
     };
