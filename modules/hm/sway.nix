@@ -22,6 +22,7 @@ in
       bars = [ ];
       keybindings = pkgs.lib.mkOptionDefault {
         "Mod4+l" = "exec ${pkgs.lib.getExe swaylock_package} -d --clock --indicator";
+        "Print" = "exec ${pkgs.lib.getExe inputs.script-pile.packages."x86_64-linux".wl-screenshot}";
       };
       input = {
         "type:keyboard" = {
@@ -90,4 +91,8 @@ in
         ];
     };
   };
+
+  home.packages = [
+    pkgs.wl-clipboard
+  ];
 }

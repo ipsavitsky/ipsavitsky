@@ -1,4 +1,4 @@
-{ pkgs, config, ... }: # Added 'config' to the arguments
+{ pkgs, config, ... }:
 
 {
   sops.secrets."bash/api_keys.sh" = {

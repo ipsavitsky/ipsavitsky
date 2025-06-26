@@ -86,6 +86,7 @@
     extraOptions = [
       "--unsupported-gpu"
     ];
+    extraPackages = [ ];
   };
 
   services = {

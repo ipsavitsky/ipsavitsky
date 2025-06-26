@@ -2555,11 +2555,11 @@
         "treefmt-nix": "treefmt-nix_6"
       },
       "locked": {
-        "lastModified": 1750719024,
-        "narHash": "sha256-VAB/sVPtUUQygZBlXjdZUAeNeEDVcDg4zxL2LK7dJD8=",
+        "lastModified": 1750876555,
+        "narHash": "sha256-3MJJwpUp5c2DUpDDZ6vKyiPBrAmgL4z7U81dYQqjgEo=",
         "owner": "ipsavitsky",
         "repo": "script_pile",
-        "rev": "8fa04624919b9b3a5f267f1361972f5087da6cea",
+        "rev": "5ae87f304f2265f9b1afd831af327ebb8f88e3cd",
         "type": "github"
       },
       "original": {
