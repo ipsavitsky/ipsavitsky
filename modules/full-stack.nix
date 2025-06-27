@@ -25,5 +25,6 @@
     localsend
     pavucontrol
     inputs.script-pile.packages."x86_64-linux".wl-screenshot
+    inputs.wdisplays.packages."x86_64-linux".default
   ];
 }

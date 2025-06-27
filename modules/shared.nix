@@ -1,9 +1,6 @@
 { pkgs, ... }:
 {
   environment.systemPackages = with pkgs; [
-    xclip
-    file
-    wget
     home-manager
   ];
 

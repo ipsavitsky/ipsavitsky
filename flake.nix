@@ -106,6 +106,7 @@
     sb_mcp.url = "github:ipsavitsky/sb_mcp";
     lanzaboote.url = "github:nix-community/lanzaboote";
     zemon.url = "github:sunng87/zemon";
+    wdisplays.url = "github:ipsavitsky/wdisplays";
   };
 
   outputs =

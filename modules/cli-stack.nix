@@ -38,6 +38,8 @@
       asciinema
       difftastic
       mani
+      file
+      wget
 
       gitu.packages.${pkgs.system}.default
       ploc.packages.${pkgs.system}.default
