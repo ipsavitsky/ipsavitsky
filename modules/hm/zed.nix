@@ -16,6 +16,7 @@
       "go"
       "zig"
       "d"
+      "svelte"
     ];
     userSettings = {
       telemetry.metrics = false;
