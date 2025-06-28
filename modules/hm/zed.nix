@@ -25,8 +25,6 @@
         "!nixd"
       ];
       load_direnv = "shell_hook";
-      # base_keymap = "Emacs";
-      # show_whitespaces = "all";
       language_models = {
         ollama = {
           api_url = "http://localhost:11434";

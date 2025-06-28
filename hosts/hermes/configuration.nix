@@ -70,8 +70,7 @@
 
   programs.sway = {
     enable = true;
-    # package = inputs.swayfx.packages.${pkgs.system}.default;
-    package = pkgs.swayfx;
+    package = pkgs.sway;
     extraOptions = [
       "--unsupported-gpu"
     ];

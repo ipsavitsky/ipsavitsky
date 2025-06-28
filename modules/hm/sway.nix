@@ -8,6 +8,7 @@ let
   fuzzel_package = pkgs.fuzzel;
   waybar_package = inputs.waybar.packages."x86_64-linux".default;
   swaylock_package = inputs.wayland-overlay.packages."x86_64-linux".swaylock-effects;
+  shotman_package = inputs.wayland-overlay.packages.${pkgs.system}.shotman;
 in
 {
   wayland.windowManager.sway = {
@@ -22,7 +23,9 @@ in
       bars = [ ];
       keybindings = pkgs.lib.mkOptionDefault {
         "Mod4+l" = "exec ${pkgs.lib.getExe swaylock_package} -d --clock --indicator";
-        "Print" = "exec ${pkgs.lib.getExe inputs.script-pile.packages."x86_64-linux".wl-screenshot}";
+        "Print" = "exec ${pkgs.lib.getExe shotman_package} -c region -C";
+        "Shift+Print" = "exec ${pkgs.lib.getExe shotman_package} -c window -C";
+        "Ctrl+Shift+Print" = "exec ${pkgs.lib.getExe shotman_package} -c output -C";
       };
       input = {
         "type:keyboard" = {
@@ -90,9 +93,17 @@ in
           }
         ];
     };
+    wlsunset = {
+      enable = true;
+      package = inputs.wayland-overlay.packages."x86_64-linux".wlsunset;
+      sunrise = "05:00";
+      sunset = "22:00";
+    };
   };
 
   home.packages = [
-    pkgs.wl-clipboard
+    inputs.wayland-overlay.packages.${pkgs.system}.wl-clipboard
+    inputs.wayland-overlay.packages.${pkgs.system}.wlay
+    inputs.wayland-overlay.packages.${pkgs.system}.shotman
   ];
 }
