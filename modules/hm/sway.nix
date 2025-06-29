@@ -23,9 +23,9 @@ in
       bars = [ ];
       keybindings = pkgs.lib.mkOptionDefault {
         "Mod4+l" = "exec ${pkgs.lib.getExe swaylock_package} -d --clock --indicator";
-        "Print" = "exec ${pkgs.lib.getExe shotman_package} -c region -C";
-        "Shift+Print" = "exec ${pkgs.lib.getExe shotman_package} -c window -C";
-        "Ctrl+Shift+Print" = "exec ${pkgs.lib.getExe shotman_package} -c output -C";
+        "Print" = "exec ${pkgs.lib.getExe' shotman_package "shotman"} -c region -C";
+        "Shift+Print" = "exec ${pkgs.lib.getExe' shotman_package "shotman"} -c window -C";
+        "Ctrl+Shift+Print" = "exec ${pkgs.lib.getExe' shotman_package "shotman"} -c output -C";
       };
       input = {
         "type:keyboard" = {
