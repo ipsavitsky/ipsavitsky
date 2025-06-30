@@ -98,6 +98,7 @@
       ];
     };
     printing.enable = true;
+    pcscd.enable = true;
   };
 
   hardware = {
