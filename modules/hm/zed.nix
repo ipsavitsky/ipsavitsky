@@ -17,6 +17,7 @@
       "zig"
       "d"
       "svelte"
+      "toml"
     ];
     userSettings = {
       telemetry.metrics = false;
