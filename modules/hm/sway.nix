@@ -169,6 +169,12 @@ in
     };
   };
 
+  home.pointerCursor = {
+    name = "Simp1e";
+    package = pkgs.simp1e-cursors;
+    # size = 24;
+  };
+
   home.packages = [
     inputs.wayland-overlay.packages.${pkgs.system}.wl-clipboard
     inputs.wayland-overlay.packages.${pkgs.system}.wlay
