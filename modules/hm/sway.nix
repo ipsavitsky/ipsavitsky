@@ -71,8 +71,13 @@ in
             "cpu"
             # "memory"
             "battery"
+            "disk"
             "clock"
           ];
+
+          "sway/window" = {
+            swap-icon-label = true;
+          };
 
           "pulseaudio/slider" = {
             min = 0;
@@ -100,6 +105,10 @@ in
 
           battery = {
             format = "bat:{capacity}%";
+          };
+
+          disk = {
+            format = "disk:{percentage_used}% ({used}/{free})";
           };
         };
       };
