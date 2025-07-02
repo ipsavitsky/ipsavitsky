@@ -21,6 +21,7 @@
     ];
     userSettings = {
       telemetry.metrics = false;
+      format_on_save = "off";
       languages.Nix.language_servers = [
         "nil"
         "!nixd"
