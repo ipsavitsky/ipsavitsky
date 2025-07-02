@@ -1,5 +1,6 @@
 {
   pkgs,
+  lib,
   inputs,
   upper_config,
   ...
@@ -18,14 +19,14 @@ in
     wrapperFeatures.gtk = true;
     config = {
       modifier = "Mod4";
-      menu = pkgs.lib.getExe fuzzel_package;
+      menu = lib.getExe fuzzel_package;
       terminal = "ghostty";
       bars = [ ];
-      keybindings = pkgs.lib.mkOptionDefault {
-        "Mod4+l" = "exec ${pkgs.lib.getExe swaylock_package} -d --clock --indicator";
-        "Print" = "exec ${pkgs.lib.getExe' shotman_package "shotman"} -c region -C";
-        "Shift+Print" = "exec ${pkgs.lib.getExe' shotman_package "shotman"} -c window -C";
-        "Ctrl+Shift+Print" = "exec ${pkgs.lib.getExe' shotman_package "shotman"} -c output -C";
+      keybindings = lib.mkOptionDefault {
+        "Mod4+l" = "exec ${lib.getExe swaylock_package} -d --clock --indicator";
+        "Print" = "exec ${lib.getExe' shotman_package "shotman"} -c region -C";
+        "Shift+Print" = "exec ${lib.getExe' shotman_package "shotman"} -c window -C";
+        "Ctrl+Shift+Print" = "exec ${lib.getExe' shotman_package "shotman"} -c output -C";
       };
       input = {
         "type:keyboard" = {
@@ -39,6 +40,13 @@ in
     };
   };
 
+  stylix.targets = {
+    waybar = {
+      font = "sansSerif";
+      addCss = false;
+    };
+  };
+
   programs = {
     waybar = {
       enable = true;
@@ -47,7 +55,58 @@ in
         enable = true;
         target = "sway-session.target";
       };
+      settings = {
+        mainBar = {
+          layer = "top";
+          position = "top";
+          height = 35;
+          modules-left = [
+            "sway/workspaces"
+            "sway/mode"
+          ];
+          modules-center = [ "sway/window" ];
+          modules-right = [
+            "pulseaudio/slider"
+            "sway/language"
+            "cpu"
+            # "memory"
+            "battery"
+            "clock"
+          ];
+
+          "pulseaudio/slider" = {
+            min = 0;
+            max = 100;
+            orientation = "horizontal";
+          };
+
+          "sway/language" = {
+            format = "{shortDescription}:{short}";
+          };
+
+          "sway/workspaces" = {
+            sort-by-number = true;
+            disable-scroll = true;
+          };
+
+          cpu = {
+            format = "cpu:{usage}%";
+          };
+
+          # this breaks waybar???
+          # memory = {
+          #   format = "mem:{usage}%";
+          # };
+
+          battery = {
+            format = "bat:{capacity}%";
+          };
+        };
+      };
+
+      style = lib.mkAfter (builtins.readFile ./waybar-confs/style.css);
     };
+
     fuzzel = {
       enable = true;
       package = fuzzel_package;
@@ -77,17 +136,17 @@ in
       extraArgs = [ "-d" ];
       timeouts =
         let
-          swaylock-pkg = pkgs.lib.getExe swaylock_package;
-          swaymsg-pkg = pkgs.lib.getExe' upper_config.programs.sway.package "swaymsg";
-          lock-timout = 5 * 60;
+          swaylock-pkg = lib.getExe swaylock_package;
+          swaymsg-pkg = lib.getExe' upper_config.programs.sway.package "swaymsg";
+          lock-timeout = 5 * 60;
         in
         [
           {
-            timeout = lock-timout;
+            timeout = lock-timeout;
             command = "${swaylock-pkg} -d --clock --indicator";
           }
           {
-            timeout = lock-timout + 20;
+            timeout = lock-timeout + 20;
             command = "${swaymsg-pkg} 'output * dpms off'";
             resumeCommand = "${swaymsg-pkg} 'output * dpms on'";
           }
