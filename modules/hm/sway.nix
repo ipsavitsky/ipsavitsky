@@ -7,8 +7,8 @@
 }:
 let
   fuzzel_package = pkgs.fuzzel;
-  waybar_package = inputs.waybar.packages."x86_64-linux".default;
-  swaylock_package = inputs.wayland-overlay.packages."x86_64-linux".swaylock-effects;
+  waybar_package = inputs.waybar.packages.${pkgs.system}.default;
+  swaylock_package = inputs.wayland-overlay.packages.${pkgs.system}.swaylock-effects;
   shotman_package = inputs.wayland-overlay.packages.${pkgs.system}.shotman;
 in
 {
@@ -108,7 +108,7 @@ in
           };
 
           disk = {
-            format = "disk:{percentage_used}% ({used}/{free})";
+            format = "disk:{percentage_used}% ({used}/{total})";
           };
         };
       };
@@ -129,7 +129,7 @@ in
   services = {
     mako = {
       enable = true;
-      package = inputs.wayland-overlay.packages."x86_64-linux".mako;
+      package = inputs.wayland-overlay.packages.${pkgs.system}.mako;
       settings = {
         actions = true;
         icons = true;
@@ -139,7 +139,7 @@ in
       };
     };
     swayidle = {
-      package = inputs.wayland-overlay.packages."x86_64-linux".swayidle;
+      package = inputs.wayland-overlay.packages.${pkgs.system}.swayidle;
       systemdTarget = "sway-session.target";
       enable = true;
       extraArgs = [ "-d" ];
@@ -163,7 +163,7 @@ in
     };
     wlsunset = {
       enable = true;
-      package = inputs.wayland-overlay.packages."x86_64-linux".wlsunset;
+      package = inputs.wayland-overlay.packages.${pkgs.system}.wlsunset;
       sunrise = "05:00";
       sunset = "22:00";
     };
