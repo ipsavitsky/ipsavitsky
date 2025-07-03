@@ -2,6 +2,7 @@
   pkgs,
   lib,
   inputs,
+  config,
   upper_config,
   ...
 }:
@@ -9,6 +10,7 @@ let
   fuzzel_package = pkgs.fuzzel;
   waybar_package = inputs.waybar.packages.${pkgs.system}.default;
   swaylock_package = inputs.wayland-overlay.packages.${pkgs.system}.swaylock-effects;
+  swaylock_config = "${lib.getExe swaylock_package} --clock --indicator";
   shotman_package = inputs.wayland-overlay.packages.${pkgs.system}.shotman;
 in
 {
@@ -23,7 +25,7 @@ in
       terminal = "ghostty";
       bars = [ ];
       keybindings = lib.mkOptionDefault {
-        "Mod4+l" = "exec ${lib.getExe swaylock_package} -d --clock --indicator";
+        "Mod4+l" = "exec ${swaylock_config}";
         "Print" = "exec ${lib.getExe' shotman_package "shotman"} -c region -C";
         "Shift+Print" = "exec ${lib.getExe' shotman_package "shotman"} -c window -C";
         "Ctrl+Shift+Print" = "exec ${lib.getExe' shotman_package "shotman"} -c output -C";
@@ -120,9 +122,13 @@ in
       enable = true;
       package = fuzzel_package;
     };
+
     swaylock = {
       enable = true;
       package = swaylock_package;
+      settings = {
+        font = config.stylix.fonts.sansSerif.name;
+      };
     };
   };
 
@@ -145,14 +151,13 @@ in
       extraArgs = [ "-d" ];
       timeouts =
         let
-          swaylock-pkg = lib.getExe swaylock_package;
           swaymsg-pkg = lib.getExe' upper_config.programs.sway.package "swaymsg";
           lock-timeout = 5 * 60;
         in
         [
           {
             timeout = lock-timeout;
-            command = "${swaylock-pkg} -d --clock --indicator";
+            command = swaylock_config;
           }
           {
             timeout = lock-timeout + 20;
