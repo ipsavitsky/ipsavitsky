@@ -17,7 +17,7 @@
       fanciness = 10;
       topp = 1;
       mcp-servers = {
-        filesystem = {
+        silverbullet = {
           command = lib.getExe' inputs.sb_mcp.packages."x86_64-linux".default "sb_mcp";
         };
       };

@@ -44,11 +44,9 @@
       context_servers = {
         silverbullet = {
           source = "custom";
-          command = {
-            path = lib.getExe' inputs.sb_mcp.packages."x86_64-linux".default "sb_mcp";
-            args = [ ];
-            env = { };
-          };
+          command = lib.getExe' inputs.sb_mcp.packages."x86_64-linux".default "sb_mcp";
+          args = [ ];
+          env = { };
         };
       };
     };
