@@ -22,6 +22,7 @@
     ./hm/btop.nix
     ./hm/pandoc.nix
     ./hm/yazi.nix
+    ./hm/pomidor.nix
   ];
 
   home.packages =
@@ -47,7 +48,6 @@
       nix-melt.packages.${pkgs.system}.default
       charmbracelet-nur.packages.${pkgs.system}.glow
       charmbracelet-nur.packages.${pkgs.system}.melt
-      pomidor.packages.${pkgs.system}.default
       zemon.packages.${pkgs.system}.default
     ];
 }
