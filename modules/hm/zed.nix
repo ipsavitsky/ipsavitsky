@@ -27,20 +27,6 @@
         "!nixd"
       ];
       load_direnv = "shell_hook";
-      language_models = {
-        ollama = {
-          api_url = "http://localhost:11434";
-          available_models = [
-            {
-              name = "qwen3:14b";
-              display_name = "qwen3 tool use";
-              max_tokens = 32768;
-              supports_tools = true;
-              supports_thinking = true;
-            }
-          ];
-        };
-      };
       context_servers = {
         silverbullet = {
           source = "custom";
