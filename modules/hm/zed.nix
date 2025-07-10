@@ -18,6 +18,8 @@
       "d"
       "svelte"
       "toml"
+      "elisp"
+      "solidity"
     ];
     userSettings = {
       telemetry.metrics = false;
@@ -30,7 +32,7 @@
       context_servers = {
         silverbullet = {
           source = "custom";
-          command = lib.getExe' inputs.sb_mcp.packages."x86_64-linux".default "sb_mcp";
+          command = lib.getExe' inputs.sb_mcp.packages.${pkgs.system}.default "sb_mcp";
           args = [ ];
           env = { };
         };

@@ -22,6 +22,7 @@
     ollama = {
       enable = true;
     };
+    v2raya.enable = true;
   };
 
   # Enable common container config files in /etc/containers

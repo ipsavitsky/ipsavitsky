@@ -112,6 +112,10 @@ in
           disk = {
             format = "disk:{percentage_used}% ({used}/{total})";
           };
+
+          clock = {
+            format = "{:%H:%M %d/%m}";
+          };
         };
       };
 
@@ -140,7 +144,6 @@ in
         actions = true;
         icons = true;
         ignore-timeout = false;
-        # default-timeout = 10 * 1000;
         markup = true;
       };
     };

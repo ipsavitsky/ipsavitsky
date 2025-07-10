@@ -18,7 +18,7 @@
       topp = 1;
       mcp-servers = {
         silverbullet = {
-          command = lib.getExe' inputs.sb_mcp.packages."x86_64-linux".default "sb_mcp";
+          command = lib.getExe' inputs.sb_mcp.packages.${pkgs.system}.default "sb_mcp";
         };
       };
       apis = {
