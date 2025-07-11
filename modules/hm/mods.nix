@@ -1,10 +1,15 @@
 {
   pkgs,
   lib,
+  config,
   inputs,
   ...
 }:
 {
+  sops.secrets."mods/silverbullet_token" = {
+    sopsFile = ../../secrets/hm.yaml;
+  };
+
   programs.mods = {
     enable = true;
     package = inputs.charmbracelet-nur.packages.${pkgs.system}.mods;
@@ -19,6 +24,12 @@
       mcp-servers = {
         silverbullet = {
           command = lib.getExe' inputs.sb_mcp.packages.${pkgs.system}.default "sb_mcp";
+          args = [
+            "--url"
+            "http://notes.savitsky.dev"
+            "--token-file"
+            config.sops.secrets."mods/silverbullet_token".path
+          ];
         };
       };
       apis = {
