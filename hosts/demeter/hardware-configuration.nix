@@ -2,6 +2,8 @@ _: {
   raspberry-pi-nix.board = "bcm2712"; # this is raspberry pi 5
 
   hardware = {
+    graphics.enable = true;
+
     raspberry-pi = {
       config = {
         all = {
@@ -28,4 +30,6 @@ _: {
       };
     };
   };
+
+  services.getty.autologinUser = "root";
 }
