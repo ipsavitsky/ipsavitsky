@@ -36,7 +36,10 @@
         ollama = {
           base-url = "http://localhost:11434/api";
           models = {
-            "qwen3:14b" = {
+            "gemma3:12b" = {
+              max-input-chars = 650000;
+            };
+            "magistral:24b" = {
               max-input-chars = 650000;
             };
           };
