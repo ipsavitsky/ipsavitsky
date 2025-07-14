@@ -34,6 +34,9 @@
         "!nixd"
       ];
       load_direnv = "shell_hook";
+      buffer_font_features = {
+        ligatures = false;
+      };
       context_servers = {
         silverbullet = {
           source = "custom";
