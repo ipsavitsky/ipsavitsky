@@ -29,6 +29,9 @@ in
         "Print" = "exec ${lib.getExe' shotman_package "shotman"} -c region -C";
         "Shift+Print" = "exec ${lib.getExe' shotman_package "shotman"} -c window -C";
         "Ctrl+Shift+Print" = "exec ${lib.getExe' shotman_package "shotman"} -c output -C";
+        "Mod4+P" = "exec ${lib.getExe' shotman_package "shotman"} -c region -C";
+        "Mod4+Shift+P" = "exec ${lib.getExe' shotman_package "shotman"} -c window -C";
+        "Mod4+Ctrl+Shift+P" = "exec ${lib.getExe' shotman_package "shotman"} -c output -C";
       };
       input = {
         "type:keyboard" = {
