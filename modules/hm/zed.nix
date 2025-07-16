@@ -25,6 +25,7 @@
       "toml"
       "elisp"
       "solidity"
+      "terraform"
     ];
     userSettings = {
       telemetry.metrics = false;
