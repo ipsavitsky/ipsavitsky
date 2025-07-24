@@ -1,6 +1,5 @@
 {
   pkgs,
-  inputs,
   ...
 }:
 {
@@ -10,16 +9,7 @@
     ./hm/ghostty.nix
     ./hm/zed.nix
     ./hm/ntfyer.nix
-
-    inputs.nix-flatpak.homeManagerModules.nix-flatpak
   ];
-
-  services.flatpak = {
-    enable = true;
-    packages = [
-      "app.zen_browser.zen"
-    ];
-  };
 
   home.packages = with pkgs; [
     localsend

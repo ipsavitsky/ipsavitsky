@@ -26,6 +26,7 @@
       "elisp"
       "solidity"
       "terraform"
+      "c#"
     ];
     userSettings = {
       telemetry.metrics = false;

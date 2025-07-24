@@ -111,6 +111,7 @@
       enable = true;
       packages = [
         "app.zen_browser.zen"
+        "com.unity.UnityHub"
       ];
     };
     printing.enable = true;
