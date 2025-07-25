@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 {
   programs.git = {
     enable = true;
@@ -10,5 +10,10 @@
       enable = true;
       display = "inline";
     };
+  };
+
+  programs.mergiraf = {
+    enable = true;
+    package = inputs.mergiraf.packages.${pkgs.system}.default;
   };
 }

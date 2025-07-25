@@ -26,7 +26,7 @@
   services = {
     kanshi = {
       enable = true;
-      package = inputs.wayland-overlay.packages.x86_64-linux.kanshi;
+      package = inputs.wayland-overlay.packages.${pkgs.system}.kanshi;
       systemdTarget = "sway-session.target";
       settings = [
         {
