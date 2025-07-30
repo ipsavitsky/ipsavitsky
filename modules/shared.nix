@@ -22,7 +22,11 @@
     ollama = {
       enable = true;
     };
-    v2raya.enable = true;
+  };
+
+  programs.nekoray = {
+    enable = true;
+    tunMode.enable = true;
   };
 
   # Enable common container config files in /etc/containers
