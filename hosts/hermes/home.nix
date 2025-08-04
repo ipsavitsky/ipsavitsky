@@ -1,5 +1,6 @@
 {
   pkgs,
+  lib,
   inputs,
   ...
 }:
@@ -22,6 +23,8 @@
         deadnix.packages.${pkgs.system}.default
       ];
   };
+
+  programs.git.userEmail = lib.mkForce "ilya.savitsky@codethink.co.uk";
 
   services = {
     kanshi = {
