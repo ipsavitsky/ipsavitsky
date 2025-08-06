@@ -103,6 +103,14 @@
     lanzaboote.url = "github:nix-community/lanzaboote";
     zemon.url = "github:sunng87/zemon";
     mergiraf.url = "git+https://codeberg.org/mergiraf/mergiraf.git?ref=main";
+    terminaltrove = {
+      url = "github:ipsavitsky/terminaltrove-flake";
+      inputs.flake-utils.follows = "flake-utils";
+    };
+    nix-ai-tools = {
+      url = "github:numtide/nix-ai-tools";
+      inputs.treefmt-nix.follows = "treefmt-nix";
+    };
   };
 
   outputs =

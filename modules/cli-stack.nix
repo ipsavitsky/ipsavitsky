@@ -49,5 +49,8 @@
       charmbracelet-nur.packages.${pkgs.system}.glow
       charmbracelet-nur.packages.${pkgs.system}.melt
       zemon.packages.${pkgs.system}.default
+      nix-ai-tools.packages.${pkgs.system}.crush
+      nix-ai-tools.packages.${pkgs.system}.opencode
+      terminaltrove.packages.${pkgs.system}.cloctui
     ];
 }
