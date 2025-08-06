@@ -8,7 +8,7 @@
     enable = true;
     extraConfig = ''
       urls-source "miniflux"
-      miniflux-url "https://flux.savitsky.dev"
+      miniflux-url "http://flux.savitsky.dev"
       miniflux-tokenfile "${config.sops.secrets."newsboat/miniflux_token".path}"
     '';
   };
