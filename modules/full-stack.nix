@@ -14,6 +14,5 @@
   home.packages = with pkgs; [
     localsend
     pavucontrol
-    firefox
   ];
 }
