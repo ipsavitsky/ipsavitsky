@@ -2710,11 +2710,11 @@
         "typst": "typst"
       },
       "locked": {
-        "lastModified": 1754558563,
-        "narHash": "sha256-fnPKl5aE2Xj/9hf6J9vX9Ma6//wtMdKS/MXmgpkek10=",
+        "lastModified": 1755162675,
+        "narHash": "sha256-tTNR1vrODd5dm69rXkUifcNfgWvJ8c61JxJzMfx0Yhk=",
         "owner": "ipsavitsky",
         "repo": "savitsky.dev",
-        "rev": "ad894819d0d4b4d854d4134d33706a9f0b7c9f90",
+        "rev": "46fd9641e8215020a03577be635d7e940f497796",
         "type": "github"
       },
       "original": {
@@ -3300,11 +3300,11 @@
         "systems": "systems_5"
       },
       "locked": {
-        "lastModified": 1754487086,
-        "narHash": "sha256-ZWWTfI0Y7RynKERss1c2zHeKQpnSi9nY5yLGNTN2Fug=",
+        "lastModified": 1755087144,
+        "narHash": "sha256-RFPwg0/ZLJz/MPyDdMvryG6SYUx9D4ZLIeEoWOOE0cA=",
         "owner": "typst",
         "repo": "typst",
-        "rev": "f38a2e9b9d5d857d67d6f9f172faff53f83d465c",
+        "rev": "805fb24ca4827490fef5e14dd5bf73c984b2fac1",
         "type": "github"
       },
       "original": {
