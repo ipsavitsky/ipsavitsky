@@ -111,6 +111,7 @@
       url = "github:numtide/nix-ai-tools";
       inputs.treefmt-nix.follows = "treefmt-nix";
     };
+    wiremix.url = "github:tsowell/wiremix";
   };
 
   outputs =
