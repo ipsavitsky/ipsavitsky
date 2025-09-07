@@ -26,6 +26,10 @@
       lockFileMaintenance.enabled = true;
       username = "Ilya's renovate bot";
       gitAuthor = "Ilya's renovate bot <renovate@savitsky.invalid>";
+      allowedCommands = [
+        "^go mod tidy$"
+        "^bash ./scripts/vendor_hash.sh --update$"
+      ];
     };
     credentials = {
       RENOVATE_TOKEN = config.sops.secrets."renovate/github_com".path;
