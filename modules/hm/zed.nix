@@ -39,6 +39,9 @@
       buffer_font_features = {
         ligatures = false;
       };
+      edit_predictions = {
+        mode = "subtle";
+      };
       context_servers = {
         silverbullet = {
           source = "custom";
