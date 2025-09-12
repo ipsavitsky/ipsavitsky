@@ -16,5 +16,6 @@
     pavucontrol
     firefox
     fractal
+    bitwarden-desktop
   ];
 }

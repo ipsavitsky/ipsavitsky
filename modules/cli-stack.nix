@@ -41,6 +41,7 @@
       mani
       file
       wget
+      bitwarden-cli
 
       gitu.packages.${pkgs.system}.default
       ploc.packages.${pkgs.system}.default
