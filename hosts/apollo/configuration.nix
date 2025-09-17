@@ -13,7 +13,7 @@
     ./ntfy-sh.nix
     ./static_page.nix
     ./silverbullet.nix
-    # ./renovate.nix
+    ./renovate.nix
     ./jellyfin.nix
     ./transmission.nix
     ./arr.nix
