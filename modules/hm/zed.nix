@@ -27,6 +27,7 @@
       "solidity"
       "terraform"
       "c#"
+      "ruby"
     ];
     userSettings = {
       telemetry.metrics = false;
