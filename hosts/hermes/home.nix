@@ -26,6 +26,14 @@
 
   programs.git.userEmail = lib.mkForce "ilya.savitsky@codethink.co.uk";
 
+  gtk = {
+    enable = true;
+    iconTheme = {
+      package = pkgs.adwaita-icon-theme;
+      name = "Adawita";
+    };
+  };
+
   services = {
     kanshi = {
       enable = true;
