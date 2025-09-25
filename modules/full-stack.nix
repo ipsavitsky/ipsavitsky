@@ -11,6 +11,14 @@
     ./hm/ntfyer.nix
   ];
 
+  gtk = {
+    enable = true;
+    iconTheme = {
+      package = pkgs.adwaita-icon-theme;
+      name = "Adawita";
+    };
+  };
+
   home.packages = with pkgs; [
     localsend
     pavucontrol
