@@ -16,6 +16,7 @@
     pavucontrol
     firefox
     fractal
+    tuba
     geary
     bitwarden-desktop
   ];
