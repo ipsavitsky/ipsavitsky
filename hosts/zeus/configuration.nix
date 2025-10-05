@@ -2,6 +2,7 @@
   pkgs,
   config,
   inputs,
+  lib,
   ...
 }:
 
@@ -21,6 +22,12 @@
         ../../modules/hm/sway.nix
         inputs.sops-nix.homeManagerModules.sops
       ];
+
+      nixpkgs.config.allowUnfreePredicate =
+        pkg:
+        builtins.elem (lib.getName pkg) [
+          "discord"
+        ];
 
       wayland.windowManager.sway.config.output."*".scale = "2";
 

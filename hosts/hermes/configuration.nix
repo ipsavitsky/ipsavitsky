@@ -2,6 +2,7 @@
   pkgs,
   config,
   inputs,
+  lib,
   ...
 }:
 
@@ -22,6 +23,12 @@
         inputs.sops-nix.homeManagerModules.sops
         inputs.nix-flatpak.homeManagerModules.nix-flatpak
       ];
+
+      nixpkgs.config.allowUnfreePredicate =
+        pkg:
+        builtins.elem (lib.getName pkg) [
+          "discord"
+        ];
 
       sops.age.keyFile = "/home/ilya/.config/sops/age/keys.txt";
 

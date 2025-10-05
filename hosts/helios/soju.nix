@@ -21,7 +21,11 @@ in
   users.users.nginx.extraGroups = [ "acme-certs" ];
 
   # Open firewall ports for IRC with TLS and HTTP (for ACME challenge)
-  networking.firewall.allowedTCPPorts = [ 80 443 6697 ];
+  networking.firewall.allowedTCPPorts = [
+    80
+    443
+    6697
+  ];
 
   # Configure soju IRC bouncer
   services.soju = {

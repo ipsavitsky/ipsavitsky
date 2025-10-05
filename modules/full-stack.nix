@@ -28,5 +28,6 @@
     tuba
     geary
     bitwarden-desktop
+    discord
   ];
 }
