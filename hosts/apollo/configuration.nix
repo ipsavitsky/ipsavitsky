@@ -18,7 +18,7 @@
     ./transmission.nix
     ./arr.nix
     ./monitoring.nix
-    ./matrix.nix
+    # ./matrix.nix
   ];
 
   boot.loader.systemd-boot.enable = true;
@@ -37,7 +37,7 @@
   };
 
   users.users = {
-    root.initialPassword = "root";
+    # root.initialPassword = "root";
     ilya = {
       isNormalUser = true;
       openssh.authorizedKeys.keys = [

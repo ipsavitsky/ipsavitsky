@@ -1,6 +1,7 @@
 {
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05";
+    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     flake-utils.url = "github:numtide/flake-utils";
     charmbracelet-nur = {
       url = "github:charmbracelet/nur";
@@ -259,6 +260,21 @@
             srvos.nixosModules.mixins-terminfo
             srvos.nixosModules.mixins-nix-experimental
             ./hosts/apollo/configuration.nix
+          ];
+        };
+
+        helios = nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          specialArgs = {
+            inherit inputs;
+          };
+          modules = [
+            sops-nix.nixosModules.sops
+            srvos.nixosModules.server
+            srvos.nixosModules.mixins-nginx
+            srvos.nixosModules.mixins-terminfo
+            srvos.nixosModules.mixins-nix-experimental
+            ./hosts/helios/configuration.nix
           ];
         };
 

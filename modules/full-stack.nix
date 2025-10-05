@@ -9,6 +9,7 @@
     ./hm/ghostty.nix
     ./hm/zed.nix
     ./hm/ntfyer.nix
+    ./hm/halloy.nix
   ];
 
   gtk = {
