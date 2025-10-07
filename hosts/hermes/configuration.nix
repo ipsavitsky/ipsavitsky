@@ -2,7 +2,6 @@
   pkgs,
   config,
   inputs,
-  lib,
   ...
 }:
 
@@ -10,7 +9,6 @@
   imports = [
     ./hardware-configuration.nix
     ../../modules/shared.nix
-    inputs.nix-flatpak.nixosModules.nix-flatpak
   ];
 
   home-manager = {
@@ -21,14 +19,7 @@
         ../../modules/hm/stylix.nix
         ../../modules/hm/sway.nix
         inputs.sops-nix.homeManagerModules.sops
-        inputs.nix-flatpak.homeManagerModules.nix-flatpak
       ];
-
-      nixpkgs.config.allowUnfreePredicate =
-        pkg:
-        builtins.elem (lib.getName pkg) [
-          "discord"
-        ];
 
       sops.age.keyFile = "/home/ilya/.config/sops/age/keys.txt";
 
@@ -102,13 +93,7 @@
     ollama = {
       acceleration = "cuda";
     };
-    flatpak = {
-      enable = true;
-      packages = [
-        "app.zen_browser.zen"
-        "com.unity.UnityHub"
-      ];
-    };
+    flatpak.enable = true;
     printing.enable = true;
     pcscd.enable = true;
     cpupower-gui.enable = true;

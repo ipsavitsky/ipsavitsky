@@ -2,7 +2,6 @@
   pkgs,
   config,
   inputs,
-  lib,
   ...
 }:
 
@@ -10,8 +9,6 @@
   imports = [
     ./hardware-configuration.nix
     ../../modules/shared.nix
-
-    inputs.nix-flatpak.nixosModules.nix-flatpak
   ];
 
   home-manager = {
@@ -22,12 +19,6 @@
         ../../modules/hm/sway.nix
         inputs.sops-nix.homeManagerModules.sops
       ];
-
-      nixpkgs.config.allowUnfreePredicate =
-        pkg:
-        builtins.elem (lib.getName pkg) [
-          "discord"
-        ];
 
       wayland.windowManager.sway.config.output."*".scale = "2";
 
@@ -122,13 +113,7 @@
     ollama = {
       acceleration = "cuda";
     };
-    flatpak = {
-      enable = true;
-      packages = [
-        "app.zen_browser.zen"
-        "com.unity.UnityHub"
-      ];
-    };
+    flatpak.enable = true;
     printing.enable = true;
   };
 

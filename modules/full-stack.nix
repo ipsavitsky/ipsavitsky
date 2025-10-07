@@ -1,5 +1,6 @@
 {
   pkgs,
+  inputs,
   ...
 }:
 {
@@ -10,6 +11,8 @@
     ./hm/zed.nix
     ./hm/ntfyer.nix
     ./hm/halloy.nix
+
+    inputs.zen-browser.homeModules.beta
   ];
 
   gtk = {
@@ -28,6 +31,8 @@
     tuba
     geary
     bitwarden-desktop
-    discord
+    dorion
   ];
+
+  programs.zen-browser.enable = true;
 }
