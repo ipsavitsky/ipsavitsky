@@ -26,6 +26,7 @@
 
       home.stateVersion = "24.11";
     };
+    backupFileExtension = "bak";
     extraSpecialArgs = {
       inherit inputs;
       upper_config = config;
@@ -86,17 +87,13 @@
     extraPackages = [ ];
   };
 
-  systemd.user.extraConfig = ''
-    DefaultEnvironment="PATH=/run/wrappers/bin:/etc/profiles/per-user/%u/bin:/nix/var/nix/profiles/default/bin:/run/current-system/sw/bin"
-  '';
-
   xdg.portal = {
     enable = true;
     wlr.enable = true;
     extraPortals = [
       pkgs.xdg-desktop-portal-gtk
     ];
-    xdgOpenUsePortal = true;
+    xdgOpenUsePortal = false;
   };
 
   services = {

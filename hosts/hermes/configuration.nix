@@ -75,10 +75,6 @@
     extraPackages = [ ];
   };
 
-  systemd.user.extraConfig = ''
-    DefaultEnvironment="PATH=/run/wrappers/bin:/etc/profiles/per-user/%u/bin:/nix/var/nix/profiles/default/bin:/run/current-system/sw/bin"
-  '';
-
   services = {
     gnome.gnome-keyring.enable = true;
     pipewire = {
@@ -135,7 +131,7 @@
     extraPortals = [
       pkgs.xdg-desktop-portal-gtk
     ];
-    xdgOpenUsePortal = true;
+    xdgOpenUsePortal = false;
   };
 
   environment.systemPackages =
