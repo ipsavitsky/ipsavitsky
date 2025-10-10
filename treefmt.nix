@@ -13,5 +13,7 @@ _: {
     actionlint.enable = true;
     yamlfmt.enable = true;
     just.enable = true;
+    deadnix.enable = true;
+    statix.enable = true;
   };
 }
