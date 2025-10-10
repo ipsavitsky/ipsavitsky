@@ -13,32 +13,37 @@
     (modulesPath + "/installer/scan/not-detected.nix")
   ];
 
-  boot.initrd.availableKernelModules = [
-    "xhci_pci"
-    "thunderbolt"
-    "nvme"
-    "usb_storage"
-    "sd_mod"
-  ];
-  boot.initrd.kernelModules = [ ];
-  boot.kernelModules = [ "kvm-intel" ];
-  boot.extraModulePackages = [ ];
-
-  fileSystems."/" = {
-    device = "/dev/disk/by-uuid/0e166b13-6be4-45a6-b9f2-c4ebff6bc63d";
-    fsType = "ext4";
+  boot = {
+    initrd = {
+      availableKernelModules = [
+        "xhci_pci"
+        "thunderbolt"
+        "nvme"
+        "usb_storage"
+        "sd_mod"
+      ];
+      kernelModules = [ ];
+      luks.devices."luks-b4e01d25-63da-4b97-ae18-deb5b3fcfe24".device =
+        "/dev/disk/by-uuid/b4e01d25-63da-4b97-ae18-deb5b3fcfe24";
+    };
+    kernelModules = [ "kvm-intel" ];
+    extraModulePackages = [ ];
   };
 
-  boot.initrd.luks.devices."luks-b4e01d25-63da-4b97-ae18-deb5b3fcfe24".device =
-    "/dev/disk/by-uuid/b4e01d25-63da-4b97-ae18-deb5b3fcfe24";
+  fileSystems = {
+    "/" = {
+      device = "/dev/disk/by-uuid/0e166b13-6be4-45a6-b9f2-c4ebff6bc63d";
+      fsType = "ext4";
+    };
 
-  fileSystems."/boot" = {
-    device = "/dev/disk/by-uuid/C434-8D20";
-    fsType = "vfat";
-    options = [
-      "fmask=0077"
-      "dmask=0077"
-    ];
+    "/boot" = {
+      device = "/dev/disk/by-uuid/C434-8D20";
+      fsType = "vfat";
+      options = [
+        "fmask=0077"
+        "dmask=0077"
+      ];
+    };
   };
 
   swapDevices = [ ];

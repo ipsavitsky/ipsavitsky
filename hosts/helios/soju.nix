@@ -8,7 +8,7 @@ in
     acceptTerms = true;
     defaults.email = "ilya@savitsky.dev";
     certs.${domain} = {
-      domain = domain;
+      inherit domain;
       group = "acme-certs";
       reloadServices = [ "soju.service" ];
     };

@@ -7,7 +7,7 @@
 {
   programs.halloy =
     let
-      unstable_pkgs = import inputs.nixpkgs-unstable { system = pkgs.system; };
+      unstable_pkgs = import inputs.nixpkgs-unstable { inherit (pkgs) system; };
     in
     {
       enable = true;
