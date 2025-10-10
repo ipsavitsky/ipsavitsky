@@ -35,7 +35,7 @@ in
       };
       input = {
         "type:keyboard" = {
-          xkb_layout = "gb,us";
+          xkb_layout = "gb,us,ru";
           xkb_options = "grp:win_space_toggle";
         };
         "type:touchpad" = {
