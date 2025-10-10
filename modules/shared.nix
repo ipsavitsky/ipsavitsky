@@ -18,15 +18,14 @@
     };
   };
 
-  services = {
-    ollama = {
-      enable = true;
-    };
-  };
+  services.ollama.enable = true;
 
-  programs.nekoray = {
-    enable = true;
-    tunMode.enable = true;
+  programs = {
+    nekoray = {
+      enable = true;
+      tunMode.enable = true;
+    };
+    nix-ld.enable = true;
   };
 
   # Enable common container config files in /etc/containers

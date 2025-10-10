@@ -99,10 +99,6 @@
     graphics.enable = true;
     nvidia = {
       modesetting.enable = true;
-      # powerManagement = {
-      #   enable = true;
-      #   finegrained = false;
-      # };
       open = true;
       nvidiaSettings = true;
       package = config.boot.kernelPackages.nvidiaPackages.stable;
@@ -153,6 +149,13 @@
     ];
 
   nix.settings.trusted-users = [ "ilya" ];
+
+  swapDevices = [
+    {
+      device = "/var/lib/swapfile";
+      size = 16 * 1024;
+    }
+  ];
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
