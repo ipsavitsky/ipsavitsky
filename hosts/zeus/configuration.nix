@@ -1,5 +1,6 @@
 {
   pkgs,
+  lib,
   config,
   inputs,
   ...
@@ -21,6 +22,9 @@
       ];
 
       wayland.windowManager.sway.config.output."*".scale = "2";
+
+      # not enogh space for a swap file, not enough ram to just build, but it's like 20 versions behind
+      programs.zed-editor.package = lib.mkForce pkgs.zed-editor;
 
       sops.age.keyFile = "/home/ilya/.config/sops/age/keys.txt";
 
