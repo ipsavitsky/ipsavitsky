@@ -54,5 +54,6 @@
       nix-ai-tools.packages.${pkgs.system}.opencode
       terminaltrove.packages.${pkgs.system}.cloctui
       wiremix.packages.${pkgs.system}.wiremix
+      wifitui.packages.${pkgs.system}.default
     ];
 }

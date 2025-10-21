@@ -114,6 +114,10 @@
       inputs.treefmt-nix.follows = "treefmt-nix";
     };
     wiremix.url = "github:tsowell/wiremix";
+    wifitui = {
+      url = "github:shazow/wifitui";
+      inputs.flake-utils.follows = "flake-utils";
+    };
   };
 
   outputs =
