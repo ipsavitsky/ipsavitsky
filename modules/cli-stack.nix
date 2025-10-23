@@ -8,7 +8,7 @@
     ./hm/bash.nix
     ./hm/bat.nix
     ./hm/direnv.nix
-    ./hm/emacs.nix
+    # ./hm/emacs.nix
     ./hm/fzf.nix
     ./hm/git.nix
     ./hm/zellij.nix
