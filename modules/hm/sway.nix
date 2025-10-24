@@ -25,13 +25,13 @@ in
       terminal = "ghostty";
       bars = [ ];
       keybindings = lib.mkOptionDefault {
-        "Mod4+l" = "exec ${swaylock_config}";
-        "Print" = "exec ${lib.getExe' shotman_package "shotman"} -c region -C";
-        "Shift+Print" = "exec ${lib.getExe' shotman_package "shotman"} -c window -C";
-        "Ctrl+Shift+Print" = "exec ${lib.getExe' shotman_package "shotman"} -c output -C";
-        "Mod4+P" = "exec ${lib.getExe' shotman_package "shotman"} -c region -C";
-        "Mod4+Shift+P" = "exec ${lib.getExe' shotman_package "shotman"} -c window -C";
-        "Mod4+Ctrl+Shift+P" = "exec ${lib.getExe' shotman_package "shotman"} -c output -C";
+        "--to-code Mod4+l" = "exec ${swaylock_config}";
+        "--to-code Print" = "exec ${lib.getExe' shotman_package "shotman"} -c region -C";
+        "--to-code Shift+Print" = "exec ${lib.getExe' shotman_package "shotman"} -c window -C";
+        "--to-code Ctrl+Shift+Print" = "exec ${lib.getExe' shotman_package "shotman"} -c output -C";
+        "--to-code Mod4+P" = "exec ${lib.getExe' shotman_package "shotman"} -c region -C";
+        "--to-code Mod4+Shift+P" = "exec ${lib.getExe' shotman_package "shotman"} -c window -C";
+        "--to-code Mod4+Ctrl+Shift+P" = "exec ${lib.getExe' shotman_package "shotman"} -c output -C";
       };
       input = {
         "type:keyboard" = {
