@@ -23,13 +23,6 @@
 
       wayland.windowManager.sway.config.output."*".scale = "2";
 
-      # not enogh space for a swap file, not enough ram to just build, but it's like 20 versions behind
-      programs.zed-editor.package =
-        let
-          unstable_pkgs = import inputs.nixpkgs-unstable { inherit (pkgs) system; };
-        in
-        lib.mkForce unstable_pkgs.zed-editor;
-
       sops.age.keyFile = "/home/ilya/.config/sops/age/keys.txt";
 
       home.stateVersion = "24.11";
@@ -51,9 +44,10 @@
         useOSProber = true;
         efiSupport = true;
         gfxmodeEfi = "1280x720";
+        efiInstallAsRemovable = true;
       };
       efi = {
-        canTouchEfiVariables = true;
+        # canTouchEfiVariables = true;
         efiSysMountPoint = "/boot/efi";
       };
     };
@@ -177,5 +171,5 @@
   # this value at the release version of the first install of this system.
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "24.05"; # Did you read the comment?
+  system.stateVersion = "25.05"; # Did you read the comment?
 }
