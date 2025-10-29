@@ -20,7 +20,6 @@
       status-text = "Generating";
       theme = "dracula";
       fanciness = 10;
-      topp = 1;
       mcp-servers = {
         silverbullet = {
           command = lib.getExe' inputs.sb_mcp.packages.${pkgs.system}.default "sb_mcp";
@@ -34,18 +33,13 @@
       };
       apis = {
         ollama = {
-          base-url = "http://localhost:11434/api";
           models = {
-            "gemma3:12b" = {
-              max-input-chars = 650000;
-            };
-            "magistral:24b" = {
+            "qwen3:14b" = {
               max-input-chars = 650000;
             };
           };
         };
         anthropic = {
-          base-url = "https://api.anthropic.com/v1";
           api-key-env = "ANTHROPIC_API_KEY";
           models = {
             "claude-3-7-sonnet-latest" = {
@@ -68,7 +62,6 @@
           };
         };
         mistral = {
-          base-url = "https://api.mistral.ai/v1";
           api-key-env = "MISTRAL_API_KEY";
           models = {
             "mistral-large-latest" = {
