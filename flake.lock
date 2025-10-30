@@ -2772,11 +2772,11 @@
         "uv2nix": "uv2nix_2"
       },
       "locked": {
-        "lastModified": 1759914365,
-        "narHash": "sha256-VQRWN0VZSHosWWG0sReZ/lcyDol4Q6YX/RjMK2H162k=",
+        "lastModified": 1761779088,
+        "narHash": "sha256-325Xk5wbB7Czoqpg7qHoRLDwvXLvXc9uZj0niNMeU3E=",
         "owner": "ipsavitsky",
         "repo": "sb_mcp",
-        "rev": "a1f7d8aa1dffa4078e42fa9281ac7676e46d0be7",
+        "rev": "b5d6fbb01fc30900114fc30ade1093044fc0de94",
         "type": "github"
       },
       "original": {
