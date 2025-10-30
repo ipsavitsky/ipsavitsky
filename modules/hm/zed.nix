@@ -56,6 +56,14 @@
           env = { };
         };
       };
+      agent_servers = {
+        opencode = {
+          command = lib.getExe' inputs.nix-ai-tools.packages.${pkgs.system}.opencode "opencode";
+          args = [
+            "acp"
+          ];
+        };
+      };
     };
   };
 
