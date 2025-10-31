@@ -128,6 +128,11 @@
       pkgs.xdg-desktop-portal-gtk
     ];
     xdgOpenUsePortal = false;
+    config = {
+      preferred = {
+        default = "wlr;gtk";
+      };
+    };
   };
 
   environment.systemPackages =
