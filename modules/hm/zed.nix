@@ -32,10 +32,18 @@
     userSettings = {
       telemetry.metrics = false;
       format_on_save = "off";
-      languages.Nix.language_servers = [
-        "nil"
-        "!nixd"
-      ];
+      languages = {
+        Nix.language_servers = [
+          "nil"
+          "!nixd"
+        ];
+
+        Python.language_servers = [
+          "basedpyright"
+          "ty"
+          "ruff"
+        ];
+      };
       load_direnv = "shell_hook";
       buffer_font_features = {
         ligatures = false;
