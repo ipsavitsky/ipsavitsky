@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 {
   environment.systemPackages = with pkgs; [
     home-manager
@@ -18,7 +18,27 @@
     };
   };
 
-  services.ollama.enable = true;
+  services.ollama =
+    let
+      unstable_pkgs = import inputs.nixpkgs-unstable {
+        inherit (pkgs) system;
+        config = {
+          allowUnfreePredicate =
+            pkg:
+            builtins.elem (pkgs.lib.getName pkg) [
+              "cuda_cudart"
+              "cuda_nvcc"
+              "cuda_cccl"
+              "libcublas"
+            ];
+          allowBroken = true;
+        };
+      };
+    in
+    {
+      enable = true;
+      package = unstable_pkgs.ollama;
+    };
 
   programs = {
     nekoray = {
