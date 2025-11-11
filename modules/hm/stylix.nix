@@ -11,7 +11,7 @@
 
   stylix = {
     enable = true;
-    base16Scheme = "${pkgs.base16-schemes}/share/themes/nord.yaml";
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-soft.yaml";
     image = config.lib.stylix.pixel "base01";
     fonts = {
       serif = config.stylix.fonts.sansSerif;
