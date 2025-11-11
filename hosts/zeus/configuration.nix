@@ -82,6 +82,7 @@
   programs.sway = {
     enable = true;
     package = pkgs.sway;
+    wrapperFeatures.gtk = true;
     extraOptions = [
       "--unsupported-gpu"
     ];
@@ -93,11 +94,15 @@
     wlr.enable = true;
     extraPortals = [
       pkgs.xdg-desktop-portal-gtk
+      pkgs.xdg-desktop-portal-gnome
     ];
     xdgOpenUsePortal = false;
     config = {
       preferred = {
-        default = "wlr;gtk";
+        default = [ "gtk" ];
+        "org.freedesktop.impl.portal.Screenshot" = [ "wlr" ];
+        "org.freedesktop.impl.portal.ScreenCast" = [ "wlr" ];
+        "org.freedesktop.impl.portal.OpenURI" = [ "gnome" ];
       };
     };
   };

@@ -17,8 +17,14 @@ in
   wayland.windowManager.sway = {
     enable = true;
     package = null;
-    systemd.enable = true;
-    wrapperFeatures.gtk = true;
+    systemd = {
+      enable = true;
+      variables = [ "--all" ];
+    };
+    wrapperFeatures = {
+      base = true;
+      gtk = true;
+    };
     config = {
       modifier = "Mod4";
       menu = lib.getExe fuzzel_package;
