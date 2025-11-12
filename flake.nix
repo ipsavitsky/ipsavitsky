@@ -138,10 +138,7 @@
     flake-utils.lib.eachDefaultSystem (
       system:
       let
-        pkgs = import nixpkgs {
-          inherit system;
-          config.allowUnfree = true;
-        };
+        pkgs = import nixpkgs { inherit system; };
 
         treefmtModule = treefmt-nix.lib.evalModule pkgs ./treefmt.nix;
       in
@@ -158,8 +155,6 @@
               with pkgs;
               with inputs;
               [
-                terraform-ls
-                (terraform.withPlugins (p: [ p.github ]))
                 ssh-to-age
                 age
                 sops
@@ -194,12 +189,6 @@
             srvos.nixosModules.mixins-nix-experimental
             # this a p14s gen4 but gen 3 is close enough
             # nixos-hardware.nixosModules.lenovo-thinkpad-p14s-intel-gen3
-            {
-              nixpkgs = {
-                # cuda modules are unfree
-                config.allowUnfree = true;
-              };
-            }
           ];
         };
 
@@ -226,12 +215,6 @@
             sops-nix.nixosModules.sops
             srvos.nixosModules.desktop
             srvos.nixosModules.mixins-nix-experimental
-            {
-              nixpkgs = {
-                # cuda modules are unfree
-                config.allowUnfree = true;
-              };
-            }
           ];
         };
 
