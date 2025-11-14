@@ -42,18 +42,18 @@
         }
         {
           output = {
-            alias = "leftPhillips";
-            criteria = "Philips Consumer Electronics Company PHL 243V5 UK01750002520";
-            mode = "1920x1080@60Hz";
+            alias = "leftIiyama";
+            criteria = "Iiyama North America PL2792Q 1226242811255";
+            mode = "2560x1440@59.951Hz";
             position = "0,0";
           };
         }
         {
           output = {
-            alias = "rightPhillips";
-            criteria = "Philips Consumer Electronics Company PHL 243V5 UK01750002509";
-            mode = "1920x1080@60Hz";
-            position = "1080,0";
+            alias = "rightIiyama";
+            criteria = "Iiyama North America PL2792Q 1226242811257";
+            mode = "2560x1440@59.951Hz";
+            position = "2560,0";
           };
         }
         {
@@ -76,13 +76,13 @@
                 status = "disable";
               }
               {
-                criteria = "$leftPhillips";
+                criteria = "$leftIiyama";
                 position = "0,0";
                 status = "enable";
               }
               {
-                criteria = "$rightPhillips";
-                position = "1920,0";
+                criteria = "$rightIiyama";
+                position = "2560,0";
                 status = "enable";
               }
             ];

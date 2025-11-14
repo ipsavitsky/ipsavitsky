@@ -125,6 +125,7 @@
     printing.enable = true;
     pcscd.enable = true;
     cpupower-gui.enable = true;
+    hardware.bolt.enable = true;
   };
 
   hardware = {
