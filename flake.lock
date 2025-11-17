@@ -1055,11 +1055,11 @@
         "rust-overlay": "rust-overlay_4"
       },
       "locked": {
-        "lastModified": 1762033935,
-        "narHash": "sha256-MS7CoMZAoH8vDdkAncdS5EAnubl6nSACWfJYJ6Wmh3I=",
+        "lastModified": 1763397384,
+        "narHash": "sha256-p4k33Y6/eFyWYoFPtSDfjlmTA5Z/ZpoJRf4ogdFjl/k=",
         "ref": "main",
-        "rev": "133e3fd1fb789e122090391935c550be42c0f16b",
-        "revCount": 470,
+        "rev": "54aa4ba39b28d3b5d25b57fddb361627ea0d86c1",
+        "revCount": 479,
         "type": "git",
         "url": "https://codeberg.org/mergiraf/mergiraf.git"
       },
