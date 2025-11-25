@@ -53,7 +53,6 @@
       };
       context_servers = {
         silverbullet = {
-          source = "custom";
           command = lib.getExe' inputs.sb_mcp.packages.${pkgs.system}.default "sb_mcp";
           args = [
             "--url"
@@ -66,6 +65,7 @@
       };
       agent_servers = {
         opencode = {
+          type = "custom";
           command = lib.getExe' inputs.nix-ai-tools.packages.${pkgs.system}.opencode "opencode";
           args = [
             "acp"

@@ -55,5 +55,9 @@
       terminaltrove.packages.${pkgs.system}.cloctui
       wiremix.packages.${pkgs.system}.wiremix
       wifitui.packages.${pkgs.system}.default
+      nom.packages.${pkgs.system}.default
+      nvd.packages.${pkgs.system}.nvd
+      caligula.packages.${pkgs.system}.default
+      home-manager.packages.${pkgs.system}.home-manager
     ];
 }

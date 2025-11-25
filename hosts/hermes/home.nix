@@ -14,13 +14,8 @@
       with inputs;
       [
         yubikey-manager
+        yubioath-flutter
         quasselClient
-
-        charmbracelet-nur.packages.${pkgs.system}.vhs
-        charmbracelet-nur.packages.${pkgs.system}.gum
-        nom.packages.${pkgs.system}.default
-        statix.packages.${pkgs.system}.default
-        deadnix.packages.${pkgs.system}.default
       ];
   };
 

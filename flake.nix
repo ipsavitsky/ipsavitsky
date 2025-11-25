@@ -30,7 +30,6 @@
       url = "github:nix-community/emacs-overlay";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    # nix-flatpak.url = "github:gmodena/nix-flatpak";
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
     nix-index-database = {
       url = "github:nix-community/nix-index-database";
@@ -42,12 +41,6 @@
       inputs.flake-utils.follows = "flake-utils";
     };
     zed.url = "github:zed-industries/zed";
-    vulnix.url = "github:nix-community/vulnix";
-    deadnix = {
-      url = "github:astro/deadnix";
-      inputs.utils.follows = "flake-utils";
-    };
-    statix.url = "github:oppiliappan/statix";
     nom = {
       url = "github:maralorn/nix-output-monitor";
       inputs.flake-utils.follows = "flake-utils";
@@ -60,7 +53,6 @@
       url = "github:ifd3f/caligula";
       inputs.flake-utils.follows = "flake-utils";
     };
-    nil.url = "github:oxalica/nil";
     gitu.url = "github:altsem/gitu";
     gitlab_due_date = {
       url = "github:ipsavitsky/gitlab_due_dates";
@@ -159,15 +151,7 @@
                 age
                 sops
                 just
-
-                caligula.packages.${pkgs.system}.default
-                nil.packages.${pkgs.system}.default
-                vulnix.packages.${pkgs.system}.default
-                deadnix.packages.${pkgs.system}.default
-                statix.packages.${pkgs.system}.default
-                nom.packages.${pkgs.system}.default
-                nvd.packages.${pkgs.system}.nvd
-                home-manager.packages.${pkgs.system}.home-manager
+                nil
               ];
           };
         };
