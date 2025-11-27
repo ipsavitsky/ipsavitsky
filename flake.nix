@@ -110,6 +110,8 @@
       url = "github:shazow/wifitui";
       inputs.flake-utils.follows = "flake-utils";
     };
+    # using this fork until https://github.com/tobi/try/pull/62 lands
+    try.url = "github:ipsavitsky/try/fix-nix";
   };
 
   outputs =

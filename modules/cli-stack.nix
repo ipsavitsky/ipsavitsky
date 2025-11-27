@@ -23,6 +23,8 @@
     ./hm/pandoc.nix
     ./hm/yazi.nix
     ./hm/pomidor.nix
+
+    inputs.try.homeModules.default
   ];
 
   home.packages =
@@ -60,4 +62,6 @@
       caligula.packages.${pkgs.system}.default
       home-manager.packages.${pkgs.system}.home-manager
     ];
+
+    programs.try.enable = true;
 }
