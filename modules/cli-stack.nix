@@ -63,5 +63,5 @@
       home-manager.packages.${pkgs.system}.home-manager
     ];
 
-    programs.try.enable = true;
+  programs.try.enable = true;
 }

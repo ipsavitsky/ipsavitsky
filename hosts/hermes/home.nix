@@ -19,7 +19,7 @@
       ];
   };
 
-  programs.git.userEmail = lib.mkForce "ilya.savitsky@codethink.co.uk";
+  programs.git.settings.user.email = lib.mkForce "ilya.savitsky@codethink.co.uk";
 
   services = {
     kanshi = {

@@ -25,5 +25,6 @@
       };
       emoji = config.stylix.fonts.sansSerif;
     };
+    targets.zen-browser.profileNames = [ "default" ];
   };
 }

@@ -1,6 +1,5 @@
 {
   pkgs,
-  inputs,
   config,
   ...
 }:
@@ -9,13 +8,9 @@
     owner = "silverbullet";
   };
 
-  services.silverbullet =
-    let
-      unstable_pkgs = import inputs.nixpkgs-unstable { inherit (pkgs) system; };
-    in
-    {
-      enable = true;
-      package = unstable_pkgs.silverbullet;
-      envFile = config.sops.secrets."silverbullet/environment".path;
-    };
+  services.silverbullet = {
+    enable = true;
+    package = pkgs.silverbullet;
+    envFile = config.sops.secrets."silverbullet/environment".path;
+  };
 }
