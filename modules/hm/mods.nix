@@ -12,7 +12,7 @@
 
   programs.mods = {
     enable = true;
-    package = inputs.charmbracelet-nur.packages.${pkgs.system}.mods;
+    package = pkgs.nur.repos.charmbracelet.mods;
     enableBashIntegration = true;
     settings = {
       default-model = "qwen3:14b";

@@ -1,6 +1,5 @@
 {
   pkgs,
-  inputs,
   ...
 }:
 {
@@ -47,19 +46,16 @@
     };
   };
 
-  environment.systemPackages =
-    with pkgs;
-    with inputs;
-    [
-      neofetch
-      nmap
-      cloudflared
-      systemctl-tui
-      btop
-      btrfs-progs
+  environment.systemPackages = with pkgs; [
+    neofetch
+    nmap
+    cloudflared
+    systemctl-tui
+    btop
+    btrfs-progs
 
-      charmbracelet-nur.packages.${pkgs.system}.melt
-    ];
+    nur.repos.charmbracelet.melt
+  ];
 
   services = {
     openssh = {

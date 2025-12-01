@@ -43,6 +43,7 @@
     geary
     bitwarden-desktop
     dorion
+    nur.repos.forkprince.helium-nightly
   ];
 
   programs.zen-browser.enable = true;

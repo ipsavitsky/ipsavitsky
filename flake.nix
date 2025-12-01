@@ -2,11 +2,11 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-25.11";
     # nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
-    flake-utils.url = "github:numtide/flake-utils";
-    charmbracelet-nur = {
-      url = "github:charmbracelet/nur";
+    nur = {
+      url = "github:nix-community/nur";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    flake-utils.url = "github:numtide/flake-utils";
     treefmt-nix = {
       url = "github:numtide/treefmt-nix";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -127,6 +127,7 @@
       srvos,
       nixos-hardware,
       lanzaboote,
+      nur,
       ...
     }@inputs:
     flake-utils.lib.eachDefaultSystem (
@@ -173,6 +174,7 @@
             sops-nix.nixosModules.sops
             srvos.nixosModules.desktop
             srvos.nixosModules.mixins-nix-experimental
+            nur.modules.nixos.default
             # this a p14s gen4 but gen 3 is close enough
             # nixos-hardware.nixosModules.lenovo-thinkpad-p14s-intel-gen3
           ];
@@ -187,6 +189,7 @@
             ./hosts/hephaestus/configuration.nix
             nixos-wsl.nixosModules.wsl
             home-manager.nixosModules.home-manager
+            nur.modules.nixos.default
           ];
         };
 
@@ -201,6 +204,7 @@
             sops-nix.nixosModules.sops
             srvos.nixosModules.desktop
             srvos.nixosModules.mixins-nix-experimental
+            nur.modules.nixos.default
           ];
         };
 
@@ -218,6 +222,7 @@
             srvos.nixosModules.mixins-terminfo
             srvos.nixosModules.mixins-nix-experimental
             nixos-hardware.nixosModules.raspberry-pi-5
+            nur.modules.nixos.default
             ./hosts/demeter/configuration.nix
           ];
         };
@@ -233,6 +238,7 @@
             srvos.nixosModules.mixins-nginx
             srvos.nixosModules.mixins-terminfo
             srvos.nixosModules.mixins-nix-experimental
+            nur.modules.nixos.default
             ./hosts/apollo/configuration.nix
           ];
         };

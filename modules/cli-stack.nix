@@ -49,8 +49,6 @@
       ploc.packages.${pkgs.system}.default
       nix-tree.packages.${pkgs.system}.default
       nix-melt.packages.${pkgs.system}.default
-      charmbracelet-nur.packages.${pkgs.system}.glow
-      charmbracelet-nur.packages.${pkgs.system}.melt
       zemon.packages.${pkgs.system}.default
       nix-ai-tools.packages.${pkgs.system}.crush
       nix-ai-tools.packages.${pkgs.system}.opencode
@@ -61,6 +59,10 @@
       nvd.packages.${pkgs.system}.nvd
       caligula.packages.${pkgs.system}.default
       home-manager.packages.${pkgs.system}.home-manager
+
+      # have to specify pkgs. so that it doesn't collide with inputs.nur
+      pkgs.nur.repos.charmbracelet.glow
+      pkgs.nur.repos.charmbracelet.melt
     ];
 
   programs.try.enable = true;

@@ -19,6 +19,7 @@
         ../../modules/hm/stylix.nix
         ../../modules/hm/sway.nix
         inputs.sops-nix.homeManagerModules.sops
+        inputs.nur.modules.homeManager.default
       ];
 
       wayland.windowManager.sway.config.output."*".scale = "2";

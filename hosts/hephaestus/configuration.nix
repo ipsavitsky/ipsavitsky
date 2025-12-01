@@ -10,6 +10,7 @@
       imports = [
         ../../modules/cli-stack.nix
         inputs.sops-nix.homeManagerModules.sops
+        inputs.nur.modules.homeManager.default
       ];
       sops.age.keyFile = "/home/ilya/.config/sops/age/keys.txt";
 

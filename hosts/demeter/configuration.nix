@@ -1,6 +1,5 @@
 {
   pkgs,
-  inputs,
   ...
 }:
 {
@@ -32,17 +31,14 @@
     };
   };
 
-  environment.systemPackages =
-    with pkgs;
-    with inputs;
-    [
-      neofetch
-      nmap
-      systemctl-tui
-      btop
+  environment.systemPackages = with pkgs; [
+    neofetch
+    nmap
+    systemctl-tui
+    btop
 
-      charmbracelet-nur.packages.${pkgs.system}.melt
-    ];
+    nur.repos.charmbracelet.melt
+  ];
 
   # https://github.com/NixOS/nixos-hardware/issues/858
   boot.initrd.systemd.tpm2.enable = false;
