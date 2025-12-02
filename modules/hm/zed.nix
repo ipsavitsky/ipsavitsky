@@ -72,6 +72,24 @@
           ];
         };
       };
+      ssh_connections = [
+        {
+          username = "ilyasavitsky";
+          args = [
+            "-J"
+            "ilyasavitsky@shell.codethink.co.uk"
+          ];
+          host = "devhw34.guest.codethink.co.uk";
+          projects = [
+            {
+              paths = [ "~/work_area/modular" ];
+            }
+            {
+              paths = [ "~/work_area/gemma3_test" ];
+            }
+          ];
+        }
+      ];
     };
   };
 
