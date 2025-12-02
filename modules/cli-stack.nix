@@ -65,5 +65,8 @@
       pkgs.nur.repos.charmbracelet.melt
     ];
 
-  programs.try.enable = true;
+  programs.try = {
+    enable = true;
+    path = "~/tries";
+  };
 }
