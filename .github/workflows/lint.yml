@@ -14,6 +14,6 @@ jobs:
         with:
           persist-credentials: false
       - name: Install nix
-        uses: DeterminateSystems/nix-installer-action@c5a866b6ab867e88becbed4467b93592bce69f8a
+        uses: DeterminateSystems/nix-installer-action@e4fb5e65d88bc1ed7f248eda4e6645126ed90438
       - name: Nix flake check
         run: nix flake check
