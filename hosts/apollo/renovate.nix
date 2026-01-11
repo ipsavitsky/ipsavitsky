@@ -3,7 +3,7 @@
   sops.secrets."renovate/github_com" = { };
   services.renovate = {
     enable = true;
-    schedule = "daily";
+    schedule = "weekly";
     validateSettings = true;
     runtimePackages = with pkgs; [
       go
