@@ -112,6 +112,7 @@
     };
     # using this fork until https://github.com/tobi/try/pull/62 lands
     try.url = "github:ipsavitsky/try/fix-nix";
+    deploy-rs.url = "github:serokell/deploy-rs";
   };
 
   outputs =
@@ -128,6 +129,7 @@
       nixos-hardware,
       lanzaboote,
       nur,
+      deploy-rs,
       ...
     }@inputs:
     flake-utils.lib.eachDefaultSystem (
@@ -155,6 +157,7 @@
                 sops
                 just
                 nil
+                pkgs.deploy-rs
               ];
           };
         };
@@ -278,7 +281,8 @@
         #   ];
         # };
       };
-    };
+    }
+    // (import ./deploy.nix { inherit self deploy-rs; });
 
   nixConfig = {
     extra-substituters = [
