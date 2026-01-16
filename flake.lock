@@ -1761,11 +1761,11 @@
         "treefmt-nix": "treefmt-nix_2"
       },
       "locked": {
-        "lastModified": 1768151238,
-        "narHash": "sha256-q7v7O2mgjpaZ/605y/gn7eIfkKRmk8cmFaK4/ROENlk=",
+        "lastModified": 1768235508,
+        "narHash": "sha256-v7AMb/DFtYb8kVH/u0DHBFzW4Pk3GuO6LzDN/jNKXPk=",
         "owner": "ipsavitsky",
         "repo": "nothingverse",
-        "rev": "7f0df793112f1dc582f56b555eda0de71b66db79",
+        "rev": "01e8df558438c2e15c3636ea673df34b114e281f",
         "type": "github"
       },
       "original": {
