@@ -23,6 +23,7 @@
     ./hm/pandoc.nix
     ./hm/yazi.nix
     ./hm/pomidor.nix
+    ./hm/opencode.nix
 
     inputs.try.homeModules.default
   ];
@@ -51,7 +52,6 @@
       nix-melt.packages.${pkgs.system}.default
       zemon.packages.${pkgs.system}.default
       nix-ai-tools.packages.${pkgs.system}.crush
-      nix-ai-tools.packages.${pkgs.system}.opencode
       terminaltrove.packages.${pkgs.system}.cloctui
       wiremix.packages.${pkgs.system}.wiremix
       wifitui.packages.${pkgs.system}.default
