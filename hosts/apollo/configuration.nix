@@ -16,9 +16,8 @@
     ./jellyfin.nix
     ./transmission.nix
     ./arr.nix
-    ./monitoring.nix
+    # ./monitoring.nix
     ./paperless.nix
-    # ./matrix.nix
   ];
 
   boot.loader.systemd-boot.enable = true;
