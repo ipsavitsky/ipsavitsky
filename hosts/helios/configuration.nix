@@ -9,7 +9,7 @@
   ];
 
   boot.tmp.cleanOnBoot = true;
-  zramSwap.enable = true;
+  zramSwap.enable = false;
   networking.hostName = "helios";
   networking.domain = "";
   services.openssh.enable = true;

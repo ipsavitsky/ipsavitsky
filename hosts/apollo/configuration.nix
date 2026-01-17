@@ -17,6 +17,7 @@
     ./transmission.nix
     ./arr.nix
     ./monitoring.nix
+    ./paperless.nix
     # ./matrix.nix
   ];
 

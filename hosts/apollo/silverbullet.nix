@@ -10,7 +10,7 @@
     };
 
     "restic/bucket" = {
-      owner = "silverbullet";
+      # owner = "silverbullet";
     };
 
     "restic/silverbullet" = {
@@ -27,7 +27,7 @@
   services.restic.backups.silverbullet = {
     user = "silverbullet";
     initialize = true;
-    repository = "s3:https://hel1.your-objectstorage.com/bupurinh9s";
+    repository = "s3:https://hel1.your-objectstorage.com/bupurinh9s/silverbullet";
     environmentFile = config.sops.secrets."restic/bucket".path;
     passwordFile = config.sops.secrets."restic/silverbullet".path;
     paths = [
