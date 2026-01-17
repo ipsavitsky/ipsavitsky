@@ -1,4 +1,4 @@
-{ pkgs, config, ... }:
+{ config, ... }:
 {
   sops.secrets = {
     "paperless/password" = {

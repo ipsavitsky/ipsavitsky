@@ -16,7 +16,6 @@
     ./jellyfin.nix
     ./transmission.nix
     ./arr.nix
-    # ./monitoring.nix
     ./paperless.nix
   ];
 
