@@ -14,6 +14,7 @@
       config.nix.package
       git
       openssh
+      bash
     ];
     settings = {
       autodiscover = true;
@@ -29,6 +30,14 @@
       allowedCommands = [
         "^go mod tidy$"
         "^bash ./scripts/vendor_hash.sh --update$"
+      ];
+      prConcurrentLimit = 0;
+      prHourlyLimit = 0;
+      packageRules = [
+        {
+          matchDepNames = [ "nixpkgs" ];
+          enabled = false;
+        }
       ];
     };
     credentials = {
