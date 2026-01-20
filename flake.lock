@@ -1893,11 +1893,11 @@
         "treefmt-nix": "treefmt-nix_5"
       },
       "locked": {
-        "lastModified": 1768758831,
-        "narHash": "sha256-f7wNzFUaKcmKeerGGGTpyZ+2a4qtyMkzYJRiFhv+BUE=",
+        "lastModified": 1768946726,
+        "narHash": "sha256-2X5OM5rakc4CvjKU/zgrjijMgX2B0Tb9fcXQhi1ER5s=",
         "owner": "ipsavitsky",
         "repo": "pomidor",
-        "rev": "b1c6f7c22e288b458eb6709296c17bcbcd7a5097",
+        "rev": "1caf72a53554c22e802e220b3e0b7c9ab94b1df3",
         "type": "github"
       },
       "original": {

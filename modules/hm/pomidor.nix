@@ -6,6 +6,7 @@
     enable = true;
     settings = {
       type = "native";
+      split = "long";
       ntfy = {
         url = "http://ntfy.savitsky.dev";
         topic = "pomidor";
