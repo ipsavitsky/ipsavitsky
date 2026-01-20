@@ -5,7 +5,7 @@
   programs.pomidor = {
     enable = true;
     settings = {
-      type = "ntfy";
+      type = "native";
       ntfy = {
         url = "http://ntfy.savitsky.dev";
         topic = "pomidor";
