@@ -33,10 +33,15 @@
       ];
       prConcurrentLimit = 0;
       prHourlyLimit = 0;
+      separateMajorMinor = false;
       packageRules = [
         {
           matchDepNames = [ "nixpkgs" ];
           enabled = false;
+        }
+        {
+          groupName = "all dependencies";
+          matchPackageNames = [ "*" ];
         }
       ];
     };
