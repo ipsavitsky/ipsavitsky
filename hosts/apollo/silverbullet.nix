@@ -1,6 +1,7 @@
 {
   pkgs,
   config,
+  inputs,
   ...
 }:
 {
@@ -18,11 +19,15 @@
     };
   };
 
-  services.silverbullet = {
-    enable = true;
-    package = pkgs.silverbullet;
-    envFile = config.sops.secrets."silverbullet/environment".path;
-  };
+  services.silverbullet =
+    let
+      pkgs_unstable = import inputs.nixpkgs-unstable { inherit (pkgs) system; };
+    in
+    {
+      enable = true;
+      package = pkgs_unstable.silverbullet;
+      envFile = config.sops.secrets."silverbullet/environment".path;
+    };
 
   services.restic.backups.silverbullet = {
     user = "silverbullet";
