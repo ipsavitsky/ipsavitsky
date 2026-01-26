@@ -3002,16 +3002,15 @@
         "nixpkgs": "nixpkgs_27"
       },
       "locked": {
-        "lastModified": 1764670198,
-        "narHash": "sha256-lnnmeM68ywGXf0/0Hpq+3ubqiraj8ivwAYUCA5dD9X8=",
-        "owner": "ipsavitsky",
+        "lastModified": 1768617840,
+        "narHash": "sha256-eqTjF93fKQhfh9MDXdUf+wNLrDJPZ/QpXWYQ0bIgz3M=",
+        "owner": "tobi",
         "repo": "try",
-        "rev": "88721031e68f379b778cf54768ec69ff2978a0d5",
+        "rev": "559279c2687ad720fd9586846dfd3027795ccb80",
         "type": "github"
       },
       "original": {
-        "owner": "ipsavitsky",
-        "ref": "fix-nix",
+        "owner": "tobi",
         "repo": "try",
         "type": "github"
       }
