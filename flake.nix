@@ -110,7 +110,8 @@
       url = "github:shazow/wifitui";
       inputs.flake-utils.follows = "flake-utils";
     };
-    try.url = "github:tobi/try";
+    # using this fork until https://github.com/tobi/try/pull/62 lands
+    try.url = "github:ipsavitsky/try/fix-nix";
     deploy-rs.url = "github:serokell/deploy-rs";
   };
 
