@@ -17,6 +17,7 @@
     ./transmission.nix
     ./arr.nix
     ./paperless.nix
+    ./interlinked.nix
   ];
 
   boot.loader.systemd-boot.enable = true;
