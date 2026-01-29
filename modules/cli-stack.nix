@@ -24,6 +24,7 @@
     ./hm/yazi.nix
     ./hm/pomidor.nix
     ./hm/opencode.nix
+    ./hm/interlinked.nix
 
     inputs.try.homeModules.default
   ];

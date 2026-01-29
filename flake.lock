@@ -891,11 +891,11 @@
         "utils": "utils_2"
       },
       "locked": {
-        "lastModified": 1769561952,
-        "narHash": "sha256-/04+nW7me3ll1gFaeBrcTNaiXigrCjei/nvQ/aq5CdY=",
+        "lastModified": 1769644455,
+        "narHash": "sha256-kb1SIMpv27CZoV9G3syEWmeMuLXMW2z2Wi0AVwQqPrI=",
         "owner": "ipsavitsky",
         "repo": "interlinked",
-        "rev": "71bc8838e77ac4e38f2994d3770b5cf0befb3726",
+        "rev": "f72355eef6d892c5eea0fa8a0592678f33aef8ce",
         "type": "github"
       },
       "original": {
