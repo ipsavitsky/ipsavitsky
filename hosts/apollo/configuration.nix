@@ -9,6 +9,8 @@
     ./gitlab_dd.nix
     ./miniflux.nix
     ./cloudflared.nix
+    ./matrix.nix
+    # ./caddy-static.nix
     ./ntfy-sh.nix
     ./static_page.nix
     ./silverbullet.nix

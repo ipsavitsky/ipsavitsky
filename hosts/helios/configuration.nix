@@ -2,10 +2,8 @@
 {
   imports = [
     ./hardware-configuration.nix
-    # ./matrix.nix
     ./soju.nix
     ./networking.nix
-    # ./jitsi.nix
   ];
 
   boot.tmp.cleanOnBoot = true;

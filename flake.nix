@@ -240,7 +240,6 @@
           modules = [
             sops-nix.nixosModules.sops
             srvos.nixosModules.server
-            srvos.nixosModules.mixins-nginx
             srvos.nixosModules.mixins-terminfo
             srvos.nixosModules.mixins-nix-experimental
             nur.modules.nixos.default
