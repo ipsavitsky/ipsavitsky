@@ -91,7 +91,8 @@
       url = "github:ipsavitsky/ntfyer";
       inputs.flake-utils.follows = "flake-utils";
     };
-    waybar.url = "github:Alexays/waybar";
+    # pinned because https://github.com/Alexays/Waybar/issues/4802
+    waybar.url = "github:Alexays/waybar/0.14.0";
     nixos-hardware.url = "github:nixos/nixos-hardware";
     sb_mcp.url = "github:ipsavitsky/sb_mcp";
     lanzaboote.url = "github:nix-community/lanzaboote";
