@@ -23,11 +23,13 @@ in
         handle_path /.well-known/matrix/client {
           header Access-Control-Allow-Origin *
           header Content-Type application/json
-          respond `${builtins.toJSON ({
-            "m.homeserver" = {
-              base_url = "https://${domain}";
-            };
-          })}` 200
+          respond `${
+            builtins.toJSON {
+              "m.homeserver" = {
+                base_url = "https://${domain}";
+              };
+            }
+          }` 200
         }
 
         handle /_matrix/* {
@@ -86,10 +88,10 @@ in
       allow_public_room_directory_without_auth = false;
       lockdown_public_room_directory = false;
       allow_device_name_federation = false;
-      url_preview_domain_contains_allowlist = [];
-      url_preview_domain_explicit_allowlist = [];
-      url_preview_url_contains_allowlist = [];
-      url_preview_domain_explicit_denylist = [];
+      url_preview_domain_contains_allowlist = [ ];
+      url_preview_domain_explicit_allowlist = [ ];
+      url_preview_url_contains_allowlist = [ ];
+      url_preview_domain_explicit_denylist = [ ];
       url_preview_max_spider_size = 384000;
       url_preview_check_root_domain = false;
       allow_profile_lookup_federation_requests = true;
