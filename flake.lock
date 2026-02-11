@@ -2701,11 +2701,11 @@
         "nixpkgs": "nixpkgs_25"
       },
       "locked": {
-        "lastModified": 1769420109,
-        "narHash": "sha256-V8mOJLLmAPJn6B3Zkoqj85YwmK/MKRAzY5S4s8Y+HmY=",
+        "lastModified": 1770763676,
+        "narHash": "sha256-nVbMBIaFsb6muAQsh0Jwk+lsgS9cKA+vjzxkyi3fGOw=",
         "owner": "ipsavitsky",
         "repo": "savitsky.dev",
-        "rev": "7e5efbc5e6f8936f594f5f86890537cab3abc07d",
+        "rev": "afafbf4923282dd08f3d15ea9ecfe4cfb467ea85",
         "type": "github"
       },
       "original": {
