@@ -1,4 +1,5 @@
 {
+  pkgs,
   config,
   inputs,
   ...
@@ -66,6 +67,11 @@
     LC_TELEPHONE = "en_GB.UTF-8";
     LC_TIME = "en_GB.UTF-8";
   };
+
+  environment.systemPackages = [
+    pkgs.gpclient
+    pkgs.coder
+  ];
 
   services = {
     pcscd.enable = true;

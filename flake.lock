@@ -3243,16 +3243,15 @@
         "nixpkgs": "nixpkgs_30"
       },
       "locked": {
-        "lastModified": 1770163611,
-        "narHash": "sha256-tfjfOvFSOnkZiXqw6/CMtr4GWqpl05nHbWDhuDHnNzU=",
-        "owner": "ipsavitsky",
+        "lastModified": 1770830493,
+        "narHash": "sha256-+tRzWjjitd3SGgqWMiN7TJ9c7mU0PMikJ3pXoHs6/aQ=",
+        "owner": "tobi",
         "repo": "try",
-        "rev": "cfe880800e22f733fe921e9da995fdd6f0cd145f",
+        "rev": "d1bc484cc31a34db3d287550f4800e9a6e56bacd",
         "type": "github"
       },
       "original": {
-        "owner": "ipsavitsky",
-        "ref": "fix-nix",
+        "owner": "tobi",
         "repo": "try",
         "type": "github"
       }

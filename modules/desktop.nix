@@ -57,6 +57,7 @@
       "nvidia-settings"
 
       "spotify"
+      "terraform"
     ];
 
   services = {
