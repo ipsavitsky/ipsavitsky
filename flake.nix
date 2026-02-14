@@ -103,7 +103,7 @@
       inputs.flake-utils.follows = "flake-utils";
     };
     nix-ai-tools = {
-      url = "github:numtide/nix-ai-tools";
+      url = "github:numtide/llm-agents.nix";
       inputs.treefmt-nix.follows = "treefmt-nix";
     };
     wiremix.url = "github:tsowell/wiremix";
@@ -293,6 +293,7 @@
       "https://gitu.cachix.org"
       "https://zed.cachix.org"
       "https://cache.garnix.io"
+      "https://cache.numtide.com"
     ];
     extra-trusted-public-keys = [
       "ghostty.cachix.org-1:QB389yTa6gTyneehvqG58y0WnHjQOqgnA+wBnpWWxns="
@@ -302,6 +303,7 @@
       "gitu.cachix.org-1:iUIaNys1l3W1LF/M8OXzaTl7N/OinGOlzdUJUSc+5eY="
       "zed.cachix.org-1:/pHQ6dpMsAZk2DiP4WCL0p9YDNKWj2Q5FL20bNmw1cU="
       "cache.garnix.io:CTFPyKSLcx5RMJKfLo5EEPUObbA78b0YQ2DTCJXqr9g="
+      "niks3.numtide.com-1:DTx8wZduET09hRmMtKdQDxNNthLQETkc/yaX7M4qK0g="
     ];
   };
 }
