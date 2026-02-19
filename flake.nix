@@ -114,6 +114,7 @@
     try.url = "github:tobi/try";
     deploy-rs.url = "github:serokell/deploy-rs";
     interlinked.url = "github:ipsavitsky/interlinked";
+    zjstatus.url = "github:dj95/zjstatus";
   };
 
   outputs =
@@ -292,7 +293,6 @@
       "https://helix.cachix.org"
       "https://gitu.cachix.org"
       "https://zed.cachix.org"
-      "https://cache.garnix.io"
       "https://cache.numtide.com"
     ];
     extra-trusted-public-keys = [
@@ -302,7 +302,6 @@
       "helix.cachix.org-1:ejp9KQpR1FBI2onstMQ34yogDm4OgU2ru6lIwPvuCVs="
       "gitu.cachix.org-1:iUIaNys1l3W1LF/M8OXzaTl7N/OinGOlzdUJUSc+5eY="
       "zed.cachix.org-1:/pHQ6dpMsAZk2DiP4WCL0p9YDNKWj2Q5FL20bNmw1cU="
-      "cache.garnix.io:CTFPyKSLcx5RMJKfLo5EEPUObbA78b0YQ2DTCJXqr9g="
       "niks3.numtide.com-1:DTx8wZduET09hRmMtKdQDxNNthLQETkc/yaX7M4qK0g="
     ];
   };

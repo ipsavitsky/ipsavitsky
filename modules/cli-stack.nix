@@ -51,7 +51,6 @@
       ploc.packages.${pkgs.system}.default
       nix-tree.packages.${pkgs.system}.default
       nix-melt.packages.${pkgs.system}.default
-      zemon.packages.${pkgs.system}.default
       nix-ai-tools.packages.${pkgs.system}.crush
       terminaltrove.packages.${pkgs.system}.cloctui
       wiremix.packages.${pkgs.system}.wiremix
