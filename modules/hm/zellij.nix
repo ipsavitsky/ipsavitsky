@@ -16,7 +16,7 @@
       keybinds {
         normal {
           bind "Alt m" {
-            Run "${lib.getExe inputs.zemon.packages.${pkgs.system}.default}" {
+            Run "${lib.getExe' inputs.zemon.packages.${pkgs.system}.default "zemon"}" {
               floating true
               close_on_exit true
             }
