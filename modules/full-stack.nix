@@ -42,7 +42,7 @@
     tuba
     geary
     bitwarden-desktop
-    dorion
+    # dorion
     nur.repos.forkprince.helium-nightly
   ];
 

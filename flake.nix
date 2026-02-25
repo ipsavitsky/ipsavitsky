@@ -85,8 +85,6 @@
     };
     nix-melt.url = "github:nix-community/nix-melt";
     pomidor.url = "github:ipsavitsky/pomidor";
-    raspberry-pi.url = "github:nix-community/raspberry-pi-nix";
-    nixos-wsl.url = "github:nix-community/NixOS-WSL";
     ntfyer = {
       url = "github:ipsavitsky/ntfyer";
       inputs.flake-utils.follows = "flake-utils";
@@ -123,10 +121,8 @@
       nixpkgs,
       flake-utils,
       treefmt-nix,
-      nixos-wsl,
       home-manager,
       sops-nix,
-      raspberry-pi,
       srvos,
       nixos-hardware,
       lanzaboote,
@@ -185,18 +181,18 @@
           ];
         };
 
-        hephaestus = nixpkgs.lib.nixosSystem {
-          specialArgs = {
-            inherit inputs;
-          };
-          system = "x86_64-linux";
-          modules = [
-            ./hosts/hephaestus/configuration.nix
-            nixos-wsl.nixosModules.wsl
-            home-manager.nixosModules.home-manager
-            nur.modules.nixos.default
-          ];
-        };
+        # hephaestus = nixpkgs.lib.nixosSystem {
+        #   specialArgs = {
+        #     inherit inputs;
+        #   };
+        #   system = "x86_64-linux";
+        #   modules = [
+        #     ./hosts/hephaestus/configuration.nix
+        #     nixos-wsl.nixosModules.wsl
+        #     home-manager.nixosModules.home-manager
+        #     nur.modules.nixos.default
+        #   ];
+        # };
 
         zeus = nixpkgs.lib.nixosSystem {
           specialArgs = {
@@ -213,24 +209,24 @@
           ];
         };
 
-        demeter = nixpkgs.lib.nixosSystem {
-          system = "aarch64-linux";
-          specialArgs = {
-            inherit inputs;
-          };
-          modules = [
-            raspberry-pi.nixosModules.raspberry-pi
-            raspberry-pi.nixosModules.sd-image
-            sops-nix.nixosModules.sops
-            srvos.nixosModules.server
-            srvos.nixosModules.mixins-nginx
-            srvos.nixosModules.mixins-terminfo
-            srvos.nixosModules.mixins-nix-experimental
-            nixos-hardware.nixosModules.raspberry-pi-5
-            nur.modules.nixos.default
-            ./hosts/demeter/configuration.nix
-          ];
-        };
+        # demeter = nixpkgs.lib.nixosSystem {
+        #   system = "aarch64-linux";
+        #   specialArgs = {
+        #     inherit inputs;
+        #   };
+        #   modules = [
+        #     raspberry-pi.nixosModules.raspberry-pi
+        #     raspberry-pi.nixosModules.sd-image
+        #     sops-nix.nixosModules.sops
+        #     srvos.nixosModules.server
+        #     srvos.nixosModules.mixins-nginx
+        #     srvos.nixosModules.mixins-terminfo
+        #     srvos.nixosModules.mixins-nix-experimental
+        #     nixos-hardware.nixosModules.raspberry-pi-5
+        #     nur.modules.nixos.default
+        #     ./hosts/demeter/configuration.nix
+        #   ];
+        # };
 
         apollo = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
