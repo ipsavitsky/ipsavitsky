@@ -124,7 +124,6 @@
       home-manager,
       sops-nix,
       srvos,
-      nixos-hardware,
       lanzaboote,
       nur,
       deploy-rs,
