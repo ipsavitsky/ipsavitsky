@@ -31,5 +31,5 @@
     };
   };
 
-  home.packages = [ pkgs.glab ];
+  home.packages = [ pkgs.glab pkgs.forgejo-cli ];
 }
