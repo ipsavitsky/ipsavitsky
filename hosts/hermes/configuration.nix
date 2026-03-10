@@ -97,6 +97,7 @@
       "wheel"
       "dialout"
       "uucp"
+      "podman"
     ];
   };
 
