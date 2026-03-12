@@ -24,7 +24,10 @@
         "renovate"
       ];
       nix.enabled = true;
-      lockFileMaintenance.enabled = true;
+      lockFileMaintenance = {
+        enabled = true;
+        schedule = "before 1am on sunday";
+      };
       username = "Ilya's renovate bot";
       gitAuthor = "Ilya's renovate bot <renovate@savitsky.invalid>";
       allowedCommands = [
