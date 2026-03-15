@@ -36,10 +36,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     sops-nix.url = "github:Mic92/sops-nix";
-    ghostty = {
-      url = "github:ghostty-org/ghostty";
-      inputs.flake-utils.follows = "flake-utils";
-    };
+    ghostty.url = "github:ghostty-org/ghostty";
     zed.url = "github:zed-industries/zed";
     nom = {
       url = "github:maralorn/nix-output-monitor";
