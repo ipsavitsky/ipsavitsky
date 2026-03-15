@@ -84,9 +84,6 @@
   };
 
   environment.systemPackages =
-  let
-    pkgs_unstable = import inputs.nixpkgs-unstable { inherit (pkgs) system; };
-  in
     with pkgs;
     with inputs;
     [
@@ -95,7 +92,6 @@
       gparted
       nmap
       transmission_4-qt
-
-      pkgs_unstable.telegram-desktop
+      telegram-desktop
     ];
 }
