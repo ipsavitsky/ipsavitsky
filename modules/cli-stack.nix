@@ -52,6 +52,7 @@
       nix-tree.packages.${pkgs.system}.default
       nix-melt.packages.${pkgs.system}.default
       nix-ai-tools.packages.${pkgs.system}.crush
+      nix-ai-tools.packages.${pkgs.system}.hermes-agent
       terminaltrove.packages.${pkgs.system}.cloctui
       wiremix.packages.${pkgs.system}.wiremix
       wifitui.packages.${pkgs.system}.default
