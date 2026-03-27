@@ -57,6 +57,18 @@
             api_url = "https://api.z.ai/api/coding/paas/v4";
             available_models = [
               {
+                name = "glm-5.1";
+                display_name = "GLM-5.1";
+                max_tokens = 200000;
+                max_output_tokens = 131072;
+                capabilities = {
+                  tools = true;
+                  images = false;
+                  parallel_tool_calls = true;
+                  prompt_cache_key = true;
+                };
+              }
+              {
                 name = "glm-4.7";
                 display_name = "GLM-4.7";
                 max_tokens = 200000;
