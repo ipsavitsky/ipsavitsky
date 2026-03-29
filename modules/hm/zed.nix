@@ -81,6 +81,18 @@
                 };
               }
               {
+                name = "glm-5-turbo";
+                display_name = "GLM-5 Turbo";
+                max_tokens = 200000;
+                max_output_tokens = 131072;
+                capabilities = {
+                  tools = true;
+                  images = false;
+                  parallel_tool_calls = true;
+                  prompt_cache_key = true;
+                };
+              }
+              {
                 name = "glm-4.7-flashx";
                 display_name = "GLM-4.7-FlashX";
                 max_tokens = 200000;
