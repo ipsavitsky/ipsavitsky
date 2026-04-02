@@ -31,8 +31,14 @@
     };
   };
 
-  home.packages = [
-    pkgs.glab
-    pkgs.forgejo-cli
-  ];
+  home.packages =
+    let
+      pkgs_unstable = import inputs.nixpkgs-unstable { inherit (pkgs) system; };
+    in
+    [
+      pkgs.glab
+      pkgs.forgejo-cli
+      pkgs.python313Packages.huggingface-hub
+      pkgs_unstable.buildkite-cli
+    ];
 }

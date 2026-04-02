@@ -38,7 +38,6 @@
       circumflex
       systemctl-tui
       dive
-      glab
       agg
       asciinema
       difftastic
@@ -46,6 +45,7 @@
       file
       wget
       bitwarden-cli
+      jq
 
       gitu.packages.${pkgs.system}.default
       ploc.packages.${pkgs.system}.default
