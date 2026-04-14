@@ -11,8 +11,9 @@
 
   stylix = {
     enable = true;
-    base16Scheme = "${pkgs.base16-schemes}/share/themes/3024.yaml";
-    image = config.lib.stylix.pixel "base01";
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/moonlight1.yaml";
+    image = ./artemis-ii-moon.jpg;
+    polarity = "dark";
     fonts = {
       serif = config.stylix.fonts.sansSerif;
       sansSerif = {
