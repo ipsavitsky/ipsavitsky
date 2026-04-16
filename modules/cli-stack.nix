@@ -53,6 +53,7 @@
       nix-melt.packages.${pkgs.system}.default
       nix-ai-tools.packages.${pkgs.system}.crush
       nix-ai-tools.packages.${pkgs.system}.pi
+      nodejs_24 # needed for pi plugins
       terminaltrove.packages.${pkgs.system}.cloctui
       wiremix.packages.${pkgs.system}.wiremix
       wifitui.packages.${pkgs.system}.default

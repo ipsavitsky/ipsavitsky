@@ -11,7 +11,7 @@
 
   stylix = {
     enable = true;
-    base16Scheme = "${pkgs.base16-schemes}/share/themes/moonlight1.yaml";
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/moonlight.yaml";
     image = ./artemis-ii-moon.jpg;
     polarity = "dark";
     fonts = {
