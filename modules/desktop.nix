@@ -93,5 +93,6 @@
       nmap
       transmission_4-qt
       telegram-desktop
+      libreoffice
     ];
 }
