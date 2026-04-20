@@ -1,9 +1,8 @@
-{ config, pkgs, ... }:
+{ config, ... }:
 
 let
   # TODO: Replace with your actual domain
   matrixDomain = "matrix.savitsky.dev";
-  baseUrl = "https://${matrixDomain}";
 
   # If using a separate server_name from the base URL (for .well-known delegation):
   # serverName = "savitsky.dev";
@@ -87,8 +86,8 @@ in
   # Open firewall ports for coturn
   networking.firewall = {
     allowedTCPPorts = [
-      80   # HTTP (for ACME)
-      443  # HTTPS
+      80 # HTTP (for ACME)
+      443 # HTTPS
       3478 # STUN/TURN
       5349 # TURNS
     ];
@@ -97,7 +96,10 @@ in
       5349 # TURNS
     ];
     allowedUDPPortRanges = [
-      { from = 49152; to = 65535; } # TURN media relay ports
+      {
+        from = 49152;
+        to = 65535;
+      } # TURN media relay ports
     ];
   };
 
@@ -141,7 +143,10 @@ in
           bind_addresses = [ "127.0.0.1" ];
           resources = [
             {
-              names = [ "client" "federation" ];
+              names = [
+                "client"
+                "federation"
+              ];
               compress = false;
             }
           ];

@@ -46,10 +46,7 @@
       url = "git+https://git.sr.ht/~khumba/nvd";
       inputs.flake-utils.follows = "flake-utils";
     };
-    caligula = {
-      url = "github:ifd3f/caligula";
-      inputs.flake-utils.follows = "flake-utils";
-    };
+    caligula.url = "github:ifd3f/caligula";
     gitu.url = "github:altsem/gitu";
     gitlab_due_date = {
       url = "github:ipsavitsky/gitlab_due_dates";
