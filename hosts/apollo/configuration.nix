@@ -18,7 +18,7 @@
     ./arr.nix
     ./paperless.nix
     ./interlinked.nix
-    ./matrix.nix
+    # ./matrix.nix
   ];
 
   boot.loader.systemd-boot.enable = true;

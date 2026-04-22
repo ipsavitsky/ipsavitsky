@@ -96,5 +96,6 @@
       libreoffice
       obs-studio
       handbrake
+      ilya-flake.packages.${pkgs.system}.t3code
     ];
 }

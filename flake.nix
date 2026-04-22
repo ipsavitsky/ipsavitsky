@@ -107,6 +107,7 @@
     deploy-rs.url = "github:serokell/deploy-rs";
     interlinked.url = "github:ipsavitsky/interlinked";
     zjstatus.url = "github:dj95/zjstatus";
+    ilya-flake.url = "github:ipsavitsky/ilya-flake";
   };
 
   outputs =
