@@ -132,6 +132,9 @@
           env = { };
         };
       };
+      agent = {
+        dock = "left";
+      };
       agent_servers = {
         opencode = {
           type = "custom";
