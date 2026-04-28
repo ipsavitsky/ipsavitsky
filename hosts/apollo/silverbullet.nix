@@ -1,5 +1,6 @@
 {
   pkgs,
+  lib,
   config,
   inputs,
   ...
@@ -38,5 +39,24 @@
     paths = [
       config.services.silverbullet.spaceDir
     ];
+  };
+
+  systemd.services.silverbullet-rumdl-fmt = {
+    description = "Run rumdl fmt on the SilverBullet space directory";
+    serviceConfig = {
+      Type = "oneshot";
+      User = config.services.silverbullet.user;
+      Group = config.services.silverbullet.group;
+      ExecStart = "${lib.getExe pkgs.rumdl} fmt ${config.services.silverbullet.spaceDir}";
+    };
+  };
+
+  systemd.timers.silverbullet-rumdl-fmt = {
+    description = "Daily rumdl fmt for SilverBullet space";
+    wantedBy = [ "timers.target" ];
+    timerConfig = {
+      OnCalendar = "daily";
+      Persistent = true;
+    };
   };
 }
