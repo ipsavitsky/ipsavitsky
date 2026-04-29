@@ -30,6 +30,11 @@
       envFile = config.sops.secrets."silverbullet/environment".path;
     };
 
+  systemd.services.silverbullet = {
+    path = [ pkgs.chromium ];
+    environment.SB_CHROME_PATH = lib.getExe pkgs.chromium;
+  };
+
   services.restic.backups.silverbullet = {
     user = "silverbullet";
     initialize = true;

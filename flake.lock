@@ -1003,11 +1003,11 @@
         "treefmt-nix": "treefmt-nix_2"
       },
       "locked": {
-        "lastModified": 1776864807,
-        "narHash": "sha256-h5BmVjwkRu287yvZnPgvk+mWHe9AnMk1vWiA2DtLrCI=",
+        "lastModified": 1777454888,
+        "narHash": "sha256-cgDU2C1suEp5KJyH6rYZ7bZZ0ZOkelxvIGjAUV5jmGY=",
         "owner": "ipsavitsky",
         "repo": "ilya-flake",
-        "rev": "3772928face0c8e156c8550810c4c2078b572ccc",
+        "rev": "b40fa23b991af0b680df0f85ae8f214dece999ff",
         "type": "github"
       },
       "original": {
