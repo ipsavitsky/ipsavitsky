@@ -18,6 +18,7 @@
     ./arr.nix
     ./paperless.nix
     ./interlinked.nix
+    ./interval-cards-bot.nix
     # ./matrix.nix
   ];
 

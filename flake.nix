@@ -108,6 +108,10 @@
     interlinked.url = "github:ipsavitsky/interlinked";
     zjstatus.url = "github:dj95/zjstatus";
     ilya-flake.url = "github:ipsavitsky/ilya-flake";
+    interval-cards-bot = {
+      url = "github:ipsavitsky/interval_cards_bot";
+      inputs.flake-utils.follows = "flake-utils";
+    };
   };
 
   outputs =
