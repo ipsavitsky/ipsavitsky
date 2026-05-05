@@ -1065,11 +1065,11 @@
         "uv2nix": "uv2nix"
       },
       "locked": {
-        "lastModified": 1776932788,
-        "narHash": "sha256-b6Gj1H3PW1aQEkWVT4aebQY4Bm/MFLgCsyaFzIsiC2w=",
+        "lastModified": 1778014297,
+        "narHash": "sha256-DzmAjsa7oLMu9/FPXVNZ2Tuk3r3cp4UzGJ76dt1mqGs=",
         "owner": "ipsavitsky",
         "repo": "interval_cards_bot",
-        "rev": "72c7b1ba98e70ffb60c34653231adffc59ebd0bc",
+        "rev": "280afe65bf9ae3d2a829facc0b6b972d0a621b05",
         "type": "github"
       },
       "original": {
