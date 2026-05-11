@@ -60,7 +60,7 @@
       caligula.packages.${pkgs.system}.default
       home-manager.packages.${pkgs.system}.home-manager
       interlinked.packages.${pkgs.system}.cli
-      ilya-flake.packages.${pkgs.system}.silverbullet
+      ilya-flake.packages.${pkgs.system}.silverbullet-cli
 
       # have to specify pkgs. so that it doesn't collide with inputs.nur
       pkgs.nur.repos.charmbracelet.glow

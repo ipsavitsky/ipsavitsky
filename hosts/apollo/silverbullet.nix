@@ -32,7 +32,10 @@
 
   systemd.services.silverbullet = {
     path = [ pkgs.chromium ];
-    environment.SB_CHROME_PATH = lib.getExe pkgs.chromium;
+    environment = {
+      SB_CHROME_PATH = "${pkgs.chromium.browser}/libexec/chromium/chromium";
+      BREAKPAD_DUMP_LOCATION = "/tmp/chrome-crashpad";
+    };
   };
 
   services.restic.backups.silverbullet = {
