@@ -46,6 +46,7 @@
       wget
       bitwarden-cli
       jq
+      openvpn
 
       gitu.packages.${pkgs.system}.default
       ploc.packages.${pkgs.system}.default
