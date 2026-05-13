@@ -58,6 +58,7 @@
 
       "spotify"
       "terraform"
+      "discord"
     ];
 
   services = {
@@ -96,5 +97,6 @@
       libreoffice
       obs-studio
       handbrake
+      discord
     ];
 }
