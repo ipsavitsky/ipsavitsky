@@ -1,7 +1,6 @@
 {
   pkgs,
   inputs,
-  config,
   lib,
   ...
 }:
@@ -121,16 +120,16 @@
         };
       };
       context_servers = {
-        silverbullet = {
-          command = lib.getExe' inputs.sb_mcp.packages.${pkgs.system}.default "sb_mcp";
-          args = [
-            "--url"
-            "http://notes.savitsky.dev"
-            "--token-file"
-            config.sops.secrets."mods/silverbullet_token".path
-          ];
-          env = { };
-        };
+        #   silverbullet = {
+        #     command = lib.getExe' inputs.sb_mcp.packages.${pkgs.system}.default "sb_mcp";
+        #     args = [
+        #       "--url"
+        #       "http://notes.savitsky.dev"
+        #       "--token-file"
+        #       config.sops.secrets."mods/silverbullet_token".path
+        #     ];
+        #     env = { };
+        #   };
       };
       agent = {
         dock = "left";

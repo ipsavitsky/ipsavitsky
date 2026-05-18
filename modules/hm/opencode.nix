@@ -8,5 +8,8 @@
     enable = true;
     package = inputs.nix-ai-tools.packages.${pkgs.system}.opencode;
     enableMcpIntegration = true;
+    settings = {
+      autoupdate = false;
+    };
   };
 }
