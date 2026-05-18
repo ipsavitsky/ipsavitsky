@@ -20,6 +20,7 @@
     ./interlinked.nix
     ./interval-cards-bot.nix
     # ./matrix.nix
+    ./open-webui.nix
   ];
 
   boot.loader.systemd-boot.enable = true;
